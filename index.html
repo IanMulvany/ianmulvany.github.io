@@ -52,7 +52,6 @@ eLife Sciences Ltd. </p>
 <h3>
 <a id="recent-photo" class="anchor" href="#recent-photo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Photos</h3>
 
-<p>A random photo.</p>
 <style type="text/css">
 .flickrimg {border: 1px solid #666666 !important; padding:0px; margin:2px;}
 #flickr_badge_wrapper {width:350px;text-align:left}
@@ -110,8 +109,13 @@ $parseRSS({
          console.log(post.title);
          title = post.title;
          date = post.publishedDate;
+         console.log(date);
+         pubMonth = date.split(" ")[2];
+         pubYear = date.split(" ")[3];
+         pubinfo = pubMonth + " " + pubYear;
+         console.log(pubinfo);
          link = post.link;
-          $( "#recent-posts" ).append( "<li>"+ "<a href=" + link + ">" + title +  "</a></li> "  );
+          $( "#recent-posts" ).append( "<li>"+ "<a href=" + link + ">" + title +  "</a> (" + pubinfo + ")</li>"   );
         });
         console.log(posts);
     }
