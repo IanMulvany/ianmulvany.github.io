@@ -44,12 +44,6 @@ eLife Sciences Ltd. </p>
 
 
 <h3>
-<a id="recent-tumblogs" class="anchor" href="#recent-tumblogs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent Tumblr Posts</h3>
-  <div id="recent-tumblr"></div>
-
-
-
-<h3>
 <a id="recent-photo" class="anchor" href="#recent-photo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Photos</h3>
 
 <style type="text/css">
@@ -88,18 +82,6 @@ var $parseRSS = function (paramsObj) {
         }
     });
 };
-
-$parseRSS({
-    url: "http://attention-deficit.tumblr.com/rss",
-    count: 5,
-    callback: function (posts) {
-        jQuery.each(posts, function(i, post) {
-         console.log(post.title);
-          $( "#recent-tumblr" ).append( "<li>"+ post.title + "</li>" );
-        });
-        console.log(posts);
-    }
-});
 
 $parseRSS({
     url: "http://partiallyattended.com/atom.xml",
