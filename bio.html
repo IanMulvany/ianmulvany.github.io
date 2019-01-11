@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ianmulvany.GitHub.io by IanMulvany</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="http://mulvany.net">Ian Mulvany's homepage</a></h1>
+        <p class="view"><a href="http://scholarly-comms-product-blog.com">Blog</a></p>
+        <p class="view"><a href="https://github.com/IanMulvany">GitHub Profile</a></p>
+        <p class="view"><a href="https://github.com/IanMulvany">LinkedIn Profile</a></p>
+        <p class="view"><a href="http://www.flickr.com/photos/mulvanynet/">Photos</a></p>
+        <p class="view"><a href="http://mulvany.net/bio.html">Speaker Bio</a></p>
+      </header>
+
+
+<section>
+        <h3>
+<a id="about-me" class="anchor" href="#speaker-bio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Speaker Bio</h3>
+
+
+<p>Ian Mulvany is head of transformation at SAGE Publishing. He helped setup SAGE’s methods innovation incubator SAGE Ocean following a lean product development approach. Previously he ran technology operations for eLife, was head of product for Mendeley and ran a number of early web2.0 products for Nature Publishing Group.</p>
+
+<p>Previously he was head of technology at eLife Sciences, head of product at Mendeley and a product manager for a number of  researcher oriented services that Nature Publishing Group. Over that time he has gained a breath of experience of modern product management practice, software engineering practice, program management and a deep understanding of the technical underpinnings of many modelling scholarly communication	 systems. </p>
+
+<p>He collaborated in defining the extensions to the NLM DTD required to support software citation and was also one of the original organising members of the Altmetrics conference series that started in 2014. He was a founding editorial advisory board member for the Journal of Open Research Software. </p>
+
+<p>He is passionate about creating digital tools that support the research enterprise. He is interested in the interplay between different stakeholders that can lead to the sustainably of these kinds of tools. </p>
+
+</section>
+
+
+
+
+<section>
+        <h3>
+<a id="about-me" class="anchor" href="#short-speaker-bio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Short speaker Bio</h3>
+
+<p>Ian Mulvany is head of transformation at SAGE Publishing. He helped setup SAGE’s methods innovation incubator SAGE Ocean following a lean product development approach. Previously he ran technology operations for eLife, was head of product for Mendeley and ran a number of early web2.0 products for Nature Publishing Group.</p>
+
+<p>He is passionate about creating digital tools that support the research enterprise. He is interested in the interplay between different stakeholders that can lead to the sustainably of these kinds of tools. </p>
+
+
+</section>
+
+
+<section>
+        <h3>
+<a id="about-me" class="anchor" href="#twitter-info" aria-hidden="true"><span class="octicon octicon-link"></span></a>Twitter Info</h3>
+
+<p>I am <a href="https://twitter.com/IanMulvany">@IanMulvany</a> on twitter, but have been unsuccessfully trying to stay away during the course of brexit.</p>
+<section>
+
+
+<section>
+        <h3>
+<a id="about-me" class="anchor" href="#profile-pics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Profile Pictures</h3>
+
+<p>If you need a profile picture you can get one from <a href="http://www.flickr.com/photos/mulvanynet/albums/72157660297808599">this flickr album.</a>
+</p>
+
+</section>
+
+
+<section>
+        <h3>
+<a id="about-me" class="anchor" href="#other-talks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Other Talks</h3>
+
+<p>You can see some of the slides from other talks that I have given.</p>
+
+<ul>
+	<li><a href="https://speakerdeck.com/ianmulvany">Recent talks on Speaker Deck</a></li> 
+	<li><a href="https://www.slideshare.net/mobile/IanMulvany">Older talks on Slideshare</a></li> 
+
+</section>
+
+
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+
+    <script type="text/javascript">
+    console.log("try append");
+
+var $parseRSS = function (paramsObj) {
+    var base = "https://ajax.googleapis.com/ajax/services/feed/load",
+        params = "?v=1.0&num=" + paramsObj.count + "&callback=?&q=" + paramsObj.url,
+        url = base + params;
+    $.ajax({
+        url: url,
+        dataType: "json",
+        success: function (data) {
+            paramsObj.callback(data.responseData.feed.entries);
+        }
+    });
+};
+
+$parseRSS({
+    url: "http://partiallyattended.com/atom.xml",
+    count: 5,
+    callback: function (posts) {
+        jQuery.each(posts, function(i, post) {
+         console.log(post.title);
+         title = post.title;
+         date = post.publishedDate;
+         console.log(date);
+         pubMonth = date.split(" ")[2];
+         pubYear = date.split(" ")[3];
+         pubinfo = pubMonth + " " + pubYear;
+         console.log(pubinfo);
+         link = post.link;
+          $( "#recent-posts" ).append( "<li>"+ "<a href=" + link + ">" + title +  "</a> (" + pubinfo + ")</li>"   );
+        });
+        console.log(posts);
+    }
+});
+
+
+    </script>
+
+  </body>
+</html>
