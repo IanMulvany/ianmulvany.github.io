@@ -24,68 +24,65 @@
         <p class="view"><a href="http://mulvany.net/bio.html">Speaker Bio</a></p>
       </header>
 
-
-<section>
+      <section>
         <h3>
-<a id="about-me" class="anchor" href="#about-me" aria-hidden="true"><span class="octicon octicon-link"></span></a>About me.</h3>
+          <a id="about-me" class="anchor" href="#about-me" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          About me.
+        </h3>
 
-<p>I'm an experienced digital technical manager, with wide experience in the STM industry. I'm based in London and am CTO for the BMJ.</p>
+        <p>I'm an experienced digital technical manager, with wide experience in the STM industry. I'm based in London and am CTO for the BMJ.</p>
 
+        <h3>
+          <a id="recent-posts" class="anchor" href="#recent-posts" aria-hidden="true">
+            <span class="octicon octicon-link"></span>
+          </a>
+          Recent blog posts
+        </h3>
 
-
-<h3>
-<a id="recent-pinboard" class="anchor" href="#recent-pinboard" aria-hidden="true"><span class="octicon octicon-link"></span></a>Recent Pinboard items</h3>
-
-<script language="javascript" src="http://pinboard.in/widgets/v1/linkroll/?user=IanMulvany&count=10"></script>
-
-
-
-</section>
+        <ul id="recent-posts"></ul>
+      </section>
 
       <footer>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+        <p>
+          <small>
+            Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a>
+          </small>
+        </p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
 
     <script type="text/javascript">
-    console.log("try append");
-
-var $parseRSS = function (paramsObj) {
-    var base = "https://ajax.googleapis.com/ajax/services/feed/load",
-        params = "?v=1.0&num=" + paramsObj.count + "&callback=?&q=" + paramsObj.url,
-        url = base + params;
-    $.ajax({
-        url: url,
-        dataType: "json",
-        success: function (data) {
-            paramsObj.callback(data.responseData.feed.entries);
-        }
-    });
-};
-
-$parseRSS({
-    url: "http://partiallyattended.com/atom.xml",
-    count: 5,
-    callback: function (posts) {
-        jQuery.each(posts, function(i, post) {
-         console.log(post.title);
-         title = post.title;
-         date = post.publishedDate;
-         console.log(date);
-         pubMonth = date.split(" ")[2];
-         pubYear = date.split(" ")[3];
-         pubinfo = pubMonth + " " + pubYear;
-         console.log(pubinfo);
-         link = post.link;
-          $( "#recent-posts" ).append( "<li>"+ "<a href=" + link + ">" + title +  "</a> (" + pubinfo + ")</li>"   );
+      // Function to parse Atom feed and display recent posts
+      function fetchRecentPosts(feedUrl, count) {
+        $.ajax(feedUrl, {
+          accepts: {
+            xml: "application/atom+xml, text/xml"
+          },
+          dataType: "xml",
+          success: function (data) {
+            const posts = $(data).find("entry").slice(0, count);
+            posts.each(function () {
+              const title = $(this).find("title").text();
+              const link = $(this).find("link[rel='alternate']").attr("href");
+              const updated = new Date($(this).find("updated").text());
+              const pubMonth = updated.toLocaleString("default", { month: "short" });
+              const pubYear = updated.getFullYear();
+              const pubInfo = `${pubMonth} ${pubYear}`;
+              $("#recent-posts").append(`<li><a href="${link}">${title}</a> (${pubInfo})</li>`);
+            });
+          },
+          error: function () {
+            console.error("Failed to fetch recent blog posts.");
+          }
         });
-        console.log(posts);
-    }
-});
+      }
 
-
+      // Fetch the latest 5 posts from the Atom feed
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+      const feedUrl = "https://world.hey.com/ian.mulvany/feed.atom";
+      fetchRecentPosts(proxyUrl + feedUrl, 5);
     </script>
-
   </body>
 </html>
