@@ -9,6 +9,12 @@ Return a list of posts that are not in the database.
 
 import feedparser
 import sqlite3
+import os
+
+# Get the base directory of the script
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Path to the database
+DB_PATH = os.path.join(BASE_DIR, "../data/blog_posts.db")
 
 
 def get_missing_posts():
@@ -16,7 +22,7 @@ def get_missing_posts():
     feed = feedparser.parse("https://world.hey.com/ian.mulvany/feed.atom")
 
     # Connect to the database
-    conn = sqlite3.connect("blog_posts.db")
+    conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
 
     # Fetch all posts from the database
