@@ -22,6 +22,7 @@
         <p class="view"><a href="https://www.linkedin.com/in/ianmulvany/">LinkedIn Profile</a></p>
         <p class="view"><a href="http://www.flickr.com/photos/mulvanynet/">Photos</a></p>
         <p class="view"><a href="http://mulvany.net/bio.html">Speaker Bio</a></p>
+        <p class="view"><a href="all-my-posts.html">All My Posts</a></p>
       </header>
 
       <section>
@@ -33,15 +34,6 @@
         </h3>
 
         <p>I'm an experienced digital technical manager, with wide experience in the STM industry. I'm based in London and am CTO for the BMJ.</p>
-
-        <h3>
-          <a id="recent-posts" class="anchor" href="#recent-posts" aria-hidden="true">
-            <span class="octicon octicon-link"></span>
-          </a>
-          Recent blog posts
-        </h3>
-
-        <ul id="recent-posts"></ul>
       </section>
 
       <footer>
@@ -53,36 +45,5 @@
       </footer>
     </div>
 
-    <script type="text/javascript">
-      // Function to parse Atom feed and display recent posts
-      function fetchRecentPosts(feedUrl, count) {
-        $.ajax(feedUrl, {
-          accepts: {
-            xml: "application/atom+xml, text/xml"
-          },
-          dataType: "xml",
-          success: function (data) {
-            const posts = $(data).find("entry").slice(0, count);
-            posts.each(function () {
-              const title = $(this).find("title").text();
-              const link = $(this).find("link[rel='alternate']").attr("href");
-              const updated = new Date($(this).find("updated").text());
-              const pubMonth = updated.toLocaleString("default", { month: "short" });
-              const pubYear = updated.getFullYear();
-              const pubInfo = `${pubMonth} ${pubYear}`;
-              $("#recent-posts").append(`<li><a href="${link}">${title}</a> (${pubInfo})</li>`);
-            });
-          },
-          error: function () {
-            console.error("Failed to fetch recent blog posts.");
-          }
-        });
-      }
-
-      // Fetch the latest 5 posts from the Atom feed
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-      const feedUrl = "https://world.hey.com/ian.mulvany/feed.atom";
-      fetchRecentPosts(proxyUrl + feedUrl, 5);
-    </script>
   </body>
 </html>
