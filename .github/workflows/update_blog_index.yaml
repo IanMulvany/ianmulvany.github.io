@@ -1,0 +1,59 @@
+name: Update Blog Posts
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Runs weekly on Sunday at midnight
+  workflow_dispatch: # Allow manual triggering of the workflow
+
+permissions:
+  contents: write  # Needed to push changes to the repository
+
+jobs:
+  update-posts:
+    runs-on: ubuntu-latest
+
+    steps:
+    # Step 1: Check out the repository code
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # Step 2: Set up Python
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'  # Specify the Python version
+
+    # Step 3: Install dependencies
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    # Step 4: Run the script to check RSS feed for missing posts
+    - name: Check RSS feed for missing posts
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python scripts/get_posts_from_RSS_not_in_db.py
+
+    # Step 5: Run the script to insert missing posts into the database
+    - name: Insert missing posts into database
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python scripts/insert_missing_hey_rss_posts_into_db.py
+
+    # Step 6: Regenerate the HTML index page
+    - name: Regenerate HTML index page
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python scripts/gen_html_index_page.py
+
+    # Step 7: Commit and push changes (HTML and SQLite DB)
+    - name: Commit and push changes
+      run: |
+        git config --local user.name "GitHub Actions"
+        git config --local user.email "actions@github.com"
+        git add all-my-posts.html data/blog_posts.db
+        git commit -m "Automated update: Regenerated blog posts archive and updated SQLite DB"
+        git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
