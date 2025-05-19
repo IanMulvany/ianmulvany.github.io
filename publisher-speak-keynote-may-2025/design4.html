@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publisher Speak Keynote – May 2025 | Ian Mulvany</title>
+  <meta name="description" content="Slides and annotations from Ian Mulvany's keynote at Publisher Speak, May 2025.">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-bg: #fafafa;
+      --secondary-bg: #ffffff;
+      --text-color: #333;
+      --accent-color: #8e44ad;
+      --link-color: #3498db;
+      --border-color: #eee;
+      --max-width: 1200px;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    html {
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+    
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.7;
+      color: var(--text-color);
+      background-color: var(--primary-bg);
+      padding: 0;
+      margin: 0;
+    }
+    
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Merriweather', serif;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 2rem 0 1rem;
+      color: #222;
+    }
+    
+    h1 {
+      font-size: 2.75rem;
+      margin-top: 0;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+    }
+    
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease;
+    }
+    
+    a:hover {
+      border-color: var(--link-color);
+    }
+    
+    ul, ol {
+      margin: 0 0 1.5rem 1.25rem;
+    }
+    
+    li {
+      margin-bottom: 0.5rem;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Header */
+    .site-header {
+      padding: 3rem 0 2rem;
+      text-align: center;
+      background-color: var(--secondary-bg);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: relative;
+    }
+    
+    .site-header:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: var(--accent-color);
+    }
+    
+    .site-header h1 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .site-header p {
+      color: #666;
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Main layout */
+    .main-content {
+      padding: 3rem 0;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    
+    .progress-nav {
+      flex: 0 0 100%;
+      margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      background-color: var(--secondary-bg);
+      padding: 1rem 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    
+    .progress-container {
+      width: 100%;
+      height: 8px;
+      background-color: #f1f1f1;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .progress-bar {
+      height: 8px;
+      background-color: var(--accent-color);
+      width: 0;
+      transition: width 0.3s ease;
+    }
+    
+    .presentation {
+      flex: 0 0 100%;
+      margin-bottom: 3rem;
+    }
+    
+    .slide {
+      margin-bottom: 6rem;
+      padding-bottom: 3rem;
+      border-bottom: 1px solid var(--border-color);
+      scroll-margin-top: 80px;
+    }
+    
+    .slide:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    
+    .slide-header {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .slide-number {
+      display: inline-block;
+      padding: 0.4rem 0.8rem;
+      background-color: var(--accent-color);
+      color: white;
+      font-weight: 600;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      margin-right: 1rem;
+      min-width: 50px;
+      text-align: center;
+    }
+    
+    .slide-title {
+      font-family: 'Merriweather', serif;
+      font-size: 1.5rem;
+      color: #222;
+      flex: 1;
+      margin: 0;
+    }
+    
+    .slide-image {
+      margin-bottom: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .slide-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .slide-text {
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    
+    .slide-text p {
+      margin-bottom: 1.5rem;
+    }
+    
+    .slide-text pre {
+      background-color: #f5f5f5;
+      padding: 1rem;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      white-space: pre-wrap;
+    }
+    
+    .slide-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+    
+    .slide-nav a {
+      padding: 0.5rem 1rem;
+      background-color: var(--secondary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      color: var(--text-color);
+      font-weight: 600;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .slide-nav a:hover {
+      background-color: var(--accent-color);
+      color: white;
+      border-color: var(--accent-color);
+    }
+    
+    .slide-nav a.disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    
+    .slide-nav a.disabled:hover {
+      background-color: var(--secondary-bg);
+      color: var(--text-color);
+      border-color: var(--border-color);
+    }
+    
+    /* Table of Contents */
+    .toc {
+      flex: 0 0 250px;
+      position: sticky;
+      top: 100px;
+      height: calc(100vh - 120px);
+      overflow-y: auto;
+      padding: 1rem;
+      background-color: var(--secondary-bg);
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      display: none; /* Hidden on mobile */
+    }
+    
+    .toc h2 {
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--accent-color);
+    }
+    
+    .toc ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .toc li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .toc a {
+      color: #555;
+      text-decoration: none;
+      display: block;
+      padding: 0.3rem 0;
+      border: none;
+      transition: color 0.2s;
+      font-size: 0.9rem;
+    }
+    
+    .toc a:hover, .toc a.active {
+      color: var(--accent-color);
+    }
+    
+    .toc .toc-slide-number {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      background-color: #f5f5f5;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
+      transition: background-color 0.2s;
+    }
+    
+    .toc a:hover .toc-slide-number, .toc a.active .toc-slide-number {
+      background-color: var(--accent-color);
+      color: white;
+    }
+    
+    /* Footer */
+    .site-footer {
+      background-color: var(--secondary-bg);
+      padding: 2rem 0;
+      margin-top: 3rem;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+    
+    .site-footer p {
+      color: #666;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+    
+    /* Responsive adjustments */
+    @media (min-width: 1024px) {
+      .toc {
+        display: block;
+      }
+      
+      .presentation {
+        flex: 0 0 calc(100% - 300px);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      html {
+        font-size: 16px;
+      }
+      
+      .container {
+        padding: 0 1rem;
+      }
+      
+      .site-header {
+        padding: 2rem 0 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .main-content {
+        padding: 2rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Publisher Speak Keynote</h1>
+      <p>Ian Mulvany &mdash; May 2025</p>
+      <p><em>Slides and annotations from my keynote at Publisher Speak</em></p>
+    </div>
+  </header>
+  
+  <div class="container">
+    <main class="main-content">
+      <div class="progress-nav">
+        <div class="progress-container">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+      </div>
+      
+      <aside class="toc">
+        <h2>Contents</h2>
+        <ul id="tocList">
+          <!-- Table of contents generated by JavaScript -->
+        </ul>
+      </aside>
+      
+      <section class="presentation">
+        <!-- Slide 1 -->
+        <article id="slide-1" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">01</span>
+            <h2 class="slide-title">Introduction</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.001.jpeg" alt="BM) Group ' What we owe the future What happened, what happens next? lan Mulvany BMJ CTO PR">
+          </div>
+          <div class="slide-text">
+            <p>These are the slides from a keynote that I gave in May 2025 at Publisher Speak.</p>
+            <p>Back in January I wrote a somewhat tongue in cheek blog post about things that might be true about scholarly publishing -- <a href="https://world.hey.com/ian.mulvany/what-things-might-be-true-about-scholarly-publishing-11d227f3">https://world.hey.com/ian.mulvany/what-things-might-be-true-about-scholarly-publishing-11d227f3</a>, and since then I've been looking to find some time to create a more constructive and positive overview of my thoughts. This talk was a great opportunity to do that.</p>
+            <p>Having worked for about twenty years in the field I decided to take a slightly more reflective stance. I used Simon Willison's tool for annotating slides to put this post together - <a href="https://simonwillison.net/2023/Aug/6/annotated-presentations/">https://simonwillison.net/2023/Aug/6/annotated-presentations/</a>.</p>
+            <p>The topic of the talk is about the future. I don't think there is anything unique or novel in this talk, but I really wanted to get across my enthusiasm for the opportunities ahead of us.</p>
+            <p>(As a side note, I used GenAI for a lot of the visuals in this presentation, for which I am absolutly unapologetic, it saved me a ton of time).</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#" class="prev disabled">Previous</a>
+            <a href="#slide-2" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 2 -->
+        <article id="slide-2" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">02</span>
+            <h2 class="slide-title">Inspirations</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.003.jpeg" alt="Introduction Inspirations">
+          </div>
+          <div class="slide-text">
+            <p>Much of the thinking behind this talk is inspired by the following three sources.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-1" class="prev">Previous</a>
+            <a href="#slide-3" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 3 -->
+        <article id="slide-3" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">03</span>
+            <h2 class="slide-title">The Knowledge Machine</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.004.jpeg" alt="MICHAEL STREVENS The Knowledge Machine book cover">
+          </div>
+          <div class="slide-text">
+            <p>I've seen The Knowledge Machine by Michael Strevens - <a href="https://www.strevens.org/scientia/-">https://www.strevens.org/scientia/-</a> described as a modern calssic in the making, and I fully agreee, it's the best book I've read on how science works, it has deeply informed by thinking and I go into the main arguments in this talk.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-2" class="prev">Previous</a>
+            <a href="#slide-4" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 4 -->
+        <article id="slide-4" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">04</span>
+            <h2 class="slide-title">Large AI Models as Cultural Technologies</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.005.jpeg" alt="Large Al models are cultural and social technologies implications draw on the history of transformative nformation ystems from the past">
+          </div>
+          <div class="slide-text">
+            <p>Large AI models are cultural and social technologies - <a href="https://www.science.org/doi/10.1126/science.adt9819">https://www.science.org/doi/10.1126/science.adt9819</a> - by Farrell et. al. provides a good does of sanity aobut what LLMs are, or are not, and the framing here applies equally as well to science.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-3" class="prev">Previous</a>
+            <a href="#slide-5" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 5 -->
+        <article id="slide-5" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">05</span>
+            <h2 class="slide-title">Trusted Identity in Academic Publishing</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.006.jpeg" alt="Trusted identity in academic publishing. ">
+          </div>
+          <div class="slide-text">
+            <p>The two reports on Identity in publishing by STM are fantastic, clearly written and this work is important and vital to our industry - <a href="https://stm-assoc.org/new-stm-report-trusted-identity-in-academic-publishing/">https://stm-assoc.org/new-stm-report-trusted-identity-in-academic-publishing/</a>.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-4" class="prev">Previous</a>
+            <a href="#slide-6" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 6 -->
+        <article id="slide-6" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">06</span>
+            <h2 class="slide-title">What Should You Do?</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.007.jpeg" alt="What should you do?">
+          </div>
+          <div class="slide-text">
+            <p>The talk is quite long, so I wanted to get the key take away messages out at the very start.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-5" class="prev">Previous</a>
+            <a href="#slide-7" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Continue with all slides... -->
+        
+        <!-- Slide 7 -->
+        <article id="slide-7" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">07</span>
+            <h2 class="slide-title">Light Cone: Our Future</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.008.jpeg" alt="Image of a light cone. ">
+          </div>
+          <div class="slide-text">
+            <p>My first framing position is that the future is entirely open, entorely ahead of us, and we are in a consequential moment in the history of research.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-6" class="prev">Previous</a>
+            <a href="#slide-8" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 8 -->
+        <article id="slide-8" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">08</span>
+            <h2 class="slide-title">Call to Action</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.009.jpeg" alt="Image of a light cone. Image of a call to action. ">
+          </div>
+          <div class="slide-text">
+            <p>What we do now really ,matters, we can play an important role in the future of scholarship, the future of science.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-7" class="prev">Previous</a>
+            <a href="#slide-9" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 9 -->
+        <article id="slide-9" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">09</span>
+            <h2 class="slide-title">Data, Identity, Trust</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.010.jpeg" alt="data identity trust">
+          </div>
+          <div class="slide-text">
+            <p>The main things I want people to take away from today are the following (if they have to pick just one thing to do, pick one of these).</p>
+            <ul>
+              <li>Strongly support data and code sharing as part of the scholarly record.</li>
+              <li>Take identity much more seriously than we have in the past.</li>
+              <li>Integrate with ORCID trust Markers.</li>
+            </ul>
+            <p>I think the need for supporting data, and the usefulness of ORCID, are well understood by our industry, so I'm going to be spending most of this talk focussing on identity as I think that's an area that needs a lot more attention.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-8" class="prev">Previous</a>
+            <a href="#slide-10" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Slide 10 -->
+        <article id="slide-10" class="slide">
+          <div class="slide-header">
+            <span class="slide-number">10</span>
+            <h2 class="slide-title">Dryad: Research Data Infrastructure</h2>
+          </div>
+          <div class="slide-image">
+            <img src="PublisherSpeak Keynote - May 2025.011.jpeg" alt="Dryad Not-for-profit and online since 2008. Learn more: datadryad.org Making research data discoverable, reusable, and citable through: Curated data repository ° Persistent identifiers (DOIs) @ Open access publishing @ Standards-compliant metadata A not-for-profit community committed to the open availability and routine reuse of all research data">
+          </div>
+          <div class="slide-text">
+            <p>But on data I want to give a shout out to <a href="https://datadryad.org">https://datadryad.org</a> which is a community run open infrastructure for publishing and curating research data. I've been on the board of Drayd for a number of years. Simply - authors can publish their data, and have it curated. It's a good example of a neutral piece of infrastructure that can support any field.</p>
+          </div>
+          <div class="slide-nav">
+            <a href="#slide-9" class="prev">Previous</a>
+            <a href="#slide-11" class="next">Next</a>
+          </div>
+        </article>
+        
+        <!-- Continue with the remaining slides, following the same pattern -->
+        
+        <!-- Final slide would have a disabled next button -->
+      </section>
+    </main>
+  </div>
+  
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 Ian Mulvany. Publisher Speak Keynote.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Generate Table of Contents
+    const tocList = document.getElementById('tocList');
+    const slides = document.querySelectorAll('.slide');
+    
+    slides.forEach((slide, index) => {
+      const slideId = slide.id;
+      const slideNumber = slide.querySelector('.slide-number').textContent;
+      const slideTitle = slide.querySelector('.slide-title').textContent;
+      
+      const listItem = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = `#${slideId}`;
+      link.innerHTML = `<span class="toc-slide-number">${index + 1}</span> ${slideTitle}`;
+      
+      listItem.appendChild(link);
+      tocList.appendChild(listItem);
+    });
+    
+    // Progress Bar
+    const progressBar = document.getElementById('progressBar');
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    
+    window.addEventListener('scroll', () => {
+      const progress = (window.pageYOffset / totalHeight) * 100;
+      progressBar.style.width = progress + '%';
+      
+      // Update active TOC item
+      const scrollPosition = window.scrollY;
+      
+      slides.forEach((slide, index) => {
+        const slideTop = slide.offsetTop;
+        const slideHeight = slide.offsetHeight;
+        
+        if (scrollPosition >= slideTop - 150 && 
+            scrollPosition < slideTop + slideHeight - 150) {
+          
+          document.querySelectorAll('.toc a').forEach(link => {
+            link.classList.remove('active');
+          });
+          
+          const activeLink = document.querySelector(`.toc a[href="#${slide.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add('active');
+          }
+        }
+      });
+    });
+    
+    // Initialize active state
+    window.dispatchEvent(new Event('scroll'));
+  </script>
+</body>
+</html>
