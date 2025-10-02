@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Geometry Explorer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .panel {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .panel h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        #canvas2d {
+            width: 100%;
+            height: 400px;
+            border: 3px solid #667eea;
+            border-radius: 10px;
+            cursor: crosshair;
+            background: white;
+            display: block;
+        }
+
+        #canvas3d {
+            width: 100%;
+            height: 400px;
+            border: 3px solid #764ba2;
+            border-radius: 10px;
+            background: linear-gradient(to bottom, #e0e7ff, #f0f4ff);
+            display: block;
+            cursor: grab;
+        }
+
+        #canvas3d:active {
+            cursor: grabbing;
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-secondary {
+            background: #48bb78;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #38a169;
+            transform: translateY(-2px);
+        }
+
+        .btn-danger {
+            background: #f56565;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background: #e53e3e;
+            transform: translateY(-2px);
+        }
+
+        .btn.active {
+            background: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.3);
+        }
+
+        .slider-group {
+            margin-top: 15px;
+        }
+
+        .slider-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #667eea;
+            cursor: pointer;
+            border: none;
+        }
+
+        .calculations {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .calculations h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .calc-label {
+            font-size: 1.1em;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .calc-value {
+            font-size: 1.3em;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .formula {
+            background: #e0e7ff;
+            padding: 10px;
+            border-radius: 8px;
+            margin-top: 5px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            color: #4c51bf;
+        }
+
+        .instruction {
+            background: #fef3c7;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .instruction p {
+            margin: 5px 0;
+            color: #78350f;
+        }
+
+        @media (max-width: 1024px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 3D Geometry Explorer</h1>
+        <p class="subtitle">Draw 2D shapes and watch them transform into 3D volumes!</p>
+
+        <div class="instruction">
+            <p><strong>📐 How to use:</strong></p>
+            <p>1. Choose a shape or use freeform drawing on the left canvas</p>
+            <p>2. Adjust the height slider to extrude your shape into 3D</p>
+            <p>3. Watch the area and volume calculations update in real-time below!</p>
+        </div>
+
+        <div class="main-content">
+            <div class="panel">
+                <h2>📏 2D Drawing Canvas</h2>
+                <canvas id="canvas2d"></canvas>
+                <div class="controls">
+                    <button class="btn btn-primary" onclick="setShape('square')">Square</button>
+                    <button class="btn btn-primary" onclick="setShape('triangle')">Triangle</button>
+                    <button class="btn btn-primary" onclick="setShape('circle')">Circle</button>
+                    <button class="btn btn-primary active" onclick="setShape('freeform')">Freeform Draw</button>
+                    <button class="btn btn-danger" onclick="clearCanvas()">Clear</button>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h2>🎲 3D View</h2>
+                <canvas id="canvas3d"></canvas>
+                <div class="slider-group">
+                    <label for="heightSlider">Height: <span id="heightValue">5</span> units</label>
+                    <input type="range" id="heightSlider" min="1" max="50" value="5">
+                </div>
+                <div class="slider-group">
+                    <label for="zoomSlider">Zoom: <span id="zoomValue">2.5</span>x</label>
+                    <input type="range" id="zoomSlider" min="0.5" max="60" step="0.1" value="2.5">
+                </div>
+                <div class="slider-group">
+                    <label for="rotationSlider">Rotation: <span id="rotationValue">0</span>°</label>
+                    <input type="range" id="rotationSlider" min="0" max="360" value="0">
+                </div>
+                <div class="controls">
+                    <button class="btn btn-secondary" onclick="reset3DView()">Reset View</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="calculations">
+            <h2>📊 Calculations</h2>
+            <div class="calc-row">
+                <div>
+                    <div class="calc-label">2D Area</div>
+                    <div class="formula" id="areaFormula">Draw a shape to see the formula</div>
+                </div>
+                <div class="calc-value" id="areaValue">0 units²</div>
+            </div>
+            <div class="calc-row">
+                <div>
+                    <div class="calc-label">3D Volume</div>
+                    <div class="formula" id="volumeFormula">Volume = Area × Height</div>
+                </div>
+                <div class="calc-value" id="volumeValue">0 units³</div>
+            </div>
+            <div class="calc-row">
+                <div>
+                    <div class="calc-label">Surface Area (with top & bottom)</div>
+                    <div class="formula" id="surfaceFormula">Surface Area = 2×Area + Perimeter×Height</div>
+                </div>
+                <div class="calc-value" id="surfaceValue">0 units²</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas2d = document.getElementById('canvas2d');
+        const ctx2d = canvas2d.getContext('2d');
+        const canvas3d = document.getElementById('canvas3d');
+        const ctx3d = canvas3d.getContext('2d');
+        
+        let currentShape = 'freeform';
+        let drawing = false;
+        let points = [];
+        let shapeData = null;
+        let height = 5;
+        let rotation = 0;
+        let zoom = 2.5;
+        let isDragging = false;
+        let lastMouseX = 0;
+        let lastMouseY = 0;
+
+        // Set canvas sizes
+        function resizeCanvases() {
+            const rect2d = canvas2d.getBoundingClientRect();
+            canvas2d.width = rect2d.width;
+            canvas2d.height = rect2d.height;
+            canvas3d.width = rect2d.width;
+            canvas3d.height = rect2d.height;
+            redraw();
+        }
+
+        window.addEventListener('resize', resizeCanvases);
+        resizeCanvases();
+
+        function setShape(shape) {
+            currentShape = shape;
+            document.querySelectorAll('.controls .btn-primary').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            if (shape !== 'freeform') {
+                drawPredefinedShape(shape);
+            } else {
+                clearCanvas();
+            }
+        }
+
+        function drawPredefinedShape(shape) {
+            clearCanvas();
+            const centerX = canvas2d.width / 2;
+            const centerY = canvas2d.height / 2;
+            // Set fixed size for square to be 5 units, scale others proportionally
+            const baseSize = 5;
+            const pixelScale = Math.min(canvas2d.width, canvas2d.height) * 0.4; // More zoomed in
+            const size = baseSize * pixelScale / 5; // Scale so 5 units = pixelScale pixels
+
+            ctx2d.fillStyle = '#667eea';
+            ctx2d.strokeStyle = '#4c51bf';
+            ctx2d.lineWidth = 3;
+
+            if (shape === 'square') {
+                const x = centerX - size / 2;
+                const y = centerY - size / 2;
+                ctx2d.fillRect(x, y, size, size);
+                ctx2d.strokeRect(x, y, size, size);
+                
+                shapeData = {
+                    type: 'square',
+                    side: baseSize, // Use actual unit value (5)
+                    area: baseSize * baseSize, // 25 square units
+                    perimeter: 4 * baseSize // 20 units
+                };
+            } else if (shape === 'circle') {
+                ctx2d.beginPath();
+                ctx2d.arc(centerX, centerY, size / 2, 0, Math.PI * 2);
+                ctx2d.fill();
+                ctx2d.stroke();
+                
+                const radius = baseSize / 2; // 2.5 units
+                shapeData = {
+                    type: 'circle',
+                    radius: radius,
+                    area: Math.PI * radius * radius,
+                    perimeter: 2 * Math.PI * radius
+                };
+            } else if (shape === 'triangle') {
+                ctx2d.beginPath();
+                ctx2d.moveTo(centerX, centerY - size / 2);
+                ctx2d.lineTo(centerX - size / 2, centerY + size / 2);
+                ctx2d.lineTo(centerX + size / 2, centerY + size / 2);
+                ctx2d.closePath();
+                ctx2d.fill();
+                ctx2d.stroke();
+                
+                const base = baseSize; // 5 units
+                const heightTri = baseSize * Math.sqrt(3) / 2; // ~4.33 units
+                shapeData = {
+                    type: 'triangle',
+                    base: base,
+                    height: heightTri,
+                    area: (base * heightTri) / 2,
+                    perimeter: 3 * base
+                };
+            }
+
+            updateCalculations();
+            draw3D();
+        }
+
+        // Freeform drawing
+        canvas2d.addEventListener('mousedown', startDrawing);
+        canvas2d.addEventListener('mousemove', draw);
+        canvas2d.addEventListener('mouseup', stopDrawing);
+        canvas2d.addEventListener('mouseout', stopDrawing);
+
+        // Touch support
+        canvas2d.addEventListener('touchstart', handleTouch);
+        canvas2d.addEventListener('touchmove', handleTouch);
+        canvas2d.addEventListener('touchend', stopDrawing);
+
+        function handleTouch(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const rect = canvas2d.getBoundingClientRect();
+            const x = touch.clientX - rect.left;
+            const y = touch.clientY - rect.top;
+            
+            if (e.type === 'touchstart') {
+                startDrawing({offsetX: x, offsetY: y});
+            } else if (e.type === 'touchmove') {
+                draw({offsetX: x, offsetY: y});
+            }
+        }
+
+        function startDrawing(e) {
+            if (currentShape !== 'freeform') return;
+            drawing = true;
+            points = [{x: e.offsetX, y: e.offsetY}];
+        }
+
+        function draw(e) {
+            if (!drawing || currentShape !== 'freeform') return;
+            
+            points.push({x: e.offsetX, y: e.offsetY});
+            
+            ctx2d.clearRect(0, 0, canvas2d.width, canvas2d.height);
+            ctx2d.strokeStyle = '#667eea';
+            ctx2d.lineWidth = 3;
+            ctx2d.lineJoin = 'round';
+            ctx2d.lineCap = 'round';
+            
+            ctx2d.beginPath();
+            ctx2d.moveTo(points[0].x, points[0].y);
+            for (let i = 1; i < points.length; i++) {
+                ctx2d.lineTo(points[i].x, points[i].y);
+            }
+            ctx2d.stroke();
+        }
+
+        function stopDrawing() {
+            if (!drawing || currentShape !== 'freeform') return;
+            drawing = false;
+            
+            if (points.length > 2) {
+                // Close the shape
+                ctx2d.closePath();
+                ctx2d.fillStyle = 'rgba(102, 126, 234, 0.3)';
+                ctx2d.fill();
+                
+                // Calculate area using shoelace formula
+                const area = calculatePolygonArea(points);
+                const perimeter = calculatePerimeter(points);
+                
+                shapeData = {
+                    type: 'freeform',
+                    points: [...points],
+                    area: area,
+                    perimeter: perimeter
+                };
+                
+                updateCalculations();
+                draw3D();
+            }
+        }
+
+        function calculatePolygonArea(points) {
+            let area = 0;
+            for (let i = 0; i < points.length; i++) {
+                const j = (i + 1) % points.length;
+                area += points[i].x * points[j].y;
+                area -= points[j].x * points[i].y;
+            }
+            return Math.abs(area / 2);
+        }
+
+        function calculatePerimeter(points) {
+            let perimeter = 0;
+            for (let i = 0; i < points.length; i++) {
+                const j = (i + 1) % points.length;
+                const dx = points[j].x - points[i].x;
+                const dy = points[j].y - points[i].y;
+                perimeter += Math.sqrt(dx * dx + dy * dy);
+            }
+            return perimeter;
+        }
+
+        function clearCanvas() {
+            ctx2d.clearRect(0, 0, canvas2d.width, canvas2d.height);
+            ctx3d.clearRect(0, 0, canvas3d.width, canvas3d.height);
+            points = [];
+            shapeData = null;
+            updateCalculations();
+        }
+
+        function redraw() {
+            if (shapeData) {
+                if (shapeData.type !== 'freeform') {
+                    drawPredefinedShape(shapeData.type);
+                } else if (shapeData.points) {
+                    // Redraw freeform shape
+                    ctx2d.clearRect(0, 0, canvas2d.width, canvas2d.height);
+                    ctx2d.strokeStyle = '#667eea';
+                    ctx2d.fillStyle = 'rgba(102, 126, 234, 0.3)';
+                    ctx2d.lineWidth = 3;
+                    
+                    ctx2d.beginPath();
+                    ctx2d.moveTo(shapeData.points[0].x, shapeData.points[0].y);
+                    for (let i = 1; i < shapeData.points.length; i++) {
+                        ctx2d.lineTo(shapeData.points[i].x, shapeData.points[i].y);
+                    }
+                    ctx2d.closePath();
+                    ctx2d.fill();
+                    ctx2d.stroke();
+                }
+            }
+        }
+
+        // Height slider
+        document.getElementById('heightSlider').addEventListener('input', function(e) {
+            height = parseInt(e.target.value);
+            document.getElementById('heightValue').textContent = height;
+            updateCalculations();
+            draw3D();
+        });
+
+        // Zoom slider
+        document.getElementById('zoomSlider').addEventListener('input', function(e) {
+            zoom = parseFloat(e.target.value);
+            document.getElementById('zoomValue').textContent = zoom.toFixed(1);
+            draw3D();
+        });
+
+        // Rotation slider
+        document.getElementById('rotationSlider').addEventListener('input', function(e) {
+            rotation = parseInt(e.target.value);
+            document.getElementById('rotationValue').textContent = rotation;
+            draw3D();
+        });
+
+        // 3D Canvas mouse interactions
+        canvas3d.addEventListener('mousedown', start3DDrag);
+        canvas3d.addEventListener('mousemove', handle3DDrag);
+        canvas3d.addEventListener('mouseup', stop3DDrag);
+        canvas3d.addEventListener('mouseout', stop3DDrag);
+        canvas3d.addEventListener('wheel', handle3DZoom);
+
+        // Touch support for 3D canvas
+        canvas3d.addEventListener('touchstart', handle3DTouch);
+        canvas3d.addEventListener('touchmove', handle3DTouch);
+        canvas3d.addEventListener('touchend', stop3DDrag);
+
+        // 3D Canvas mouse interaction functions
+        function start3DDrag(e) {
+            isDragging = true;
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            canvas3d.style.cursor = 'grabbing';
+        }
+
+        function handle3DDrag(e) {
+            if (!isDragging) return;
+            
+            const deltaX = e.clientX - lastMouseX;
+            const deltaY = e.clientY - lastMouseY;
+            
+            // Update rotation based on mouse movement
+            rotation += deltaX * 0.5; // Adjust sensitivity
+            if (rotation < 0) rotation += 360;
+            if (rotation >= 360) rotation -= 360;
+            
+            // Update slider and display
+            document.getElementById('rotationSlider').value = rotation;
+            document.getElementById('rotationValue').textContent = Math.round(rotation);
+            
+            lastMouseX = e.clientX;
+            lastMouseY = e.clientY;
+            
+            draw3D();
+        }
+
+        function stop3DDrag() {
+            isDragging = false;
+            canvas3d.style.cursor = 'grab';
+        }
+
+        function handle3DZoom(e) {
+            e.preventDefault();
+            
+            const delta = e.deltaY > 0 ? -0.1 : 0.1;
+            zoom = Math.max(0.5, Math.min(60, zoom + delta));
+            
+            // Update slider and display
+            document.getElementById('zoomSlider').value = zoom;
+            document.getElementById('zoomValue').textContent = zoom.toFixed(1);
+            
+            draw3D();
+        }
+
+        function handle3DTouch(e) {
+            e.preventDefault();
+            if (e.touches.length === 1) {
+                const touch = e.touches[0];
+                if (e.type === 'touchstart') {
+                    start3DDrag({clientX: touch.clientX, clientY: touch.clientY});
+                } else if (e.type === 'touchmove') {
+                    handle3DDrag({clientX: touch.clientX, clientY: touch.clientY});
+                }
+            }
+        }
+
+        function updateCalculations() {
+            if (!shapeData) {
+                document.getElementById('areaValue').textContent = '0 units²';
+                document.getElementById('volumeValue').textContent = '0 units³';
+                document.getElementById('surfaceValue').textContent = '0 units²';
+                document.getElementById('areaFormula').textContent = 'Draw a shape to see the formula';
+                return;
+            }
+
+            const area = shapeData.area;
+            const volume = area * height;
+            const surfaceArea = 2 * area + shapeData.perimeter * height;
+
+            document.getElementById('areaValue').textContent = area.toFixed(2) + ' units²';
+            document.getElementById('volumeValue').textContent = volume.toFixed(2) + ' units³';
+            document.getElementById('surfaceValue').textContent = surfaceArea.toFixed(2) + ' units²';
+
+            // Update formulas
+            if (shapeData.type === 'square') {
+                document.getElementById('areaFormula').textContent = 
+                    `Area = side² = ${shapeData.side.toFixed(1)}² = ${area.toFixed(2)} units²`;
+            } else if (shapeData.type === 'circle') {
+                document.getElementById('areaFormula').textContent = 
+                    `Area = πr² = π × ${shapeData.radius.toFixed(1)}² = ${area.toFixed(2)} units²`;
+            } else if (shapeData.type === 'triangle') {
+                document.getElementById('areaFormula').textContent = 
+                    `Area = ½ × base × height = ½ × ${shapeData.base.toFixed(1)} × ${shapeData.height.toFixed(1)} = ${area.toFixed(2)} units²`;
+            } else {
+                document.getElementById('areaFormula').textContent = 
+                    `Area (polygon) = ${area.toFixed(2)} units²`;
+            }
+
+            document.getElementById('volumeFormula').textContent = 
+                `Volume = Area × Height = ${area.toFixed(2)} × ${height} = ${volume.toFixed(2)} units³`;
+            
+            document.getElementById('surfaceFormula').textContent = 
+                `Surface = 2×${area.toFixed(2)} + ${shapeData.perimeter.toFixed(2)}×${height} = ${surfaceArea.toFixed(2)} units²`;
+        }
+
+        function draw3D() {
+            if (!shapeData) return;
+
+            ctx3d.clearRect(0, 0, canvas3d.width, canvas3d.height);
+            
+            const centerX = canvas3d.width / 2;
+            const centerY = canvas3d.height / 2;
+            const scale = 0.8 * zoom; // Apply zoom
+            const depthScale = 0.5 * zoom; // Apply zoom to depth too
+            
+            // Apply rotation
+            ctx3d.save();
+            ctx3d.translate(centerX, centerY);
+            ctx3d.rotate(rotation * Math.PI / 180);
+            ctx3d.translate(-centerX, -centerY);
+
+            ctx3d.strokeStyle = '#764ba2';
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.3)';
+            ctx3d.lineWidth = 2;
+
+            if (shapeData.type === 'square') {
+                drawIsometricBox(centerX, centerY, shapeData.side * scale, shapeData.side * scale, height * depthScale);
+            } else if (shapeData.type === 'circle') {
+                drawIsometricCylinder(centerX, centerY, shapeData.radius * scale, height * depthScale);
+            } else if (shapeData.type === 'triangle' || shapeData.type === 'freeform') {
+                drawIsometricPrism(centerX, centerY, scale, height * depthScale);
+            }
+            
+            ctx3d.restore(); // Restore the rotation transform
+        }
+
+        function drawIsometricBox(cx, cy, width, depth, height) {
+            // Bottom face
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.4)';
+            ctx3d.beginPath();
+            ctx3d.moveTo(cx, cy);
+            ctx3d.lineTo(cx + width/2, cy - width/4);
+            ctx3d.lineTo(cx, cy - width/2);
+            ctx3d.lineTo(cx - width/2, cy - width/4);
+            ctx3d.closePath();
+            ctx3d.fill();
+            ctx3d.stroke();
+
+            // Front face
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.6)';
+            ctx3d.beginPath();
+            ctx3d.moveTo(cx, cy);
+            ctx3d.lineTo(cx + width/2, cy - width/4);
+            ctx3d.lineTo(cx + width/2, cy - width/4 - height);
+            ctx3d.lineTo(cx, cy - height);
+            ctx3d.closePath();
+            ctx3d.fill();
+            ctx3d.stroke();
+
+            // Side face
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.5)';
+            ctx3d.beginPath();
+            ctx3d.moveTo(cx, cy);
+            ctx3d.lineTo(cx - width/2, cy - width/4);
+            ctx3d.lineTo(cx - width/2, cy - width/4 - height);
+            ctx3d.lineTo(cx, cy - height);
+            ctx3d.closePath();
+            ctx3d.fill();
+            ctx3d.stroke();
+
+            // Top face
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.7)';
+            ctx3d.beginPath();
+            ctx3d.moveTo(cx, cy - height);
+            ctx3d.lineTo(cx + width/2, cy - width/4 - height);
+            ctx3d.lineTo(cx, cy - width/2 - height);
+            ctx3d.lineTo(cx - width/2, cy - width/4 - height);
+            ctx3d.closePath();
+            ctx3d.fill();
+            ctx3d.stroke();
+        }
+
+        function drawIsometricCylinder(cx, cy, radius, height) {
+            // Bottom ellipse (back face)
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.4)';
+            ctx3d.beginPath();
+            ctx3d.ellipse(cx, cy, radius, radius * 0.5, 0, 0, Math.PI * 2);
+            ctx3d.fill();
+            ctx3d.stroke();
+
+            // Top ellipse (front face)
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.7)';
+            ctx3d.beginPath();
+            ctx3d.ellipse(cx, cy - height, radius, radius * 0.5, 0, 0, Math.PI * 2);
+            ctx3d.fill();
+            ctx3d.stroke();
+
+            // Left side curve
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.6)';
+            ctx3d.beginPath();
+            ctx3d.ellipse(cx, cy, radius, radius * 0.5, 0, Math.PI, Math.PI * 2);
+            ctx3d.lineTo(cx, cy - height);
+            ctx3d.ellipse(cx, cy - height, radius, radius * 0.5, 0, Math.PI * 2, Math.PI, true);
+            ctx3d.closePath();
+            ctx3d.fill();
+            ctx3d.stroke();
+
+            // Right side curve
+            ctx3d.fillStyle = 'rgba(118, 75, 162, 0.5)';
+            ctx3d.beginPath();
+            ctx3d.ellipse(cx, cy, radius, radius * 0.5, 0, 0, Math.PI);
+            ctx3d.lineTo(cx, cy - height);
+            ctx3d.ellipse(cx, cy - height, radius, radius * 0.5, 0, Math.PI, 0, true);
+            ctx3d.closePath();
+            ctx3d.fill();
+            ctx3d.stroke();
+        }
+
+        function drawIsometricPrism(cx, cy, scale, height) {
+            if (shapeData.type === 'triangle') {
+                const size = shapeData.base * scale;
+                // Draw triangular prism
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.4)';
+                ctx3d.beginPath();
+                ctx3d.moveTo(cx, cy - size/3);
+                ctx3d.lineTo(cx - size/2, cy + size/3);
+                ctx3d.lineTo(cx + size/2, cy + size/3);
+                ctx3d.closePath();
+                ctx3d.fill();
+                ctx3d.stroke();
+
+                // Sides
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.6)';
+                ctx3d.beginPath();
+                ctx3d.moveTo(cx - size/2, cy + size/3);
+                ctx3d.lineTo(cx + size/2, cy + size/3);
+                ctx3d.lineTo(cx + size/2, cy + size/3 - height);
+                ctx3d.lineTo(cx - size/2, cy + size/3 - height);
+                ctx3d.closePath();
+                ctx3d.fill();
+                ctx3d.stroke();
+
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.5)';
+                ctx3d.beginPath();
+                ctx3d.moveTo(cx, cy - size/3);
+                ctx3d.lineTo(cx - size/2, cy + size/3);
+                ctx3d.lineTo(cx - size/2, cy + size/3 - height);
+                ctx3d.lineTo(cx, cy - size/3 - height);
+                ctx3d.closePath();
+                ctx3d.fill();
+                ctx3d.stroke();
+
+                // Top
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.7)';
+                ctx3d.beginPath();
+                ctx3d.moveTo(cx, cy - size/3 - height);
+                ctx3d.lineTo(cx - size/2, cy + size/3 - height);
+                ctx3d.lineTo(cx + size/2, cy + size/3 - height);
+                ctx3d.closePath();
+                ctx3d.fill();
+                ctx3d.stroke();
+            } else {
+                // Freeform prism - simplified representation
+                const points = shapeData.points;
+                if (!points || points.length < 3) return;
+
+                // Scale and center points
+                const scaledPoints = points.map(p => ({
+                    x: (p.x - canvas2d.width/2) * scale * 0.5 + cx,
+                    y: (p.y - canvas2d.height/2) * scale * 0.5 + cy
+                }));
+
+                // Bottom face
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.4)';
+                ctx3d.beginPath();
+                ctx3d.moveTo(scaledPoints[0].x, scaledPoints[0].y);
+                scaledPoints.forEach(p => ctx3d.lineTo(p.x, p.y));
+                ctx3d.closePath();
+                ctx3d.fill();
+                ctx3d.stroke();
+
+                // Sides
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.6)';
+                for (let i = 0; i < scaledPoints.length; i++) {
+                    const p1 = scaledPoints[i];
+                    const p2 = scaledPoints[(i + 1) % scaledPoints.length];
+                    
+                    ctx3d.beginPath();
+                    ctx3d.moveTo(p1.x, p1.y);
+                    ctx3d.lineTo(p2.x, p2.y);
+                    ctx3d.lineTo(p2.x, p2.y - height);
+                    ctx3d.lineTo(p1.x, p1.y - height);
+                    ctx3d.closePath();
+                    ctx3d.fill();
+                    ctx3d.stroke();
+                }
+
+                // Top face
+                ctx3d.fillStyle = 'rgba(118, 75, 162, 0.7)';
+                ctx3d.beginPath();
+                ctx3d.moveTo(scaledPoints[0].x, scaledPoints[0].y - height);
+                scaledPoints.forEach(p => ctx3d.lineTo(p.x, p.y - height));
+                ctx3d.closePath();
+                ctx3d.fill();
+                ctx3d.stroke();
+            }
+        }
+
+        function reset3DView() {
+            zoom = 2.5;
+            rotation = 0;
+            document.getElementById('zoomSlider').value = 2.5;
+            document.getElementById('rotationSlider').value = 0;
+            document.getElementById('zoomValue').textContent = '2.5';
+            document.getElementById('rotationValue').textContent = '0';
+            draw3D();
+        }
+
+        // Initialize
+        clearCanvas();
+    </script>
+</body>
+</html>
