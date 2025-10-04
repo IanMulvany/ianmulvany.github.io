@@ -180,6 +180,51 @@
             box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
         }
 
+        .load-more-container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .load-more-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: #fff;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .load-more-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .loader {
+            border: 3px solid #333;
+            border-top: 3px solid #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -237,6 +282,10 @@
 
     <div class="gallery" id="gallery"></div>
 
+    <div class="load-more-container" id="load-more-container">
+        <div class="loader"></div>
+    </div>
+
     <div class="lightbox" id="lightbox">
         <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
         <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#8249;</button>
@@ -279,30 +328,78 @@
             'DSCF1290.jpeg', 'DSCF1291.jpeg', 'DSCF1292.jpeg', 'DSCF1294.jpeg', 'DSCF1295.jpeg',
             'DSCF1298.jpeg', 'DSCF1299.jpeg', 'DSCF1304.jpeg', 'DSCF1305.jpeg', 'DSCF1307.jpeg'
         ];
-        const images = imageFiles.map(file => cdnBase + file);
+
+        // Create paths for different sizes
+        const images = {
+            thumbs: imageFiles.map(file => cdnBase + 'thumbs/' + file),
+            medium: imageFiles.map(file => cdnBase + 'medium/' + file),
+            full: imageFiles.map(file => cdnBase + file)
+        };
 
         let currentImageIndex = 0;
+        let loadedCount = 0;
+        const IMAGES_PER_LOAD = 24; // Load 24 images at a time
+        let isLoading = false;
 
-        // Generate gallery
+        // Generate gallery progressively
         const gallery = document.getElementById('gallery');
-        images.forEach((img, index) => {
-            const item = document.createElement('div');
-            item.className = 'gallery-item';
-            item.onclick = () => openLightbox(index);
+        const loadMoreContainer = document.getElementById('load-more-container');
 
-            const imgElement = document.createElement('img');
-            imgElement.src = img;
-            imgElement.alt = `Photo ${index + 1}`;
-            imgElement.loading = 'lazy';
+        function loadMoreImages() {
+            if (isLoading || loadedCount >= images.thumbs.length) return;
 
-            item.appendChild(imgElement);
-            gallery.appendChild(item);
+            isLoading = true;
+            loadMoreContainer.style.display = 'block';
+
+            // Simulate slight delay for UX (optional)
+            setTimeout(() => {
+                const endIndex = Math.min(loadedCount + IMAGES_PER_LOAD, images.thumbs.length);
+
+                for (let index = loadedCount; index < endIndex; index++) {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.onclick = () => openLightbox(index);
+
+                    const imgElement = document.createElement('img');
+                    imgElement.src = images.thumbs[index];
+                    imgElement.alt = `Photo ${index + 1}`;
+                    imgElement.loading = 'lazy';
+
+                    item.appendChild(imgElement);
+                    gallery.appendChild(item);
+                }
+
+                loadedCount = endIndex;
+                isLoading = false;
+
+                // Hide loader if all images loaded
+                if (loadedCount >= images.thumbs.length) {
+                    loadMoreContainer.style.display = 'none';
+                }
+            }, 100);
+        }
+
+        // Intersection Observer for infinite scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !isLoading) {
+                    loadMoreImages();
+                }
+            });
+        }, {
+            rootMargin: '200px' // Load more when user is 200px from the bottom
         });
+
+        // Start observing the load more container
+        observer.observe(loadMoreContainer);
+
+        // Load initial batch
+        loadMoreImages();
 
         function openLightbox(index) {
             currentImageIndex = index;
-            document.getElementById('lightbox-img').src = images[index];
-            document.getElementById('lightbox-download').href = images[index];
+            document.getElementById('lightbox-img').src = images.medium[index];
+            document.getElementById('lightbox-download').href = images.full[index];
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -314,10 +411,10 @@
 
         function changeImage(direction) {
             currentImageIndex += direction;
-            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
-            if (currentImageIndex >= images.length) currentImageIndex = 0;
-            document.getElementById('lightbox-img').src = images[currentImageIndex];
-            document.getElementById('lightbox-download').href = images[currentImageIndex];
+            if (currentImageIndex < 0) currentImageIndex = images.medium.length - 1;
+            if (currentImageIndex >= images.medium.length) currentImageIndex = 0;
+            document.getElementById('lightbox-img').src = images.medium[currentImageIndex];
+            document.getElementById('lightbox-download').href = images.full[currentImageIndex];
         }
 
         // Keyboard navigation
