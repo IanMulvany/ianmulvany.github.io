@@ -180,6 +180,32 @@
             box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
         }
 
+        .slideshow-btn {
+            position: absolute;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .slideshow-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .slideshow-btn.playing {
+            background: #fff;
+            color: #0a0a0a;
+        }
+
         .load-more-container {
             text-align: center;
             padding: 2rem;
@@ -267,7 +293,20 @@
 
             .lightbox-download {
                 bottom: 1rem;
-                padding: 0.6rem 1.5rem;
+                left: 1rem;
+                transform: none;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.85rem;
+            }
+
+            .lightbox-download:hover {
+                transform: translateY(-2px);
+            }
+
+            .slideshow-btn {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.6rem 1.2rem;
                 font-size: 0.85rem;
             }
         }
@@ -293,7 +332,8 @@
             <img id="lightbox-img" src="" alt="">
         </div>
         <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#8250;</button>
-        <a id="lightbox-download" class="lightbox-download" href="" download>Download Image</a>
+        <a id="lightbox-download" class="lightbox-download" href="" download>Download</a>
+        <button id="slideshow-btn" class="slideshow-btn" onclick="toggleSlideshow()">Play Slideshow</button>
     </div>
 
     <footer>
@@ -340,6 +380,8 @@
         let loadedCount = 0;
         const IMAGES_PER_LOAD = 24; // Load 24 images at a time
         let isLoading = false;
+        let slideshowInterval = null;
+        let isSlideshowPlaying = false;
 
         // Generate gallery progressively
         const gallery = document.getElementById('gallery');
@@ -405,6 +447,7 @@
         }
 
         function closeLightbox() {
+            stopSlideshow();
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = 'auto';
         }
@@ -417,12 +460,52 @@
             document.getElementById('lightbox-download').href = images.full[currentImageIndex];
         }
 
+        function toggleSlideshow() {
+            if (isSlideshowPlaying) {
+                stopSlideshow();
+            } else {
+                startSlideshow();
+            }
+        }
+
+        function startSlideshow() {
+            isSlideshowPlaying = true;
+            const btn = document.getElementById('slideshow-btn');
+            btn.textContent = 'Stop Slideshow';
+            btn.classList.add('playing');
+
+            slideshowInterval = setInterval(() => {
+                changeImage(1);
+            }, 2000); // Change image every 2 seconds
+        }
+
+        function stopSlideshow() {
+            if (slideshowInterval) {
+                clearInterval(slideshowInterval);
+                slideshowInterval = null;
+            }
+            isSlideshowPlaying = false;
+            const btn = document.getElementById('slideshow-btn');
+            btn.textContent = 'Play Slideshow';
+            btn.classList.remove('playing');
+        }
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('lightbox').classList.contains('active')) {
                 if (e.key === 'Escape') closeLightbox();
-                if (e.key === 'ArrowLeft') changeImage(-1);
-                if (e.key === 'ArrowRight') changeImage(1);
+                if (e.key === 'ArrowLeft') {
+                    stopSlideshow();
+                    changeImage(-1);
+                }
+                if (e.key === 'ArrowRight') {
+                    stopSlideshow();
+                    changeImage(1);
+                }
+                if (e.key === ' ') {
+                    e.preventDefault();
+                    toggleSlideshow();
+                }
             }
         });
 
