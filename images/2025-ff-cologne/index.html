@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 FF Cologne Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.75rem 2rem;
+            background: #fff;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+            aspect-ratio: 3/2;
+            background: #1a1a1a;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 3rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+        }
+
+        .lightbox-download {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 0.75rem 2rem;
+            background: #fff;
+            color: #0a0a0a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .lightbox-download:hover {
+            transform: translateX(-50%) translateY(-2px);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .lightbox-nav {
+                width: 45px;
+                height: 45px;
+                font-size: 2rem;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+                font-size: 2rem;
+            }
+
+            .lightbox-download {
+                bottom: 1rem;
+                padding: 0.6rem 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>2025 FF Cologne</h1>
+        <p>Photo Gallery</p>
+        <a href="2025-ff-cologne-images.zip" class="download-btn" download>Download All Images</a>
+    </header>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&#8249;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">&#8250;</button>
+        <a id="lightbox-download" class="lightbox-download" href="" download>Download Image</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 FF Cologne Gallery</p>
+    </footer>
+
+    <script>
+        const images = [
+            'DSCF1080.jpeg', 'DSCF1081.jpeg', 'DSCF1085.jpeg', 'DSCF1086.jpeg', 'DSCF1087.jpeg',
+            'DSCF1089.jpeg', 'DSCF1090.jpeg', 'DSCF1093.jpeg', 'DSCF1096.jpeg', 'DSCF1097.jpeg',
+            'DSCF1098.jpeg', 'DSCF1099.jpeg', 'DSCF1100.jpeg', 'DSCF1103.jpeg', 'DSCF1104.jpeg',
+            'DSCF1105.jpeg', 'DSCF1107.jpeg', 'DSCF1108.jpeg', 'DSCF1111.jpeg', 'DSCF1114.jpeg',
+            'DSCF1115.jpeg', 'DSCF1116.jpeg', 'DSCF1120.jpeg', 'DSCF1121.jpeg', 'DSCF1122.jpeg',
+            'DSCF1125.jpeg', 'DSCF1126.jpeg', 'DSCF1127.jpeg', 'DSCF1128.jpeg', 'DSCF1129.jpeg',
+            'DSCF1130.jpeg', 'DSCF1134.jpeg', 'DSCF1136.jpeg', 'DSCF1137.jpeg', 'DSCF1139.jpeg',
+            'DSCF1140.jpeg', 'DSCF1141.jpeg', 'DSCF1143.jpeg', 'DSCF1145.jpeg', 'DSCF1148.jpeg',
+            'DSCF1152.jpeg', 'DSCF1155.jpeg', 'DSCF1156.jpeg', 'DSCF1164.jpeg', 'DSCF1175.jpeg',
+            'DSCF1181.jpeg', 'DSCF1183.jpeg', 'DSCF1187.jpeg', 'DSCF1188.jpeg', 'DSCF1190.jpeg',
+            'DSCF1192.jpeg', 'DSCF1194.jpeg', 'DSCF1196.jpeg', 'DSCF1198.jpeg', 'DSCF1203.jpeg',
+            'DSCF1206.jpeg', 'DSCF1207.jpeg', 'DSCF1208.jpeg', 'DSCF1211.jpeg', 'DSCF1212.jpeg',
+            'DSCF1214.jpeg', 'DSCF1216.jpeg', 'DSCF1218.jpeg', 'DSCF1219.jpeg', 'DSCF1220.jpeg',
+            'DSCF1221.jpeg', 'DSCF1222.jpeg', 'DSCF1224.jpeg', 'DSCF1225.jpeg', 'DSCF1227.jpeg',
+            'DSCF1228.jpeg', 'DSCF1229.jpeg', 'DSCF1230.jpeg', 'DSCF1231.jpeg', 'DSCF1233.jpeg',
+            'DSCF1234.jpeg', 'DSCF1235.jpeg', 'DSCF1236.jpeg', 'DSCF1237.jpeg', 'DSCF1238.jpeg',
+            'DSCF1240.jpeg', 'DSCF1241.jpeg', 'DSCF1242.jpeg', 'DSCF1243.jpeg', 'DSCF1244.jpeg',
+            'DSCF1250.jpeg', 'DSCF1252.jpeg', 'DSCF1253.jpeg', 'DSCF1254.jpeg', 'DSCF1256.jpeg',
+            'DSCF1258.jpeg', 'DSCF1260.jpeg', 'DSCF1265.jpeg', 'DSCF1266.jpeg', 'DSCF1268.jpeg',
+            'DSCF1272.jpeg', 'DSCF1273.jpeg', 'DSCF1274.jpeg', 'DSCF1275.jpeg', 'DSCF1276.jpeg',
+            'DSCF1277.jpeg', 'DSCF1278.jpeg', 'DSCF1280.jpeg', 'DSCF1281.jpeg', 'DSCF1282.jpeg',
+            'DSCF1283.jpeg', 'DSCF1285.jpeg', 'DSCF1286.jpeg', 'DSCF1287.jpeg', 'DSCF1288.jpeg',
+            'DSCF1290.jpeg', 'DSCF1291.jpeg', 'DSCF1292.jpeg', 'DSCF1294.jpeg', 'DSCF1295.jpeg',
+            'DSCF1298.jpeg', 'DSCF1299.jpeg', 'DSCF1304.jpeg', 'DSCF1305.jpeg', 'DSCF1307.jpeg'
+        ];
+
+        let currentImageIndex = 0;
+
+        // Generate gallery
+        const gallery = document.getElementById('gallery');
+        images.forEach((img, index) => {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            item.onclick = () => openLightbox(index);
+
+            const imgElement = document.createElement('img');
+            imgElement.src = img;
+            imgElement.alt = `Photo ${index + 1}`;
+            imgElement.loading = 'lazy';
+
+            item.appendChild(imgElement);
+            gallery.appendChild(item);
+        });
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            document.getElementById('lightbox-img').src = images[index];
+            document.getElementById('lightbox-download').href = images[index];
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.length - 1;
+            if (currentImageIndex >= images.length) currentImageIndex = 0;
+            document.getElementById('lightbox-img').src = images[currentImageIndex];
+            document.getElementById('lightbox-download').href = images[currentImageIndex];
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+            }
+        });
+
+        // Close lightbox on background click
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+    </script>
+</body>
+</html>
