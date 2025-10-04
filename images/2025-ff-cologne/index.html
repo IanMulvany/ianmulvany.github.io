@@ -232,7 +232,7 @@
     <header>
         <h1>2025 FF Cologne</h1>
         <p>Photo Gallery</p>
-        <a href="2025-ff-cologne-images.zip" class="download-btn" download>Download All Images</a>
+        <a href="https://cdn.mulvany.net/2025-ff-cologne/2025-ff-cologne-images.zip" class="download-btn" download>Download All Images</a>
     </header>
 
     <div class="gallery" id="gallery"></div>
@@ -252,7 +252,8 @@
     </footer>
 
     <script>
-        const images = [
+        const cdnBase = 'https://cdn.mulvany.net/2025-ff-cologne/';
+        const imageFiles = [
             'DSCF1080.jpeg', 'DSCF1081.jpeg', 'DSCF1085.jpeg', 'DSCF1086.jpeg', 'DSCF1087.jpeg',
             'DSCF1089.jpeg', 'DSCF1090.jpeg', 'DSCF1093.jpeg', 'DSCF1096.jpeg', 'DSCF1097.jpeg',
             'DSCF1098.jpeg', 'DSCF1099.jpeg', 'DSCF1100.jpeg', 'DSCF1103.jpeg', 'DSCF1104.jpeg',
@@ -278,6 +279,7 @@
             'DSCF1290.jpeg', 'DSCF1291.jpeg', 'DSCF1292.jpeg', 'DSCF1294.jpeg', 'DSCF1295.jpeg',
             'DSCF1298.jpeg', 'DSCF1299.jpeg', 'DSCF1304.jpeg', 'DSCF1305.jpeg', 'DSCF1307.jpeg'
         ];
+        const images = imageFiles.map(file => cdnBase + file);
 
         let currentImageIndex = 0;
 
