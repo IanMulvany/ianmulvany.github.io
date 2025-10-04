@@ -1,3 +1,5 @@
 *.sqlite*
 .DS_Store
 *.bak 
+images/2025-ff-cologne/*.jpeg
+images/2025-ff-cologne/*.zip
