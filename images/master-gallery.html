@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Familienfest Galleries</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            text-align: center;
+            padding: 5rem 2rem 3rem 2rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 200;
+            margin-bottom: 1rem;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .galleries-list {
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .gallery-link {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 3rem;
+            margin-bottom: 1px;
+            background: #0f0f0f;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .gallery-link:hover {
+            background: #1a1a1a;
+            border-left-color: #fff;
+            padding-left: 3.5rem;
+        }
+
+        .gallery-link:first-child {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        .gallery-link:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        .gallery-main {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .gallery-icon {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            opacity: 0.9;
+        }
+
+        .gallery-icon.placeholder {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #1a1a1a;
+            font-size: 2rem;
+            opacity: 0.7;
+        }
+
+        .gallery-details h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            margin-bottom: 0.3rem;
+            letter-spacing: 2px;
+        }
+
+        .gallery-location-year {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 1px;
+        }
+
+        .gallery-meta {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .status-badge {
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .status-badge.available {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        .status-badge.soon {
+            background: transparent;
+            border: 1px solid #333;
+            color: #666;
+        }
+
+        .arrow {
+            font-size: 1.5rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: #666;
+        }
+
+        .gallery-link:hover .arrow {
+            opacity: 1;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #333, transparent);
+            margin: 3rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            color: #333;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                letter-spacing: 4px;
+            }
+
+            .gallery-link {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+                padding: 1.5rem 2rem;
+            }
+
+            .gallery-link:hover {
+                padding-left: 2rem;
+            }
+
+            .gallery-meta {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .arrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Familienfest</h1>
+        <p class="subtitle">Gallery Collection</p>
+    </header>
+
+    <main>
+        <div class="galleries-list">
+            <a href="2025-ff-cologne/index.html" class="gallery-link">
+                <div class="gallery-main">
+                    <img src="2025-ff-cologne/DSCF1080.jpeg" alt="Cologne" class="gallery-icon">
+                    <div class="gallery-details">
+                        <h2>Cologne</h2>
+                        <p class="gallery-location-year">Germany · 2025</p>
+                    </div>
+                </div>
+                <div class="gallery-meta">
+                    <span class="status-badge available">217 photos</span>
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+
+            <a href="2023-ff-heidelberg/index.html" class="gallery-link">
+                <div class="gallery-main">
+                    <img src="2023-ff-heidelberg/DSCF8200.jpeg" alt="Heidelberg" class="gallery-icon">
+                    <div class="gallery-details">
+                        <h2>Heidelberg</h2>
+                        <p class="gallery-location-year">Germany · 2023</p>
+                    </div>
+                </div>
+                <div class="gallery-meta">
+                    <span class="status-badge available">69 photos</span>
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+
+            <a href="2019-ff-cochem/index.html" class="gallery-link">
+                <div class="gallery-main">
+                    <img src="2019-ff-cochem/IMG_2612.jpeg" alt="Cochem" class="gallery-icon">
+                    <div class="gallery-details">
+                        <h2>Cochem</h2>
+                        <p class="gallery-location-year">Germany · 2019</p>
+                    </div>
+                </div>
+                <div class="gallery-meta">
+                    <span class="status-badge available">50 photos</span>
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+
+            <a href="2013-ff-bad-camberg/index.html" class="gallery-link">
+                <div class="gallery-main">
+                    <img src="2013-ff-bad-camberg/DSCF3645.jpeg" alt="Bad Camberg" class="gallery-icon">
+                    <div class="gallery-details">
+                        <h2>Bad Camberg</h2>
+                        <p class="gallery-location-year">Germany · 2013</p>
+                    </div>
+                </div>
+                <div class="gallery-meta">
+                    <span class="status-badge available">137 photos</span>
+                    <span class="arrow">→</span>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025</p>
+    </footer>
+</body>
+</html>
