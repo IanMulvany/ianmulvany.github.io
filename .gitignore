@@ -1,3 +1,5 @@
+images/upload_to_r2.py 
+
 *.sqlite*
 .DS_Store
 *.bak 
