@@ -2,8 +2,13 @@
 .DS_Store
 *.bak 
 images/2025-ff-cologne/*.jpeg
+images/2025-ff-cologne/*.jpeg
 images/2025-ff-cologne/*.zip
 images/2025-ff-cologne/*.py
 images/2025-ff-cologne/medium/*
-images/2025-ff-cologne/thumbs/*
+images/2026-ff-heidelberg/thumbs/*
+images/2026-ff-heidelberg/*.zip
+images/2026-ff-heidelberg/*.py
+images/2026-ff-heidelberg/medium/*
+images/2026-ff-heidelberg/thumbs/*
 
