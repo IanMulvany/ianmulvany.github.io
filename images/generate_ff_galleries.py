@@ -618,11 +618,12 @@ class GalleryGenerator:
 
             if image_count > 0:
                 status_badge = f'<span class="status-badge available">{image_count} photos</span>'
-                # Use profile image or first image
+                # Use profile image or first image with CDN URL
+                cdn_base = f'https://cdn.mulvany.net/{directory}/'
                 if profile_image:
-                    img_src = f'{directory}/{profile_image}'
+                    img_src = f'{cdn_base}thumbs/{profile_image}'
                 else:
-                    img_src = f'{directory}/{images[0]}' if images else ''
+                    img_src = f'{cdn_base}thumbs/{images[0]}' if images else ''
 
                 img_html = f'<img src="{img_src}" alt="{title}" class="gallery-icon">'
             else:
