@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Gallery - Dublin 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #faf9f7;
+            color: #3d3d3d;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem 3rem;
+            background: linear-gradient(180deg, #fff 0%, #faf9f7 100%);
+            border-bottom: 1px solid #e8e4df;
+        }
+
+        .header-ornament {
+            font-size: 1.5rem;
+            color: #c9b99a;
+            margin-bottom: 1rem;
+            letter-spacing: 1rem;
+        }
+
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+            color: #2c2c2c;
+        }
+
+        .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 300;
+            font-style: italic;
+            color: #7d7d7d;
+            margin-bottom: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.9rem 2.5rem;
+            background: transparent;
+            color: #3d3d3d;
+            text-decoration: none;
+            border: 1px solid #c9b99a;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background: #c9b99a;
+            color: #fff;
+        }
+
+        .photo-count {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #9d9d9d;
+            letter-spacing: 1px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 3rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 3/2;
+            background: #f0ede8;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease, opacity 0.3s ease;
+            opacity: 0.95;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+            opacity: 1;
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid rgba(201, 185, 154, 0);
+            transition: border-color 0.3s ease;
+            pointer-events: none;
+        }
+
+        .gallery-item:hover::after {
+            border-color: rgba(201, 185, 154, 0.5);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(250, 249, 247, 0.98);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 85%;
+            position: relative;
+        }
+
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            box-shadow: 0 10px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 1.5rem;
+            color: #7d7d7d;
+            cursor: pointer;
+            background: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .lightbox-close:hover {
+            color: #3d3d3d;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #7d7d7d;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #e8e4df;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .lightbox-nav:hover {
+            background: #fff;
+            color: #3d3d3d;
+            border-color: #c9b99a;
+        }
+
+        .lightbox-prev {
+            left: 2rem;
+        }
+
+        .lightbox-next {
+            right: 2rem;
+        }
+
+        .lightbox-info {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .lightbox-counter {
+            font-size: 0.85rem;
+            color: #9d9d9d;
+            letter-spacing: 2px;
+        }
+
+        .lightbox-download {
+            padding: 0.7rem 1.8rem;
+            background: transparent;
+            color: #3d3d3d;
+            text-decoration: none;
+            border: 1px solid #c9b99a;
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-download:hover {
+            background: #c9b99a;
+            color: #fff;
+        }
+
+        .load-more-container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #e8e4df;
+            border-top: 1px solid #c9b99a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #9d9d9d;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            border-top: 1px solid #e8e4df;
+            margin-top: 2rem;
+        }
+
+        footer .ornament {
+            color: #c9b99a;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            letter-spacing: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 0.75rem;
+                padding: 1rem;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+            }
+
+            .lightbox-prev {
+                left: 1rem;
+            }
+
+            .lightbox-next {
+                right: 1rem;
+            }
+
+            .lightbox-close {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .lightbox-info {
+                flex-direction: column;
+                gap: 1rem;
+                bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-ornament">* * *</div>
+        <h1>Wedding Gallery</h1>
+        <p class="subtitle">Dublin, 2025</p>
+        <a href="https://cdn.mulvany.net/2025-wedding-dublin/Archive.zip" class="download-btn" download>Download All Photos</a>
+        <p class="photo-count">198 photographs</p>
+    </header>
+
+    <div class="gallery" id="gallery"></div>
+
+    <div class="load-more-container" id="load-more-container">
+        <div class="loader"></div>
+    </div>
+
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">&lsaquo;</button>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="" alt="">
+        </div>
+        <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">&rsaquo;</button>
+        <div class="lightbox-info">
+            <span class="lightbox-counter" id="lightbox-counter"></span>
+            <a id="lightbox-download" class="lightbox-download" href="" download>Download</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="ornament">*</div>
+        <p>&copy; 2025</p>
+    </footer>
+
+    <script>
+        const cdnBase = 'https://cdn.mulvany.net/2025-wedding-dublin/';
+        const imageFiles = [
+            'DSCF1630.jpeg',
+            'DSCF1631.jpeg',
+            'DSCF1634.jpeg',
+            'DSCF1635.jpeg',
+            'DSCF1651.jpeg',
+            'DSCF1657.jpeg',
+            'DSCF1658.jpeg',
+            'DSCF1659.jpeg',
+            'DSCF1660.jpeg',
+            'DSCF1661.jpeg',
+            'DSCF1662.jpeg',
+            'DSCF1663.jpeg',
+            'DSCF1665.jpeg',
+            'DSCF1667.jpeg',
+            'DSCF1669.jpeg',
+            'DSCF1673.jpeg',
+            'DSCF1675.jpeg',
+            'DSCF1676.jpeg',
+            'DSCF1678.jpeg',
+            'DSCF1683.jpeg',
+            'DSCF1689.jpeg',
+            'DSCF1691.jpeg',
+            'DSCF1694.jpeg',
+            'DSCF1696.jpeg',
+            'DSCF1700.jpeg',
+            'DSCF1702.jpeg',
+            'DSCF1703.jpeg',
+            'DSCF1704.jpeg',
+            'DSCF1705.jpeg',
+            'DSCF1706.jpeg',
+            'DSCF1709.jpeg',
+            'DSCF1710.jpeg',
+            'DSCF1712.jpeg',
+            'DSCF1713.jpeg',
+            'DSCF1714.jpeg',
+            'DSCF1715.jpeg',
+            'DSCF1717.jpeg',
+            'DSCF1719.jpeg',
+            'DSCF1720.jpeg',
+            'DSCF1721.jpeg',
+            'DSCF1722.jpeg',
+            'DSCF1726.jpeg',
+            'DSCF1727.jpeg',
+            'DSCF1729.jpeg',
+            'DSCF1731.jpeg',
+            'DSCF1732.jpeg',
+            'DSCF1733.jpeg',
+            'DSCF1735.jpeg',
+            'DSCF1736.jpeg',
+            'DSCF1738.jpeg',
+            'DSCF1740.jpeg',
+            'DSCF1741.jpeg',
+            'DSCF1742.jpeg',
+            'DSCF1743.jpeg',
+            'DSCF1744.jpeg',
+            'DSCF1747.jpeg',
+            'DSCF1750.jpeg',
+            'DSCF1751.jpeg',
+            'DSCF1752.jpeg',
+            'DSCF1753.jpeg',
+            'DSCF1755.jpeg',
+            'DSCF1756.jpeg',
+            'DSCF1757.jpeg',
+            'DSCF1759.jpeg',
+            'DSCF1760.jpeg',
+            'DSCF1762.jpeg',
+            'DSCF1764.jpeg',
+            'DSCF1765.jpeg',
+            'DSCF1768.jpeg',
+            'DSCF1769.jpeg',
+            'DSCF1774.jpeg',
+            'DSCF1775.jpeg',
+            'DSCF1782.jpeg',
+            'DSCF1784.jpeg',
+            'DSCF1785.jpeg',
+            'DSCF1787.jpeg',
+            'DSCF1790.jpeg',
+            'DSCF1795.jpeg',
+            'DSCF1799.jpeg',
+            'DSCF1802.jpeg',
+            'DSCF1804.jpeg',
+            'DSCF1805.jpeg',
+            'DSCF1806.jpeg',
+            'DSCF1807.jpeg',
+            'DSCF1808.jpeg',
+            'DSCF1809.jpeg',
+            'DSCF1819.jpeg',
+            'DSCF1823.jpeg',
+            'DSCF1824.jpeg',
+            'DSCF1825.jpeg',
+            'DSCF1828.jpeg',
+            'DSCF1829.jpeg',
+            'DSCF1830.jpeg',
+            'DSCF1834.jpeg',
+            'DSCF1835.jpeg',
+            'DSCF1837.jpeg',
+            'DSCF1838.jpeg',
+            'DSCF1839.jpeg',
+            'DSCF1843.jpeg',
+            'DSCF1845.jpeg',
+            'DSCF1848.jpeg',
+            'DSCF1850.jpeg',
+            'DSCF1852.jpeg',
+            'DSCF1853.jpeg',
+            'DSCF1854.jpeg',
+            'DSCF1856.jpeg',
+            'DSCF1857.jpeg',
+            'DSCF1858.jpeg',
+            'DSCF1859.jpeg',
+            'DSCF1860.jpeg',
+            'DSCF1861.jpeg',
+            'DSCF1862.jpeg',
+            'DSCF1863.jpeg',
+            'DSCF1864.jpeg',
+            'DSCF1865.jpeg',
+            'DSCF1866.jpeg',
+            'DSCF1867.jpeg',
+            'DSCF1868.jpeg',
+            'DSCF1869.jpeg',
+            'DSCF1870.jpeg',
+            'DSCF1873.jpeg',
+            'DSCF1874.jpeg',
+            'DSCF1878.jpeg',
+            'DSCF1893.jpeg',
+            'DSCF1894.jpeg',
+            'DSCF1895.jpeg',
+            'DSCF1896.jpeg',
+            'DSCF1897.jpeg',
+            'DSCF1898.jpeg',
+            'DSCF1899.jpeg',
+            'DSCF1900.jpeg',
+            'DSCF1901.jpeg',
+            'DSCF1902.jpeg',
+            'DSCF1903.jpeg',
+            'DSCF1904.jpeg',
+            'DSCF1905.jpeg',
+            'DSCF1906.jpeg',
+            'DSCF1907.jpeg',
+            'DSCF1908.jpeg',
+            'DSCF1909.jpeg',
+            'DSCF1910.jpeg',
+            'DSCF1911.jpeg',
+            'DSCF1912.jpeg',
+            'DSCF1913.jpeg',
+            'DSCF1914.jpeg',
+            'DSCF1917.jpeg',
+            'DSCF1921.jpeg',
+            'DSCF1922.jpeg',
+            'DSCF1923.jpeg',
+            'DSCF1924.jpeg',
+            'DSCF1928.jpeg',
+            'DSCF1930.jpeg',
+            'DSCF1938.jpeg',
+            'DSCF1944.jpeg',
+            'DSCF1945.jpeg',
+            'DSCF1949.jpeg',
+            'DSCF1952.jpeg',
+            'DSCF1955.jpeg',
+            'DSCF1956.jpeg',
+            'DSCF1957.jpeg',
+            'DSCF1961.jpeg',
+            'DSCF1964.jpeg',
+            'DSCF1967.jpeg',
+            'DSCF1969.jpeg',
+            'DSCF1970.jpeg',
+            'DSCF1973.jpeg',
+            'DSCF1974.jpeg',
+            'DSCF1976.jpeg',
+            'DSCF1979.jpeg',
+            'DSCF1981.jpeg',
+            'DSCF1983.jpeg',
+            'DSCF1985.jpeg',
+            'DSCF1986.jpeg',
+            'DSCF1988.jpeg',
+            'DSCF1995.jpeg',
+            'DSCF1996.jpeg',
+            'DSCF1997.jpeg',
+            'DSCF1999.jpeg',
+            'DSCF2000.jpeg',
+            'DSCF2002.jpeg',
+            'DSCF2003.jpeg',
+            'DSCF2004.jpeg',
+            'DSCF2005.jpeg',
+            'DSCF2010.jpeg',
+            'DSCF2013.jpeg',
+            'DSCF2015.jpeg',
+            'DSCF2017.jpeg',
+            'DSCF2021.jpeg',
+            'DSCF2022.jpeg',
+            'DSCF2024.jpeg',
+            'DSCF2025.jpeg',
+            'DSCF2026.jpeg',
+            'DSCF2027.jpeg',
+            'DSCF2028.jpeg',
+            'DSCF2029.jpeg',
+            'DSCF2034.jpeg',
+            'IMG_7302.jpeg',
+            'IMG_7304.jpeg'
+        ];
+
+        const images = {
+            thumbs: imageFiles.map(file => cdnBase + 'thumbs/' + file),
+            medium: imageFiles.map(file => cdnBase + 'medium/' + file),
+            full: imageFiles.map(file => cdnBase + file)
+        };
+
+        let currentImageIndex = 0;
+        let loadedCount = 0;
+        const IMAGES_PER_LOAD = 24;
+        let isLoading = false;
+
+        const gallery = document.getElementById('gallery');
+        const loadMoreContainer = document.getElementById('load-more-container');
+
+        function loadMoreImages() {
+            if (isLoading || loadedCount >= images.thumbs.length) return;
+
+            isLoading = true;
+            loadMoreContainer.style.display = 'block';
+
+            setTimeout(() => {
+                const endIndex = Math.min(loadedCount + IMAGES_PER_LOAD, images.thumbs.length);
+
+                for (let index = loadedCount; index < endIndex; index++) {
+                    const item = document.createElement('div');
+                    item.className = 'gallery-item';
+                    item.onclick = () => openLightbox(index);
+
+                    const imgElement = document.createElement('img');
+                    imgElement.src = images.thumbs[index];
+                    imgElement.alt = `Photo ${index + 1}`;
+                    imgElement.loading = 'lazy';
+
+                    item.appendChild(imgElement);
+                    gallery.appendChild(item);
+                }
+
+                loadedCount = endIndex;
+                isLoading = false;
+
+                if (loadedCount >= images.thumbs.length) {
+                    loadMoreContainer.style.display = 'none';
+                }
+            }, 100);
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !isLoading) {
+                    loadMoreImages();
+                }
+            });
+        }, {
+            rootMargin: '200px'
+        });
+
+        observer.observe(loadMoreContainer);
+        loadMoreImages();
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            updateLightbox();
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateLightbox() {
+            document.getElementById('lightbox-img').src = images.medium[currentImageIndex];
+            document.getElementById('lightbox-download').href = images.full[currentImageIndex];
+            document.getElementById('lightbox-counter').textContent = `${currentImageIndex + 1} / ${images.medium.length}`;
+        }
+
+        function changeImage(direction) {
+            currentImageIndex += direction;
+            if (currentImageIndex < 0) currentImageIndex = images.medium.length - 1;
+            if (currentImageIndex >= images.medium.length) currentImageIndex = 0;
+            updateLightbox();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') changeImage(-1);
+                if (e.key === 'ArrowRight') changeImage(1);
+            }
+        });
+
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+    </script>
+</body>
+</html>
