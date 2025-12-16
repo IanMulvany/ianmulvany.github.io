@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menti Survey Results</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .files-section {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .files-section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        .file-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .file-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .file-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 1.5rem;
+        }
+        .chart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+        .chart-card.full-width {
+            grid-column: 1 / -1;
+        }
+        .chart-card h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+        .chart-container {
+            position: relative;
+            height: 300px;
+        }
+        .chart-container.tall {
+            height: 450px;
+        }
+        @media (max-width: 600px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            body {
+                padding: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menti Survey Results</h1>
+
+        <div class="files-section">
+            <h2>Download CSV Files</h2>
+            <div class="file-list">
+                <a href="q_1.csv" class="file-link">Q1: Bad Bots vs Humans</a>
+                <a href="q_2.csv" class="file-link">Q2: Fake Identities Problem</a>
+                <a href="q_3.csv" class="file-link">Q3: Different Lanes</a>
+                <a href="q_4.csv" class="file-link">Q4: Identity Check Enforcement</a>
+                <a href="q_5.csv" class="file-link">Q5: Identity Check Types</a>
+                <a href="q_6.csv" class="file-link">Q6: Accountability</a>
+                <a href="q_7.csv" class="file-link">Q7: One Thing To Do</a>
+            </div>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-card">
+                <h3>Q1: Which is more of a problem for you - bad bots or bad humans?</h3>
+                <div class="chart-container">
+                    <canvas id="chart1"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Q2: How big of a problem are fake identities/institutions for you?</h3>
+                <div class="chart-container">
+                    <canvas id="chart2"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Q3: Is it acceptable to have different lanes for folks with different levels of assurance?</h3>
+                <div class="chart-container">
+                    <canvas id="chart3"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Q4: How strongly should we enforce identity checks? (Score out of 20)</h3>
+                <div class="chart-container">
+                    <canvas id="chart4"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card">
+                <h3>Q6: Where does accountability most lie?</h3>
+                <div class="chart-container">
+                    <canvas id="chart6"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card full-width">
+                <h3>Q5: What kinds of identity checks would you consider? (Top 15 responses)</h3>
+                <div class="chart-container tall">
+                    <canvas id="chart5"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-card full-width">
+                <h3>Q7: What is one thing we should all do? (Top 15 responses)</h3>
+                <div class="chart-container tall">
+                    <canvas id="chart7"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const colors = {
+            primary: ['#667eea', '#764ba2', '#f093fb', '#f5576c', '#4facfe', '#00f2fe', '#43e97b', '#38f9d7', '#fa709a', '#fee140'],
+            gradient1: ['rgba(102, 126, 234, 0.8)', 'rgba(118, 75, 162, 0.8)', 'rgba(240, 147, 251, 0.8)', 'rgba(245, 87, 108, 0.8)', 'rgba(79, 172, 254, 0.8)'],
+            bar: 'rgba(102, 126, 234, 0.8)',
+            barBorder: 'rgba(102, 126, 234, 1)'
+        };
+
+        // Q1: Bad Humans vs Bad Bots
+        new Chart(document.getElementById('chart1'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Bad Humans', 'Bad Bots'],
+                datasets: [{
+                    data: [94, 5],
+                    backgroundColor: ['#667eea', '#f5576c'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Q2: Fake identities problem
+        new Chart(document.getElementById('chart2'), {
+            type: 'bar',
+            data: {
+                labels: ['Don\'t Know', 'Small', 'Medium', 'Large', 'Largest'],
+                datasets: [{
+                    label: 'Responses',
+                    data: [11, 12, 25, 40, 5],
+                    backgroundColor: ['#9ca3af', '#43e97b', '#4facfe', '#f5576c', '#764ba2'],
+                    borderWidth: 0,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Q3: Different lanes
+        new Chart(document.getElementById('chart3'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Yes', 'Don\'t Know', 'No'],
+                datasets: [{
+                    data: [45, 25, 22],
+                    backgroundColor: ['#43e97b', '#9ca3af', '#f5576c'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Q4: Identity check enforcement scores
+        new Chart(document.getElementById('chart4'), {
+            type: 'bar',
+            data: {
+                labels: ['Everyone', 'Institutional Affiliation', 'No Institutional Affiliation', 'Flagged by Integrity Systems'],
+                datasets: [{
+                    label: 'Score',
+                    data: [15.9, 12.1, 14.7, 16.4],
+                    backgroundColor: ['#667eea', '#764ba2', '#4facfe', '#f5576c'],
+                    borderWidth: 0,
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 20,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Q5: Identity check types (top 15)
+        new Chart(document.getElementById('chart5'), {
+            type: 'bar',
+            data: {
+                labels: ['Just wing it', '2FA', 'Passport', 'Digital wallet', 'Government ID', 'SSO', 'ORCID', 'ORCID trust markers', 'SAML', 'Validation from institute', 'Combinations', 'Institutional SSO', 'Video of author', 'Employer verification', 'Institutional affiliation'],
+                datasets: [{
+                    label: 'Count',
+                    data: [38, 14, 11, 9, 9, 9, 7, 5, 4, 4, 3, 3, 3, 2, 2],
+                    backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                    borderColor: 'rgba(102, 126, 234, 1)',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // Q6: Accountability
+        new Chart(document.getElementById('chart6'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Individual', 'Institution', 'Publisher', 'Other', 'Funder', 'Government'],
+                datasets: [{
+                    data: [45, 20, 16, 6, 1, 0],
+                    backgroundColor: ['#667eea', '#764ba2', '#4facfe', '#9ca3af', '#43e97b', '#f5576c'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+
+        // Q7: One thing to do (top 15)
+        new Chart(document.getElementById('chart7'), {
+            type: 'bar',
+            data: {
+                labels: ['Collaborate', 'Hold hands and go together', 'Obey anti-trust laws', 'Cry', 'Get on with it', 'Agree and implement standard', 'Agree on a standard', 'Agree to require ORCID', 'Ask ChatGPT', 'Be comfortable sharing', 'Collab with institutions', 'Commit', 'Commit to a timeline', 'Do not monetise', 'Eat lunch'],
+                datasets: [{
+                    label: 'Count',
+                    data: [8, 7, 3, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+                    backgroundColor: 'rgba(118, 75, 162, 0.8)',
+                    borderColor: 'rgba(118, 75, 162, 1)',
+                    borderWidth: 1,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

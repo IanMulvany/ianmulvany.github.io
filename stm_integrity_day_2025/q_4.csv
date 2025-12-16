@@ -1,0 +1,5 @@
+question, how strongly should we enforce identity checks?label,score,skipped
+Everyone,15.9,0
+Individuals with institutional affiliation,12.1,2
+Individuals with no institutional affiliation,14.7,3
+Individuals flagged by integrity systems,16.4,2
