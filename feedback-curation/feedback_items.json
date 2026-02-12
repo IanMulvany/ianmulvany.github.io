@@ -1,0 +1,3247 @@
+{
+  "summary": {
+    "source_images": 53,
+    "boards": 50,
+    "total_notes_detected": 488,
+    "total_feedback_items": 249
+  },
+  "items": [
+    {
+      "item_id": "fb_0001",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The combined reports were too lengthy and dense to assess holistically, despite some valuable insights.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0002",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "My standard sub-screening relies on concise yes/no bullet points for reporting elements, but the agents missed several of my primary decision points (adding dates to methods, revising strengths and limitations, including full search strategy).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 34
+      }
+    },
+    {
+      "item_id": "fb_0003",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "These omissions likely stem from the critical Methodology Reporting Agent error, which handles the most important aspect of BMJ Open editorial review.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0004",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Greater calibration against actual editor decision notes is essential.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0005",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Key insights",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 2
+      }
+    },
+    {
+      "item_id": "fb_0006",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Novelty Agent (very helpful): Correctly validated authors\u2019 claim (\"no systematic review has been conducted on this topic\u2019), identified novelty in mainstream vs primary healthcare focus, and highlighted meta-aggregation as a methodological advance aligning with BMJ Open priorities. Flagged missing citations of similar studies with useful revision suggestions (though lengthy, unformatted, and lacking URLs for competing works).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 56
+      }
+    },
+    {
+      "item_id": "fb_0007",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Integrity Agent (very helpful): Time-saving PubPeer, ORCID, author publication relevance, and affiliation checks with concise red flag summary. Editors rarely perform these unless concerns arise.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0008",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Methodology Validation Agent (very helpful): Caught PROSPERO digit mismatches and offered statistical error calculations (though data sources unclear). Formatting issues persist (residual \"\\n\" markers); could validate against submitted checklists.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0009",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Ethics Agent (slightly helpful): Useful PROSPERO timeline, PPI/COI extraction, and publication overlap detection (time-intensive for editors), though disproportionate for protocol SRMA without ethics approval.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0010",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Key limitations",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 2
+      }
+    },
+    {
+      "item_id": "fb_0011",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Scope-narrowing suggestion inappropriate for editors (peer reviewer territory).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 8
+      }
+    },
+    {
+      "item_id": "fb_0012",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "The agents surfaced checks I'd not routinely perform (integrity, detailed COI, PROSPERO timeline validation), showing utility for ethics-heavy or unfamiliar study designs. However, for standard protocol SRMAs, the output felt excessive and required substantial workflow streamlining for practical BMJ Open editorial use.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 42
+      }
+    },
+    {
+      "item_id": "fb_0013",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Scoping Agent (slightly helpful): Adequate design/topic overview but overly long summary.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 11
+      }
+    },
+    {
+      "item_id": "fb_0014",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 - pt1 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Excessive length across agents, bold text impeding skim-reading, repetition of known standards, and hyperbolic language (\"exemplary commitment\u2019). Needed: italicised manuscript quotes, summary boxes/tables (CO! overlap, competing works: citation/TL;DR/difference/is-cited?), condensed revisions (2-3 points).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 32
+      }
+    },
+    {
+      "item_id": "fb_0015",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The agents provided editorial decisions (e.g., accept/revise), but their language did not align with my team's editorial terminology.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 18
+      }
+    },
+    {
+      "item_id": "fb_0016",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The Novelty agent offered useful example revisions, though the formatting was suboptimal and lacked journal-specific guidance, which is critical for practical utility. .",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 23
+      }
+    },
+    {
+      "item_id": "fb_0017",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "A tool delivering information in this comprehensive format would be more suitable for editorial training, where new editors need to absorb the full wealth of details for the first time; for trained editors, it feels entirely unnecessary",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 37
+      }
+    },
+    {
+      "item_id": "fb_0018",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I agree that this was a well-written manuscript likely to survive peer review, and the agents conveyed this assessment. However, they offered limited additional insight for this particular submission.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0019",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Utility depends entirely on how this tool integrates into our editorial workflow. In my typical set-up, I work across two screens split into quadrants, with the manuscript PDF, ScholarOne, Word templates, and a search engine all open simultaneously. A lengthy document like these agent outputs, or even this volume of text, is simply not feasible to review within that workflow. At minimum, responses must be far more condensed, with explicit prompts to eliminate repetition both within and across agents; the current format is too time-consuming.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 85
+      }
+    },
+    {
+      "item_id": "fb_0020",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I'm unclear whether the plan is ScholarOne integration, a separate tab, or standalone app, but editor feedback on optimal delivery is essential. I already use Perplexity Al effectively in my workflow for topic questions, redundancy checks via relevant papers, and clarifying checklist requirements - its true value lies in the interactive back-and-forth questioning. Agents delivering information already available from skimming the manuscript add minimal value; at best, they'd save a few minutes per submission as a pre-reading checklist.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 78
+      }
+    },
+    {
+      "item_id": "fb_0021",
+      "board_id": "paper_14",
+      "source_file": "Screenshot paper 14 pt 2 .png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "A conversational interface would be far more practical. Tools like Paper Digest, ChatPDF, Elicit, and Humata (where you can query PDFs directly) demonstrate real utility. An ideal hybrid might auto-generate key insights while enabling follow-up questions, highlighting specific manuscript locations, and providing external links where relevant.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 46
+      }
+    },
+    {
+      "item_id": "fb_0022",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The Novelty, Methodology Reporting, and Integrity Agents were particularly useful, surfacing detailed flags on novelty/redundancy, poor rationale, and basic methods that aligned with my primary reject reasons.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 27
+      }
+    },
+    {
+      "item_id": "fb_0023",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "They conducted in-depth analyses of similar studies and author publication patterns that I wouldn't normally have time for.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 18
+      }
+    },
+    {
+      "item_id": "fb_0024",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "However, excessive length and repetition undermined utility, and the agents completely missed editors' well-established wariness of retrospective cohort/secondary analyses of large databases (particularly national surveys). These manuscript types raise major red flags for publish-or-perish mentality and papermill culture - biases we acknowledge but are usually correct about.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 47
+      }
+    },
+    {
+      "item_id": "fb_0025",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Key additions",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 2
+      }
+    },
+    {
+      "item_id": "fb_0026",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Novelty Agent (extremely helpful): Correct reject decision with low importance rationale; identified critical overlap paper and field's position. Useful reconsideration criteria for rare appeals.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0027",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Methodology Reporting Agent (very useful): 80% score with 3 key STROBE issues (short bullets I could investigate); flagged exposure variable (BUN/Cr ratio) timing concerns and study limitations list (useful for peer review).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 32
+      }
+    },
+    {
+      "item_id": "fb_0028",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Integrity Agent (moderately helpful): \"Proceed with decision, no concerns\" reassuring for papermill-prone manuscript type; publication pattern/timeline analysis valuable for bulk publication detection.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0029",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Key limitations",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 2
+      }
+    },
+    {
+      "item_id": "fb_0030",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Scoping (not helpful): Superficial; misses utility of hydration RQ and field concerns about repetitive database studies (we reject most).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0031",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 1.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Ethics (not helpful): Disproportionate length for secondary analysis; unnecessary Declaration of Helsinki detail. BMJ Open doesn't require protocols for this manuscript type, but pre-planned analysis absence (noted) is relevant.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0032",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Methodology Reporting validated common STROBE issues I'd identify independently.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0033",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Ethics overemphasised irrelevant protocol requirements for BMJ Open.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 8
+      }
+    },
+    {
+      "item_id": "fb_0034",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The agents conveyed appropriate reject \"vibe\" but needed calibration to journal-specific standards and editorial language.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0035",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I agree with the reject decision driven by Novelty Agent's low importance/overlap assessment, which matches my primary reject Criterion.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0036",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Integrity's \"no concerns\u2019 aligns with cautious proceed recommendation despite papermill risk profile.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 12
+      }
+    },
+    {
+      "item_id": "fb_0037",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "However, Scoping lacked critical field context,",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0038",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Strengths to retain / amplify",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0039",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Emojis (green ticks, red flags, warnings) excellent for skim-reading.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0040",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Publication pattern analysis/timelines for integrity checks.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0041",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Short bullet issue lists (Methodology Reporting) perfect for editorial action.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 10
+      }
+    },
+    {
+      "item_id": "fb_0042",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 2.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Study limitations extraction useful for peer review instructions.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 8
+      }
+    },
+    {
+      "item_id": "fb_0043",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Critical improvements",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 2
+      }
+    },
+    {
+      "item_id": "fb_0044",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Adaptive depth: Shorten Ethics for secondary analyses; expand for trials.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 10
+      }
+    },
+    {
+      "item_id": "fb_0045",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Field-specific context: Scoping should flag repetitive database study concerns.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0046",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Citation transparency: Clarify \"No evidence of paper mills\" methodology.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0047",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Technical explanation: Field-specific method critiques need rationale (e.g., BUN/Cr timing) or follow-up question capability.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0048",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Formatting: Fix table rendering; reduce repetition.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0049",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Journal calibration: Remove BMJ Open-inappropriate requirements (protocols).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 7
+      }
+    },
+    {
+      "item_id": "fb_0050",
+      "board_id": "paper_15",
+      "source_file": "Screenshot paper 15 part 3.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "This manuscript type benefits most from Novelty/Methodology focus; Scoping/Ethics felt miscalibrated. A conversational interface for technical follow-ups would unlock greater utility than static reports.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0051",
+      "board_id": "screen_screenshot_2026_02_11_at_11_10_25_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.10.25\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Yes",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 1
+      }
+    },
+    {
+      "item_id": "fb_0052",
+      "board_id": "screen_screenshot_2026_02_11_at_11_10_25_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.10.25\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Largely agree although would not necessarily have asked authors for further changes.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 12
+      }
+    },
+    {
+      "item_id": "fb_0053",
+      "board_id": "screen_screenshot_2026_02_11_at_11_10_25_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.10.25\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Integrity agent did not work",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0054",
+      "board_id": "screen_screenshot_2026_02_11_at_11_10_25_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.10.25\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Methods validation failed on of 2 ms tested.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 8
+      }
+    },
+    {
+      "item_id": "fb_0055",
+      "board_id": "screen_screenshot_2026_02_11_at_11_10_25_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.10.25\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "The novelty explanation added quite a bit of context that could be used to select for press release or commentary or podast.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0056",
+      "board_id": "screen_screenshot_2026_02_11_at_11_10_25_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.10.25\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Ethics agent did not work",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0057",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_16_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.16\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Methodology validation: Sonnet: I was surprised to see that yesterday It returned no errors but today it did (1 minor Inconsistency In reporting) Sonnet: While this didn't show In the results, In the activity log, the text from the manuscript \u201cfirst 50 articles will be screened Independently\u2019 was interpreted as \u2018this ia a planned pilot\u2019. This wae taken out of context and Is Incorrect Sonnet/Haiku; There also seems to exist some inconsistency between sonnet (1 error based on cheoking olalms) and haiku (2 errors based on checking 15 claims). In the results of haiku the percentage error is classed as major (minor In sonnet) and an additional minor error in formatting Is noted Opus: 0 errors/checked 10 claims",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 118
+      }
+    },
+    {
+      "item_id": "fb_0058",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_16_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.16\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I would have liked to see the findings of the methodology reporting agent.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0059",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_36_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.36\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "One minor rounding error was identified by the Methodology validation.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 10
+      }
+    },
+    {
+      "item_id": "fb_0060",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_36_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.36\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I've particularly looked at the ethics agent for this qualitative study.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 11
+      }
+    },
+    {
+      "item_id": "fb_0061",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_36_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.36\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Haiku: It identified this study wrongly as a clinical trial and lists a number of minor and major gaps.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0062",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_36_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.36\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Sonnet: final decision - reject. It identified this study wrongly as a clinical trial and lists a number of minor and major gaps. The explanations correctly note that this is a qualitative study though. The reject decision seems to relate to a lack of pre-registration.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 45
+      }
+    },
+    {
+      "item_id": "fb_0063",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_36_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.36\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I noted yesterday that the ethics agent noted a minor gap relating to a missing a-priori sample size calculation (which I cannot re-create today). We don't usually expect this for qualitative studies but instead we would look for a definition of when to stop, e.g. data saturation.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 47
+      }
+    },
+    {
+      "item_id": "fb_0064",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_48_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.48\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "I only looked at the scoping agent for this case series and it incorrectly assessed this submission as \u2018in scope\u2019 for Open.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0065",
+      "board_id": "screen_screenshot_2026_02_11_at_11_11_48_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.11.48\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The scoping agent was wrong. I made a general comment on this in the other form. I assume it takes the information from our website and as we don't specify that case series/reports aren't in scope this agent may assume it is. It would be better if it would highlight uncertainty if something isn't clear (relevant for all agents I'd say).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 61
+      }
+    },
+    {
+      "item_id": "fb_0066",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Methodology reporting agent did not work",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0067",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Novelty agent did not work",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0068",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Methodology validation agent returned some useful information.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 7
+      }
+    },
+    {
+      "item_id": "fb_0069",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "O Ethics agent Haiku - information too convoluted, not picked up on vague statement relating to all participating centres O Major gap of \u2018no trial O _ registration number\u2019 noted but this is a cross-sectional study",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 36
+      }
+    },
+    {
+      "item_id": "fb_0070",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I found that the scoping agent could provide a more succinct reasoning.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 12
+      }
+    },
+    {
+      "item_id": "fb_0071",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Integrity agent (mismatch between findings in Sonnet and Haiku) Sonnet - Topic expertise as a strength Haiku - \u2018limited topic expertise\u2019 as a concern",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0072",
+      "board_id": "screen_screenshot_2026_02_11_at_11_12_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.12.07\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Methodology validation Sonnet - calculated a percentage based on understanding the context - impressive and helpful in checking numerical data",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 20
+      }
+    },
+    {
+      "item_id": "fb_0073",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "By the time I the agents had run and I read all the outputs I could have read the paper.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 20
+      }
+    },
+    {
+      "item_id": "fb_0074",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The useful component were the novelty agent which may have spotted papers that I might have missed.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0075",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The scoping agent works but is not useful for me as an editor at Open but would be useful were I looking to transfer a paper.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 26
+      }
+    },
+    {
+      "item_id": "fb_0076",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The validation agent was helpful as it spotted stats errors I probably wouldn't",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0077",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The ethics agent was wrong about this paper and failed to understand the methods.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0078",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The integrity agent was ok though all its points were subjective but I could see if it had spotted an issues it would be helpful.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0079",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The reporting agent was ok but to dogmatic and I think I would double check all of its comments for context.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 21
+      }
+    },
+    {
+      "item_id": "fb_0080",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The validation agent would also require checking but was more specific in its points",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0081",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_26_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.26\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I would want all these before I began my assessment due to the time taken",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0082",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_44_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.44\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "No I would not say the combination was helpful so much as each one individual had use",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0083",
+      "board_id": "screen_screenshot_2026_02_11_at_11_26_44_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.26.44\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Reasonable assessments though the reporting was maybe overly precise",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0084",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.07\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "no though each had its uses",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0085",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.07\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The Ethics agent suggest the legal argument made the authors suggest compliance which it may but its worth noting our requirements supersede local laws.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0086",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_07_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.07\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Validation agent is perhaps overly harsh with its rounding but it is technically correct",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0087",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_51_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.51\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "No, I don't think so. I was concerned that it pulled key issues from the limitations section, as this could motivate authors to hide the limitations rather than being honest about them.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 32
+      }
+    },
+    {
+      "item_id": "fb_0088",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_51_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.51\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I agree to a certain extent, but it lacks a recognition that this isn't an exact science. I'm also concerned that reporting all the additional items requested will make the manuscript less readable as some of the items didn't seem terribly relevant.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 42
+      }
+    },
+    {
+      "item_id": "fb_0089",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_51_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.51\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "My main concern is that requesting some of these items will lead authors to be dishonest about their work, \u00e9.g., rather than being honest and saying they didn't consider something, they will feel pressured to come up with explanations after the fact to satisfy the agent.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 46
+      }
+    },
+    {
+      "item_id": "fb_0090",
+      "board_id": "screen_screenshot_2026_02_11_at_11_27_51_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.27.51\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Also there were certain items that were simply incorrect.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0091",
+      "board_id": "screen_screenshot_2026_02_11_at_11_28_46_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.28.46\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "It was also helpful when checking for novelty and Author integrity issues because, while Editors can run these checks, they are more time consuming for an Editor to do (this system could do these check much more quickly).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 38
+      }
+    },
+    {
+      "item_id": "fb_0092",
+      "board_id": "screen_screenshot_2026_02_11_at_11_28_46_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.28.46\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "However, a couple of the points raised in the Methods Reporting Agent were incorrect, so all reports would need to be double checked by an Editor.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 26
+      }
+    },
+    {
+      "item_id": "fb_0093",
+      "board_id": "screen_screenshot_2026_02_11_at_11_28_46_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.28.46\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "As mentioned, for this paper, the report was mostly accurate, but did include some errors. For example, the report stated \"Consensus thresholds (70%/50%) stated but no rationale provided for why these specific values were chosen\u2019, however, when checking the PDF manually, the authors did cite two references to support their choice of consensus thresholds at 70%/50%",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 56
+      }
+    },
+    {
+      "item_id": "fb_0094",
+      "board_id": "screen_screenshot_2026_02_11_at_11_28_46_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.28.46\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The report also stated that a percentage was missing from the abstract results section, however, it was present in the PDF.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 21
+      }
+    },
+    {
+      "item_id": "fb_0095",
+      "board_id": "screen_screenshot_2026_02_11_at_11_28_46_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.28.46\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The overall rating to \u201creject\u201d was probaly too harsh, as some of the concerns flagged could be fixed with revision, so for BMJ Open it would probably be ok for peer review, and some of the issues raised would be required at revision (rather than as a desk [pre-peer review] reject)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 51
+      }
+    },
+    {
+      "item_id": "fb_0096",
+      "board_id": "screen_screenshot_2026_02_11_at_11_28_46_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.28.46\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "The interface also could be more user-friendly.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 7
+      }
+    },
+    {
+      "item_id": "fb_0097",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "For some reason, the tool was unable to provide results for the two Methodology Agents for this paper, so I have left those sections blank. Unfortunately, those are probably the two most useful agents for this type of manuscript",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 39
+      }
+    },
+    {
+      "item_id": "fb_0098",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "While scoping is helpful, these are checks that Editors can perform very quickly without Al.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0099",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "While ethics are helpful, these are checks that Editors can perform very quickly without Al.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0100",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The novelty agent is helpful, and probably can answer this more quickly than an Editor (but an Editor can find this info reasonably easily).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0101",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The Integrity agent is also helpful, if there is a concern identified, but if the results are positive, I wouldn't dig into them and would take the overall assessment provided by the tool at face value.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 36
+      }
+    },
+    {
+      "item_id": "fb_0102",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Methods reporting did not work",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0103",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "For the 4 agents that worked, I would agree with the overall evaluation provided.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0104",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_19_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.19\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Methods validation did not work",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0105",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_32_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.32\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "No, because the Ethics agent thought the paper should be rejected, it did not run the other agents.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 18
+      }
+    },
+    {
+      "item_id": "fb_0106",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_32_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.32\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Although the ethics agent flagged some potential undisclosed COls, I do not think the paper should be rejected for that. A way to override this step (i.e. if the tool suggests rejecting because of ethics, but you diasgree with its ethical assessment and think the ethics are ok to proceed) so you can receive the full report from all the agents would be helpful to make a more informed decision.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 70
+      }
+    },
+    {
+      "item_id": "fb_0107",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_32_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.32\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I agree with the scope assessment",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0108",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_32_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.32\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "but diasgree with the ethics assessment. While undisclosed COls are a concern, I would not desk reject for this.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0109",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_32_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.32\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "A way to override a gatekeeper decision (i.e. reject for ethics) would be helpful in case you disgree with the tool's assessment",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0110",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_41_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.41\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "It highlighted some methods reporting that might have been missed and other similar literature that has already been published (for novelty). So, it helped a bit, but quite a few of the issues would have been ' caught by an Editor.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 41
+      }
+    },
+    {
+      "item_id": "fb_0111",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_41_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.41\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Overall, I mostly agree with the evaluation of the agents. The main thing for this paper comes down to redundancy and how much it adds to the literature that has already been published (i.e. where similar analyses have been performed using this same dataset, looking at the same/similar research question).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 50
+      }
+    },
+    {
+      "item_id": "fb_0112",
+      "board_id": "screen_screenshot_2026_02_11_at_11_29_41_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.29.41\u202fpm.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "the Novelty agent has provided useful information that would help an Editor make the decision about whether this paper is sufficiently novel.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0113",
+      "board_id": "screen_screenshot_2026_02_11_at_11_43_16_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.43.16\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Of course, no single person can identify all the issues picked up by this tool.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0114",
+      "board_id": "screen_screenshot_2026_02_11_at_11_43_16_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.43.16\u202fpm.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "The output is too unwieldy, could be summarized and the action points from all agents summarized in a single table. The key information is too scattered.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 26
+      }
+    },
+    {
+      "item_id": "fb_0115",
+      "board_id": "screen_screenshot_2026_02_11_at_11_43_22_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.43.22\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Yes. No single person could identify all the issues picked up by the tool.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0116",
+      "board_id": "screen_screenshot_2026_02_11_at_11_43_31_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.43.31\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Yes. No single person could identify all the issues picked up by the tool.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0117",
+      "board_id": "screen_screenshot_2026_02_11_at_11_43_38_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.43.38\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Yes. No single person could identify all the issues picked up by the tool.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0118",
+      "board_id": "screen_screenshot_2026_02_11_at_11_43_47_pm",
+      "source_file": "Screenshot 2026-02-11 at 11.43.47\u202fpm.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Yes. No single person could identify all the issues picked up by the tool.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0119",
+      "board_id": "screen_screenshot_2026_02_12_at_10_18_45_am",
+      "source_file": "Screenshot 2026-02-12 at 10.18.45\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The information provided definitely helped identify key issues with the methodology that might not have been picked up on a quick screening. However, the recommendation for this section was 'REVISE' which isn't a feasible option for screening unless you have a reject and resubmit option. What one would like to know is whether these issues are serious enough to reject now.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 61
+      }
+    },
+    {
+      "item_id": "fb_0120",
+      "board_id": "screen_screenshot_2026_02_12_at_10_18_45_am",
+      "source_file": "Screenshot 2026-02-12 at 10.18.45\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The scoping agent was a bit off on its reasoning. It compared this study to one on risk factors for poo outcomes in patient on dialysis who have cardiac arrest which we said was out of scope. The agent said that this had nothing to do with emergency care delivery, triage, or management; however, the study was about frequency of ED visits which is about care delivery. I looked back at our decision which was reject and resubmit as a Letter focusing on the ED visits (a letter due to the borderline connection with EM) but the authors chose to just submit elsewhere. It was published almost immediately after we sent. it back, as is, despite all the methodological issues and has an Altmetric score of 0.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 127
+      }
+    },
+    {
+      "item_id": "fb_0121",
+      "board_id": "screen_screenshot_2026_02_12_at_10_18_45_am",
+      "source_file": "Screenshot 2026-02-12 at 10.18.45\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "There is an awful lot of information and it's difficult to get a sense of the whole thing ( 61 pages!). I think this could be helped by having a summary at the top with the recommendations for each agent with the ability to click on the detail.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 48
+      }
+    },
+    {
+      "item_id": "fb_0122",
+      "board_id": "screen_screenshot_2026_02_12_at_10_18_45_am",
+      "source_file": "Screenshot 2026-02-12 at 10.18.45\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "The novelty agent was very repetitious and the summary appears at the end, when it would help it it was at the beginning. It would also help to include the name of the journal articles were published in which helps us see what audiences were considered relevant as that is a consideration for SCOPE.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 54
+      }
+    },
+    {
+      "item_id": "fb_0123",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The novelty agent was helpful in showing the ,large volume of data on this subject and showing the incremental nature of this study. However, the recommendation of \"revise\" does not make sense. The revisions suggested would change the study and even if the rationale were improved the findings are not very different from previous studies. The recommendation should have been reject based on the information provided.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 66
+      }
+    },
+    {
+      "item_id": "fb_0124",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Agree with the novelty agent",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0125",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Agree with ethics agent",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0126",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Agree with integrity agent",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0127",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The reporting agent doesn't give a recommendation but provides information that shows there are minimal reporting gaps. This agent tends to overlap a bit with methodology validation.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 27
+      }
+    },
+    {
+      "item_id": "fb_0128",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "The validation of methodology is quite short as there are no issues, however, the methodology reporting agent picked up the lack of conversion of Ors to more meaningful statistics and lack of a sample size calculation. (Since we don't have the actual paper it's hard to know) - I am not an Editor in Chief for BMJ open so don't know the paper.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 63
+      }
+    },
+    {
+      "item_id": "fb_0129",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_11_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.11\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "As noted in other reports, there is a great deal of repetition which can be overwhelming, part of which seems to be because the agent checks various sources for gold standards. Perhaps the BMJ or each journal should determine which sources it wants to comply with to reduce this repetition.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 50
+      }
+    },
+    {
+      "item_id": "fb_0130",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_27_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.27\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Without access to the original paper, hard to say. However the identification of patents by one of the authors may not have been discovered on initial screening. Also noting that the original trial was not pre-registered could have been missed on initial screen and could in itself be a reason to reject without further evaluation.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 55
+      }
+    },
+    {
+      "item_id": "fb_0131",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_27_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.27\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "This was a secondary analysis of an RCT; I would disagree that the paper needs to include all the information for the CONSORT guidelines, given that this was itself not an RCT.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 32
+      }
+    },
+    {
+      "item_id": "fb_0132",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_27_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.27\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Scoping was missing.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 3
+      }
+    },
+    {
+      "item_id": "fb_0133",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_27_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.27\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "find it unnerving that the methodology agent is so short, while the methodology reporting section is long and in my mind includes information that really belongs in the methodology validation",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 30
+      }
+    },
+    {
+      "item_id": "fb_0134",
+      "board_id": "screen_screenshot_2026_02_12_at_10_19_27_am",
+      "source_file": "Screenshot 2026-02-12 at 10.19.27\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Obviously there will. be some overlap by the methodology reporting touches on issues of bias, missing information, etc, which I would think would be in the methodology validation. The latter seems to purely focus on whether or not the numbers are correct. There is some note earlier about the use of immortal time bias and is it appropriate, it would seem that this should be commented on if raised in a prior section.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 73
+      }
+    },
+    {
+      "item_id": "fb_0135",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_36_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.36\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "O But it is bringing up a lot of information and it's hard to see the wood for the trees, O ie. which issues are O\u00b0 important and influence our decision whether or not to review a paper.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 38
+      }
+    },
+    {
+      "item_id": "fb_0136",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_36_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.36\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Yes, I think some of the discreprancies (such as the results being slightly different in different places) might not have been flagged at this stage.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0137",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_36_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.36\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "I also think some of the assessment details could be better explained - for example why is phone call control group preferable to sham acupuncture? I'm not sure we would all agree with that.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 34
+      }
+    },
+    {
+      "item_id": "fb_0138",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_36_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.36\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I agree with the overall suggestion to review this paper",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 10
+      }
+    },
+    {
+      "item_id": "fb_0139",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_36_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.36\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "It is very dense and detailed. Despite doing my best to focus on the content of the output it's hard not to get overwhelmed by the way it's presented. A higher level summary would be helpful and then we can dig into the detail as needed (but perhaps that is how it is set up on the tool - I had to use the Google Doc output as I couldn't log in)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 72
+      }
+    },
+    {
+      "item_id": "fb_0140",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_59_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.59\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "I am not sure how helpful the agent advice was for this one, as it seemed to miss the bigger picture about importance, especially given this was a secondary analysis. From a study design perspective, we have had various issues with secondary analyses of RCTs we've considered where it's unclear the extent to which the population could be considered a trial population vs a cohort study within a trial. I don't think the agents really get to grips with that.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 80
+      }
+    },
+    {
+      "item_id": "fb_0141",
+      "board_id": "screen_screenshot_2026_02_12_at_10_22_59_am",
+      "source_file": "Screenshot 2026-02-12 at 10.22.59\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "I would not proceed with this one, as I know our bar is high for secondary analyses and I wasn't convinced that this paper met it (and I also know the problems we've had with a mammography study asking a similar research question)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 43
+      }
+    },
+    {
+      "item_id": "fb_0142",
+      "board_id": "screen_screenshot_2026_02_12_at_10_23_52_am",
+      "source_file": "Screenshot 2026-02-12 at 10.23.52\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "No, I don't think so, although this would broadly be a quite quick, easy manuscript to assess as it appears to be of reasonably high quality.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 26
+      }
+    },
+    {
+      "item_id": "fb_0143",
+      "board_id": "screen_screenshot_2026_02_12_at_10_23_52_am",
+      "source_file": "Screenshot 2026-02-12 at 10.23.52\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Broady agree, although it goes into far more detail than necessary",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 11
+      }
+    },
+    {
+      "item_id": "fb_0144",
+      "board_id": "screen_screenshot_2026_02_12_at_10_23_52_am",
+      "source_file": "Screenshot 2026-02-12 at 10.23.52\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I tried a few times to run it for this manuscript and some agents were not working. I'm assuming it's because it's a study protocol (which is a lot of BMJ Open content)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 33
+      }
+    },
+    {
+      "item_id": "fb_0145",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_03_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.03\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "No, I think there is an issue with this in that it took place across several countries, so it would need multiple ethical approvals. It looks like it missed that point completely. So while it was thorough, for me, the main point that I notice wasn't mentioned.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 47
+      }
+    },
+    {
+      "item_id": "fb_0146",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_03_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.03\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Broadly OK. This is an unusual paper/methodology, and I'm not sure the agent caught on to some of the nuances and was reading it more like a standard paper.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0147",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_03_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.03\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "Integrity didn't work for me",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0148",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_03_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.03\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "methodology didn't work for me",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0149",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_12_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.12\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "The methodology reporting agent was helpful to identify some minor things an editor might not pick up on a quick read.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 21
+      }
+    },
+    {
+      "item_id": "fb_0150",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_12_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.12\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "There were no details (I could see) in the methodology validation agent (just said it is OK).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0151",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_12_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.12\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "However the reporting agent picked up some good points.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0152",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_12_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.12\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I seem to get different agents working for each manuscript, which is weird!",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0153",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_12_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.12\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "The methodology validation agent contained barely any information, in contrast to the others, which included too much.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0154",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_12_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.12\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I definitely found the reporting agent to be by far the most helpful.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0155",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_24_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.24\u202fam.png",
+      "question": "Did the advice of all agents combined help you to identify key issues with this manuscript you might have otherwise overlooked?",
+      "feedback_text": "Broadly looks OK, although it's a fairly straightforward paper.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0156",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_24_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.24\u202fam.png",
+      "question": "To what extent do you agree with the evaluation of the agents?",
+      "feedback_text": "Mostly agreed, although I was surprised it said it was in scope without any issues. I think this is on the edge of scope and is debatable.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 27
+      }
+    },
+    {
+      "item_id": "fb_0157",
+      "board_id": "screen_screenshot_2026_02_12_at_10_24_24_am",
+      "source_file": "Screenshot 2026-02-12 at 10.24.24\u202fam.png",
+      "question": "Is there anything else you'd like to tell us about the output of the agents for this manuscript?",
+      "feedback_text": "I think this one was quite helpful on the whole as it's a fairly standard study design.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0158",
+      "board_id": "screen_screenshot_2026_02_12_at_10_35_56_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.35.56\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Considering that the Novelty agent and Methodology reporting didn't work for me, I found the Methodology validation the most helpful (e.g. it identified some numerical issues which I would usually not identify).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 32
+      }
+    },
+    {
+      "item_id": "fb_0159",
+      "board_id": "screen_screenshot_2026_02_12_at_10_35_56_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.35.56\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "The agents I could test (scope/integrity/ethics/methods validation) provided generally sound information. However, I also identified some errors (see below)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0160",
+      "board_id": "screen_screenshot_2026_02_12_at_10_35_56_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.35.56\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "As this seems to take the information on scope from the particular journal website, we may need to look at the information provided there. For example, the tool wrongly identified a case series as in scope for Open. We do not seem to provide a specific statement on this particular study design in our submission guidelines which the tool seems to interpret as being ok (instead of stating an uncertainty).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 70
+      }
+    },
+    {
+      "item_id": "fb_0161",
+      "board_id": "screen_screenshot_2026_02_12_at_10_35_56_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.35.56\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "Did not work for me unfortunately.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 6
+      }
+    },
+    {
+      "item_id": "fb_0162",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_06_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.06\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Combining was not very helpful so much as each one had particular uses",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0163",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_06_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.06\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "Sometimes they missed the nuisance of designs and some of the agents produced a high volume.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 16
+      }
+    },
+    {
+      "item_id": "fb_0164",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_06_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.06\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "Very useful for the transfer team and for editors looking where to transfer",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0165",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_06_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.06\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "Potentially useful for selective journals and some use on sound science journals for rationale checks",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0166",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_22_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.22\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "The extend of the information felt overwhelming and not necessarily relevant. There were some issues with not identifying a vague statement about ethics approval for all participating centres and identifying a major gap of 'no trial registration number\u2019 for a cross-sectional study.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 42
+      }
+    },
+    {
+      "item_id": "fb_0167",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_22_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.22\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "This is generally informative and something that would save time compared to manual checks. The list of publications on the same topic area for each author could be interesting, but the full reference (or a link) would be helpful.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 39
+      }
+    },
+    {
+      "item_id": "fb_0168",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_22_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.22\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "Did not work for me unfortunately. I was particularly keen to see the output from this one.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0169",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_22_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.22\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "This seems to be very useful in identifying discrepancies in reporting. I was particularly impressed by the tool picking up on a % error without the denominator being specifically noted in the manuscript (i.e. it understood the context and calculated the relevant number based on it).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 46
+      }
+    },
+    {
+      "item_id": "fb_0170",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "This one was less useful as it did not pick up on the nuisance of study design and relied to heavily on laws as opposed to our policies",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 28
+      }
+    },
+    {
+      "item_id": "fb_0171",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "Useful for specific pub ethics advanced searches",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 7
+      }
+    },
+    {
+      "item_id": "fb_0172",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "Provided far to much text which didn't always grasp the study design. My overriding thought was why would I read this rather than the paper",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0173",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "This was very useful as the stats/maths work it did I would probably not do",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0174",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_46_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.46\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "O Move the summary of findings to the top. I O like the detail but that oO is secondary.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0175",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_46_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.46\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "If you could improve one aspect of how the Al agents generate their advice, what would it be? (e.g., level of detail, tone, structure, etc.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0176",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_46_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.46\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "If you could improve one aspect of how the Al agents generate their advice, what would it be? (e.g., level of detail, tone, structure, etc.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0177",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_46_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.46\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "Not clear on how the ethics agent works as it seems to check irrelevant sources, e.g. in case of aSR protocol which is clearly exempt from ethics approval.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 28
+      }
+    },
+    {
+      "item_id": "fb_0178",
+      "board_id": "screen_screenshot_2026_02_12_at_10_36_46_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.36.46\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "Keep the activity log - it provides interesting information what is done \u2018behind the scenes\u2019.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 15
+      }
+    },
+    {
+      "item_id": "fb_0179",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "However, excessive length/repetition reduced usability, Methodology Reporting errors caused knock-on misses of my core decision points (methods dates, search strategy), and agents lacked BMJ Open-specific context (e.g., repetitive database study risks, protocol requirements). Novelty and Integrity added the most unique insight for standard workflows.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 44
+      }
+    },
+    {
+      "item_id": "fb_0180",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Novelty and Integrity added the most unique insight for standard workflows.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 11
+      }
+    },
+    {
+      "item_id": "fb_0181",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Across both manuscripts, the agents surfaced valuable checks I don't routinely perform: detailed COl/publication pattern analysis (Integrity), PROSPERO digit mismatches/timelines (Ethics/Methodology Validation), competing studies overlap (Novelty), and checklist violations Methodology Reporting).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 31
+      }
+    },
+    {
+      "item_id": "fb_0182",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "Strong agreement on reject decisions for low-novelty retro cohort study and methodological/novelty concerns for protocol SRMA. Agents correctly conveyed \"survive peer review\" vs \"clear reject\" sentiment matching my assessments. Minor disagreements on disproportionate Ethics depth and Scoping superficiality. Need journal-calibrated language and validation against BMJ Open first-decision criteria.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 48
+      }
+    },
+    {
+      "item_id": "fb_0183",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "Minor disagreements on disproportionate Ethics depth and Scoping superficiality. Need journal-calibrated language and validation against BMJ Open first-decision criteria.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0184",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "Protocol SRMA (slightly helpful): Adequate design/topic overview but overly long.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 10
+      }
+    },
+    {
+      "item_id": "fb_0185",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_34_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.34\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "Retro cohort study (not helpful): Superficial; misses RQ utility scrutiny and field concerns about repetitive database studies (primary reject criterion). Replace with direct novelty check for these manuscript types.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0186",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.43\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "Requires substantially more in-text citations. I much prefer Perplexity Al's approach of sentence-end citations with a separate references tab showing paper titles and journals. This is invaluable for rapid novelty checks, even without clicking through. LLM-generated text without citations is untrustworthy, just as unsubstantiated claims in manuscripts require verification. While field experts (peer reviewers) can often accept sources at face value, editors frequently handle unfamiliar topics and must validate claims.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 70
+      }
+    },
+    {
+      "item_id": "fb_0187",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.43\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "The output is repetitive and dense, creating unnecessary reading despite bullet points. The \"novelty level\" and \"key competing works\" sections significantly overlap. A tabular format would be far superior for assessing the manuscript's position in the field: columns for citation, TL,DR summary, differences from the submitted work, and \"is it cited?\". This enables editors to quickly gauge introductory citations and confirm whether authors have acknowledged similar studies. This is my primary novelty checkpoint.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 73
+      }
+    },
+    {
+      "item_id": "fb_0188",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.43\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "Strengths and limitations should combine current study details with concise novelty bullets (stratified by topic, methods, analysis, discussion). Remove the summary section entirely and streamline others. Action points at the end remain valuable. Specific, copy-paste-ready revisions phrased in BMJ Open editorial style would maximise utility, for example, \"Please expand your discussion of the literature and clarify how your study's focus on XXXX represents an advance on existing research.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 68
+      }
+    },
+    {
+      "item_id": "fb_0189",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.43\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "Protocol SRMA (slightly helpful): Useful PROSPERO/COI extraction but disproportionate; needs tables, less repetition.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0190",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.43\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "Retro cohort study (not helpful): Excessive for secondary analysis; shorten non-relevant sections (Declaration of Helsinki), fix checklist table formatting.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0191",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.43\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "Both manuscripts (very/moderately helpful): Time-saving PubPeer/ORCID/publication pattern analysis with red flag summaries. Retain emojis; add papermill detection transparency.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 18
+      }
+    },
+    {
+      "item_id": "fb_0192",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "Protocol SRMA (error/N/A). Retro cohort study (very useful): Concise STROBE bullets perfect for action; needs quotes, field-specific rationale, less repetition.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 20
+      }
+    },
+    {
+      "item_id": "fb_0193",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "Retro cohort study (very useful): Concise STROBE bullets perfect for action; needs quotes, field-specific rationale, less repetition.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0194",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "Protocol SRMA (very helpful): PROSPERO mismatches valuable but thin for BMJ Open methodology priority; formatting issues.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 16
+      }
+    },
+    {
+      "item_id": "fb_0195",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "Retro cohort study (error/N/A).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0196",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "lf you could improve one aspect of how the Al agents generate their advice, what would it be? (e.g., level of detail, tone, structure, etc.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0197",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "Condense by 70%: Eliminate repetition within/across agents, use tables (COI overlap, competing works), sentence-end citations with reference tab, and journal-specific first-decision phrasing. Prioritise skim-readable format (emojis, bullets, italicised quotes) matching editorial workflow over exhaustive detail better suited for training.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 39
+      }
+    },
+    {
+      "item_id": "fb_0198",
+      "board_id": "screen_screenshot_2026_02_12_at_10_37_53_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.37.53\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "Prioritise skim-readable format (emojis, bullets, italicised quotes) matching editorial workflow over exhaustive detail better suited for training.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0199",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Of course, no single person can, by a long shot, identify all the issues picked up by the tool.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0200",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "100%",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 1
+      }
+    },
+    {
+      "item_id": "fb_0201",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "N/a",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 1
+      }
+    },
+    {
+      "item_id": "fb_0202",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "Excellent",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 1
+      }
+    },
+    {
+      "item_id": "fb_0203",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "The output is too long, makes it discouraging to use.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 10
+      }
+    },
+    {
+      "item_id": "fb_0204",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "I find it the least helpful but I guess it will be particularly useful in papers from certain paets of the world.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 22
+      }
+    },
+    {
+      "item_id": "fb_0205",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_41_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.41\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "Very impressive",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 2
+      }
+    },
+    {
+      "item_id": "fb_0206",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_50_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.50\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "Was not entirely convincing",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0207",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_50_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.50\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "If you could improve one aspect of how the Al agents generate their advice, what would it be? (e.g., level of detail, tone, structure, etc.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0208",
+      "board_id": "screen_screenshot_2026_02_12_at_10_39_50_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.39.50\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "The level of detail is excessive, I'd rather receive a 5 page summary with action points, with links to access content with further detail.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 24
+      }
+    },
+    {
+      "item_id": "fb_0209",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_14_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.14\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Yes. We tested the tool for paper published in our journal (BMJ Health & Care Informatics) using the Claude Haiku 4.5 model. During testing, the scoping agent was not available; however, the combined feedback from the remaining agents was still helpful in identifying potential issues that may not have been immediately apparent during initial editorial review.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 56
+      }
+    },
+    {
+      "item_id": "fb_0210",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_14_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.14\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "In particular, the ethics-related agent provided a notably in-depth assessment, offering a valuable secondary perspective to complement editor evaluation.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0211",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_14_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.14\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "The feedback provided by the agents was useful in highlighting areas for further consideration.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 14
+      }
+    },
+    {
+      "item_id": "fb_0212",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_14_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.14\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "Nevertheless, all outputs require human verification due to the limitations of LLMs. The scoping agent was not available during testing, and the evaluation is based ona single manuscript.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 28
+      }
+    },
+    {
+      "item_id": "fb_0213",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_14_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.14\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "The scoping agent was not available during testing, and the evaluation is based on a single manuscript.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0214",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_31_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.31\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "The Ethics Agent is comprehensive and provides a useful second opinion on ethical considerations. Further testing would be helpful to assess how it can best support editors in practice.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0215",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_31_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.31\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "Provides a second opinion",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0216",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_31_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.31\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "Provides a second opinion",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0217",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_31_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.31\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "Provides a second opinion",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 4
+      }
+    },
+    {
+      "item_id": "fb_0218",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "Yes, I think in all cases, there was something that the agents spotted that would have taken a lot of time (and thought) to figure out.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 26
+      }
+    },
+    {
+      "item_id": "fb_0219",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "In some cases the novelty agent really heightened interest in the paper or completely made it seem only incremental.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0220",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "The ethics agent spotted some major issues.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 7
+      }
+    },
+    {
+      "item_id": "fb_0221",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "Overall given the information provided as explanation (as other than EMJ was not familiar with the papers) I would agree with the agents.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 23
+      }
+    },
+    {
+      "item_id": "fb_0222",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "I think the scoping is not always on target,",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 9
+      }
+    },
+    {
+      "item_id": "fb_0223",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "and the methodology reporting can be overly picky.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 8
+      }
+    },
+    {
+      "item_id": "fb_0224",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "Only somewhat helpful. Not sure it can get the nuances of why some articles that seem similar to prior ones (either accepted or rejected) are not the same.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 28
+      }
+    },
+    {
+      "item_id": "fb_0225",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "A few of the articles were missing scoping or had the wrong journal.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 13
+      }
+    },
+    {
+      "item_id": "fb_0226",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "I think it should consider whether similar articles have appeared in other emergency journals as this might influence the decision (rather than rely solely on prior decisions which might have been wrong.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 32
+      }
+    },
+    {
+      "item_id": "fb_0227",
+      "board_id": "screen_screenshot_2026_02_12_at_10_40_51_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.40.51\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "Excellent, if repetitive.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": true,
+        "word_count": 3
+      }
+    },
+    {
+      "item_id": "fb_0228",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "Quite long for what we want to know. Uses several sources which mostly results in repetition and when there are differences, a. bit hard to spot in the current layout.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 30
+      }
+    },
+    {
+      "item_id": "fb_0229",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "It might be helpful if the agent can consider what it wrote for one set of standards and underline where another gold standard source has issues with the ethics.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0230",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "Excellent. Again, could be shorter.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 5
+      }
+    },
+    {
+      "item_id": "fb_0231",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Aqent?",
+      "feedback_text": "Very thorough. Tended to get into actual aspects of content, (e.g. stating that the Table 1 didn't have many aspects of patient characteristics).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 23
+      }
+    },
+    {
+      "item_id": "fb_0232",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "In several of these it was very brief, which made we wonder what its being told to evaluate.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 18
+      }
+    },
+    {
+      "item_id": "fb_0233",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "I would think it should comment on bias, limitations, etc - which is now done by the Methodology reporting agent.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 20
+      }
+    },
+    {
+      "item_id": "fb_0234",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_30_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.30\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "It might be useful if the output were in more of a tabular or bullet form with the topic of what it evaluated and what it found -= similar to the novelty agent.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 33
+      }
+    },
+    {
+      "item_id": "fb_0235",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.43\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "If you could improve one aspect of how the Al agents generate their advice, what would it be? (e.g., level of detail, tone, structure, etc.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0236",
+      "board_id": "screen_screenshot_2026_02_12_at_10_44_43_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.44.43\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "The agents need to talk to each other to provide a summary at the beginning - list the recommendations for each section, then summarize in text with one or two sentences for each agent what it found. The agents need to \"talk to each other\" to avoid repetition in this section.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 51
+      }
+    },
+    {
+      "item_id": "fb_0237",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_15_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.15\u202fam general feedback.png",
+      "question": "Did the advice of all six agents combined help you to identify key issues you might have otherwise overlooked? Please elaborate.",
+      "feedback_text": "No, I don't think so. Key issues are generally apparent on a quick read. It was better at finding more minor issues rather than big ones.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 26
+      }
+    },
+    {
+      "item_id": "fb_0238",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_15_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.15\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "It was OK. It was better at standard research designs, and less good for atypical study designs (often, counter-intuitively, more positive)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 21
+      }
+    },
+    {
+      "item_id": "fb_0239",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_15_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.15\u202fam general feedback.png",
+      "question": "To what extent do you agree with the evaluation of the agents? Please elaborate.",
+      "feedback_text": "It did often make mistakes, and was particularly bad if the context was relavent to the item.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 17
+      }
+    },
+    {
+      "item_id": "fb_0240",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_15_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.15\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "It should just be yes/no rather than a few sentances (it gets annoying when you look at a lot of them).",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 21
+      }
+    },
+    {
+      "item_id": "fb_0241",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_15_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.15\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Scoping Agent?",
+      "feedback_text": "That said, it seemed to be overly favourable and indicated everything was in scope. There were a few borderlines one that it simply sent through without comment.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 27
+      }
+    },
+    {
+      "item_id": "fb_0242",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_15_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.15\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Novelty Agent?",
+      "feedback_text": "OK. Not something we really look at in BMJ Open, so I didn't dig too deep, but again, it seemed a bit more positive than I would have expected.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 29
+      }
+    },
+    {
+      "item_id": "fb_0243",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_29_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.29\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Ethics Agent?",
+      "feedback_text": "It seemed that this one is quite flawed due to the nuance of ethical issues. For exceptions, it didn't look into whether they were valid but instead just agreed with what authors said (who of course think all exceptions are valid). This seems particularly problematic as rarely (i.e., never) do authors say that what they have done is unethical!",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 59
+      }
+    },
+    {
+      "item_id": "fb_0244",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_29_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.29\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "It might be useful, but I didn't have the time to check whether what it was reporting was accurate.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 19
+      }
+    },
+    {
+      "item_id": "fb_0245",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_29_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.29\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Integrity Agent?",
+      "feedback_text": "I do also have questions of whether a lot of these points are relevant as they are separate from the content of the paper. It presents a lot of complex, biased information, which could be problematic.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 36
+      }
+    },
+    {
+      "item_id": "fb_0246",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_29_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.29\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Reporting Agent?",
+      "feedback_text": "This was by far the most useful one. However it was only really helpful for standard study designs where there is a checklist. For study designs without a checklist, it wasn't very reliable (again, counter-intuitively, it seemed more positive)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 39
+      }
+    },
+    {
+      "item_id": "fb_0247",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_29_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.29\u202fam general feedback.png",
+      "question": "What general feedback do you have about the Methodology Validation Agent?",
+      "feedback_text": "It was helpful, but not very sensitive to context and how critical the critical flaws really are. But for discovering some broad issues, it was helpful, but a human would really need to help interpret the accuracy.",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 37
+      }
+    },
+    {
+      "item_id": "fb_0248",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_40_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.40\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "If you could improve one aspect of how the Al agents generate their advice, what would it be? (e.g., level of detail, tone, structure, etc.)",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 25
+      }
+    },
+    {
+      "item_id": "fb_0249",
+      "board_id": "screen_screenshot_2026_02_12_at_10_45_40_am_general_feedback",
+      "source_file": "Screenshot 2026-02-12 at 10.45.40\u202fam general feedback.png",
+      "question": null,
+      "feedback_text": "Shorter, for the scope particularly, but also the ethics and integrity. E.g., the ethics statements are often 2-3 sentences, but this seems to infer hundreds of words from these statements!",
+      "sentiment_label": null,
+      "feedback_type_label": null,
+      "auto_flags": {
+        "heading_like": false,
+        "word_count": 30
+      }
+    }
+  ]
+}
