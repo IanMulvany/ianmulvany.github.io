@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Labelling Analysis</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <div class="logo">
+      <h2>Feedback Analysis</h2>
+      <span class="subtitle">AWS AI Prototype</span>
+    </div>
+    <ul>
+      <li><a href="#" class="nav-link active" data-view="dashboard">Dashboard</a></li>
+      <li><a href="#" class="nav-link" data-view="agents">Agent Ranking</a></li>
+      <li><a href="#" class="nav-link" data-view="negative">Negative Analysis</a></li>
+      <li><a href="#" class="nav-link" data-view="backlog">Product Backlog</a></li>
+      <li><a href="#" class="nav-link" data-view="positive">Positive Feedback</a></li>
+      <li><a href="#" class="nav-link" data-view="bugs">Bug Reports</a></li>
+      <li><a href="#" class="nav-link" data-view="prompts">Prompt Improvements</a></li>
+    </ul>
+  </nav>
+
+  <main id="content">
+    <!-- Dashboard -->
+    <section id="view-dashboard" class="view active">
+      <h1>Dashboard</h1>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-total">--</div>
+          <div class="stat-label">Total Feedback Items</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-agreement">--</div>
+          <div class="stat-label">Inter-Annotator Agreement</div>
+        </div>
+        <div class="stat-card accent-green">
+          <div class="stat-number" id="stat-positive">--</div>
+          <div class="stat-label">Positive (Consensus)</div>
+        </div>
+        <div class="stat-card accent-red">
+          <div class="stat-number" id="stat-negative">--</div>
+          <div class="stat-label">Negative (Consensus)</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Consensus Sentiment Distribution</h3>
+          <div class="chart-container"><canvas id="chart-consensus"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>IM vs NN Sentiment Comparison</h3>
+          <div class="chart-container"><canvas id="chart-annotator-compare"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Disagreement Patterns (IM &rarr; NN)</h3>
+          <div class="chart-container"><canvas id="chart-disagreements"></canvas></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>Annotator Bias Summary</h3>
+        <p><strong>IM</strong> tends to label more items as <span class="tag neutral">neutral</span> and <span class="tag positive">positive</span>.</p>
+        <p><strong>NN</strong> tends to label significantly more items as <span class="tag negative">negative</span> (46% vs 17%).</p>
+        <p>The consensus approach uses the <strong>more critical label</strong> when annotators disagree, ensuring product decisions are conservative and don't overlook genuine issues.</p>
+      </div>
+    </section>
+
+    <!-- Agent Ranking -->
+    <section id="view-agents" class="view">
+      <h1>Agent Effectiveness Ranking</h1>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Average Helpfulness Score (1&ndash;4 scale)</h3>
+          <div class="chart-container tall"><canvas id="chart-agent-rank"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Rating Distribution per Agent</h3>
+          <div class="chart-container tall"><canvas id="chart-rating-dist"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Consensus Sentiment per Agent</h3>
+          <div class="chart-container tall"><canvas id="chart-agent-sentiment"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Negative Analysis -->
+    <section id="view-negative" class="view">
+      <h1>Negative Feedback Analysis</h1>
+      <div class="stats-row">
+        <div class="stat-card accent-red">
+          <div class="stat-number" id="stat-neg-total">--</div>
+          <div class="stat-label">Total Negative Items</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-research-flaw">--</div>
+          <div class="stat-label">Research Flaws</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-prompt-ctx">--</div>
+          <div class="stat-label">Prompt/Context Issues</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-eng-change">--</div>
+          <div class="stat-label">Engineering Changes</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Negative Feedback Categories</h3>
+          <div class="chart-container"><canvas id="chart-neg-cats"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Negative Sentiment by Agent</h3>
+          <div class="chart-container"><canvas id="chart-neg-agents"></canvas></div>
+        </div>
+      </div>
+      <div id="neg-feedback-samples" class="feedback-list"></div>
+    </section>
+
+    <!-- Product Backlog -->
+    <section id="view-backlog" class="view">
+      <h1>Product Backlog</h1>
+      <p class="view-desc">Engineering changes extracted from negative and neutral feedback, prioritised by frequency.</p>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Engineering Sub-categories</h3>
+          <div class="chart-container"><canvas id="chart-backlog"></canvas></div>
+        </div>
+      </div>
+      <div id="backlog-cards" class="backlog-grid"></div>
+    </section>
+
+    <!-- Positive Feedback -->
+    <section id="view-positive" class="view">
+      <h1>Positive Feedback Analysis</h1>
+      <div class="stats-row">
+        <div class="stat-card accent-green">
+          <div class="stat-number" id="stat-pos-total">--</div>
+          <div class="stat-label">Total Positive Items</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Positive Feedback Themes</h3>
+          <div class="chart-container"><canvas id="chart-pos-themes"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Positive Feedback by Agent</h3>
+          <div class="chart-container"><canvas id="chart-pos-agents"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bug Reports -->
+    <section id="view-bugs" class="view">
+      <h1>Bug Report Analysis</h1>
+      <div class="stats-row">
+        <div class="stat-card accent-orange">
+          <div class="stat-number" id="stat-bug-total">--</div>
+          <div class="stat-label">Total Bug Reports</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Bugs by Agent</h3>
+          <div class="chart-container"><canvas id="chart-bugs"></canvas></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prompt Improvements -->
+    <section id="view-prompts" class="view">
+      <h1>Suggested Prompt Improvements</h1>
+      <p class="view-desc">Actionable prompt and context improvements for each agent, derived from negative and neutral feedback analysis. Agents are ordered from most to least in need of improvement.</p>
+      <div id="prompt-cards"></div>
+    </section>
+  </main>
+
+  <script src="prompt_suggestions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

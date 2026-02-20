@@ -1,0 +1,161 @@
+{
+  "inter_annotator": {
+    "total_items": 329,
+    "agreement_count": 187,
+    "agreement_pct": 56.8,
+    "im_distribution": {
+      "positive": 118,
+      "negative": 56,
+      "neutral": 132,
+      "bug": 23
+    },
+    "nn_distribution": {
+      "neutral": 64,
+      "positive": 94,
+      "negative": 151,
+      "bug": 20
+    },
+    "disagreements": {
+      "positive->neutral": 25,
+      "neutral->positive": 14,
+      "neutral->negative": 79,
+      "negative->neutral": 1,
+      "negative->positive": 1,
+      "neutral->bug": 2,
+      "bug->negative": 5,
+      "positive->bug": 1,
+      "positive->negative": 13,
+      "bug->neutral": 1
+    }
+  },
+  "consensus_distribution": {
+    "neutral": 76,
+    "positive": 79,
+    "negative": 148,
+    "bug": 26
+  },
+  "agent_helpfulness_ranking": [
+    {
+      "agent": "methodology_reporting",
+      "avg_score": 3.55,
+      "rated_count": 190
+    },
+    {
+      "agent": "methodology_validation",
+      "avg_score": 3.5,
+      "rated_count": 252
+    },
+    {
+      "agent": "novelty",
+      "avg_score": 3.18,
+      "rated_count": 122
+    },
+    {
+      "agent": "integrity",
+      "avg_score": 2.94,
+      "rated_count": 281
+    },
+    {
+      "agent": "scope",
+      "avg_score": 1.99,
+      "rated_count": 267
+    },
+    {
+      "agent": "ethics",
+      "avg_score": 1.88,
+      "rated_count": 317
+    }
+  ],
+  "agent_sentiment": {
+    "novelty": {
+      "neutral": 10,
+      "bug": 3,
+      "positive": 16,
+      "negative": 6
+    },
+    "scope": {
+      "positive": 6,
+      "negative": 12,
+      "neutral": 5,
+      "bug": 3
+    },
+    "ethics": {
+      "positive": 6,
+      "negative": 29,
+      "neutral": 8,
+      "bug": 2
+    },
+    "methodology_reporting": {
+      "neutral": 12,
+      "bug": 6,
+      "positive": 16,
+      "negative": 22
+    },
+    "methodology_validation": {
+      "neutral": 13,
+      "positive": 12,
+      "negative": 9,
+      "bug": 7
+    },
+    "integrity": {
+      "positive": 13,
+      "negative": 7,
+      "neutral": 3,
+      "bug": 1
+    }
+  },
+  "negative_analysis": {
+    "total": 148,
+    "categories": {
+      "other": 62,
+      "research_flaw": 19,
+      "prompt_context_improvement": 31,
+      "engineering_change": 63
+    },
+    "research_flaw_count": 19,
+    "prompt_context_count": 31
+  },
+  "engineering_backlog": {
+    "total": 83,
+    "subcategories": {
+      "summary_key_points": 14,
+      "depth_detail": 15,
+      "format_length": 37,
+      "integration_workflow": 36,
+      "references_citations": 9,
+      "duplication_redundancy": 21
+    },
+    "priority_order": [
+      "format_length",
+      "integration_workflow",
+      "duplication_redundancy",
+      "depth_detail",
+      "summary_key_points",
+      "references_citations"
+    ]
+  },
+  "positive_analysis": {
+    "total": 79,
+    "themes": {
+      "other_positive": 19,
+      "educational": 4,
+      "useful_insights": 34,
+      "time_saving": 14,
+      "agrees_with_reviewer": 20,
+      "effective_identification": 17,
+      "thorough_analysis": 6
+    }
+  },
+  "bug_analysis": {
+    "total": 26,
+    "by_agent": {
+      "novelty": 3,
+      "methodology_reporting": 6,
+      "scope": 3,
+      "methodology_validation": 7,
+      "(general)": 12,
+      "ethics": 2,
+      "integrity": 1
+    }
+  }
+}
