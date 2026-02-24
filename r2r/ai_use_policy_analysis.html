@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Use-Case Permission Map</title>
+    <style>
+      :root {
+        --bg-sand: #f4efe5;
+        --bg-mint: #dceee7;
+        --ink: #1f2623;
+        --ink-soft: #41524a;
+        --card: #fffdfa;
+        --line: #c7d4cd;
+        --tnf: #125f4b;
+        --wiley: #9b4c1f;
+        --stm: #205784;
+
+        --ok-bg: #e2f5ea;
+        --ok-ink: #1c6a46;
+        --cond-bg: #fff0dd;
+        --cond-ink: #9a551a;
+        --decision-bg: #e9eef2;
+        --decision-ink: #385168;
+        --scope-bg: #f1f3f5;
+        --scope-ink: #4f5c65;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        color: var(--ink);
+        font-family: "Source Sans 3", "Trebuchet MS", sans-serif;
+        background:
+          radial-gradient(circle at 12% 14%, #ffe3bf 0, transparent 26%),
+          radial-gradient(circle at 86% 78%, #b8ddf7 0, transparent 31%),
+          linear-gradient(140deg, var(--bg-sand), var(--bg-mint));
+      }
+
+      .page {
+        width: min(1140px, 94vw);
+        margin: 2.3rem auto;
+        background: color-mix(in srgb, var(--card) 94%, white 6%);
+        border: 1px solid #e5ebe7;
+        border-radius: 24px;
+        box-shadow: 0 16px 40px rgba(24, 38, 30, 0.12);
+        overflow: hidden;
+      }
+
+      .hero {
+        padding: 2rem clamp(1rem, 2.6vw, 2.2rem) 1.35rem;
+        border-bottom: 1px solid var(--line);
+        background:
+          linear-gradient(92deg, rgba(18, 95, 75, 0.08), rgba(155, 76, 31, 0.07)),
+          linear-gradient(180deg, #fffefc, #fbf9f4);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Spectral", "Palatino Linotype", serif;
+      }
+
+      h1 {
+        font-size: clamp(1.4rem, 3.2vw, 2rem);
+        line-height: 1.15;
+      }
+
+      .lede {
+        margin-top: 0.65rem;
+        max-width: 70ch;
+        color: var(--ink-soft);
+        line-height: 1.42;
+      }
+
+      .meta {
+        margin-top: 0.75rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+      }
+
+      .meta span {
+        border: 1px solid #cedad3;
+        border-radius: 999px;
+        padding: 0.23rem 0.58rem;
+        background: #f7fbf9;
+        font-size: 0.82rem;
+      }
+
+      .body {
+        padding: 1.2rem clamp(1rem, 2.6vw, 2.2rem) 2rem;
+      }
+
+      .framework-cards {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.7rem;
+        margin-bottom: 1rem;
+      }
+
+      .f-card {
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 0.72rem 0.78rem;
+        background: #ffffff;
+      }
+
+      .f-head {
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .dot {
+        width: 0.62rem;
+        height: 0.62rem;
+        border-radius: 50%;
+      }
+
+      .dot.tnf {
+        background: var(--tnf);
+      }
+
+      .dot.wiley {
+        background: var(--wiley);
+      }
+
+      .dot.stm {
+        background: var(--stm);
+      }
+
+      .f-stats {
+        margin-top: 0.4rem;
+        color: var(--ink-soft);
+        font-size: 0.88rem;
+      }
+
+      .legend {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .pill {
+        border-radius: 999px;
+        padding: 0.22rem 0.52rem;
+        font-size: 0.78rem;
+        font-weight: 700;
+      }
+
+      .status-ok {
+        background: var(--ok-bg);
+        color: var(--ok-ink);
+      }
+
+      .status-conditional {
+        background: var(--cond-bg);
+        color: var(--cond-ink);
+      }
+
+      .status-decision {
+        background: var(--decision-bg);
+        color: var(--decision-ink);
+      }
+
+      .status-scope {
+        background: var(--scope-bg);
+        color: var(--scope-ink);
+      }
+
+      .matrix-wrap {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        overflow: hidden;
+        background: #fff;
+      }
+
+      .table-scroll {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 860px;
+      }
+
+      th,
+      td {
+        text-align: left;
+        vertical-align: top;
+        padding: 0.68rem 0.66rem;
+        border-bottom: 1px solid #e8eeeb;
+      }
+
+      thead th {
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: #496055;
+        background: #f6fbf9;
+      }
+
+      tbody tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .usecase {
+        width: 26%;
+        font-weight: 700;
+      }
+
+      .cell {
+        width: 24.6%;
+      }
+
+      .cell .note {
+        margin-top: 0.35rem;
+        font-size: 0.84rem;
+        color: #50615a;
+        line-height: 1.33;
+      }
+
+      .details-grid {
+        margin-top: 1rem;
+        display: grid;
+        gap: 0.66rem;
+      }
+
+      details {
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: #fff;
+        padding: 0.55rem 0.66rem;
+      }
+
+      summary {
+        cursor: pointer;
+        font-weight: 700;
+      }
+
+      .detail-body {
+        margin-top: 0.5rem;
+        color: var(--ink-soft);
+        line-height: 1.36;
+        font-size: 0.9rem;
+      }
+
+      .detail-body ul {
+        margin: 0.35rem 0 0;
+        padding-left: 1.12rem;
+      }
+
+      .sources {
+        margin-top: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fafdfc;
+        padding: 0.72rem 0.8rem;
+        font-size: 0.88rem;
+        color: #44574d;
+      }
+
+      .sources code {
+        font-size: 0.83rem;
+      }
+
+      .animated {
+        opacity: 0;
+        transform: translateY(10px);
+        animation: rise 0.55s ease forwards;
+      }
+
+      @keyframes rise {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 860px) {
+        .framework-cards {
+          grid-template-columns: 1fr;
+        }
+
+        .page {
+          margin: 1rem auto;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero animated" style="animation-delay: 0.02s">
+        <h1>Where Your AI Use Cases Are Permitted</h1>
+        <p class="lede">
+          Clear comparison of your six use cases against Taylor &amp; Francis (T&amp;F), Wiley,
+          and STM (Sept 2025 classification guidance).
+        </p>
+        <div class="meta">
+          <span>Scope: manuscript prep + adjacent ideation</span>
+          <span>View: policy-usable summary</span>
+          <span>Built from local source files</span>
+        </div>
+      </header>
+
+      <section class="body">
+        <div id="frameworkCards" class="framework-cards"></div>
+
+        <div class="legend animated" style="animation-delay: 0.08s">
+          <span class="pill status-ok">Permitted</span>
+          <span class="pill status-conditional">Permitted with conditions</span>
+          <span class="pill status-decision">Publisher or journal decision</span>
+          <span class="pill status-scope">Out of scope</span>
+        </div>
+
+        <section class="matrix-wrap animated" style="animation-delay: 0.12s">
+          <div class="table-scroll">
+            <table aria-label="AI use-case permission matrix">
+              <thead>
+                <tr>
+                  <th>Use Case</th>
+                  <th>T&amp;F</th>
+                  <th>Wiley</th>
+                  <th>STM</th>
+                </tr>
+              </thead>
+              <tbody id="matrixBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="detailsGrid" class="details-grid animated" style="animation-delay: 0.18s"></section>
+
+        <section class="sources animated" style="animation-delay: 0.24s">
+          <strong>Source map used:</strong>
+          <div>
+            <code>t_n_f_policy.txt</code>: explicit support for idea generation, language improvement,
+            LLM-enhanced search, literature classification, plus disclosure requirements.
+          </div>
+          <div>
+            <code>wiley_text.txt</code>: "Literature review with AI" support, disclosure placement,
+            intellectual leadership, verification expectations, and peer-review confidentiality boundaries.
+          </div>
+          <div>
+            <code>stm_ai.txt</code>: classification framework (not direct permission policy), explicit
+            publisher-decision model, Activity 8 (references), Activity 3 (translation), and out-of-scope
+            note for broader research-process uses.
+          </div>
+          <div>
+            <code>AI_idea_generatino_iuses.txt</code>: your six use cases.
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const statusMeta = {
+        ok: { label: "Permitted", className: "status-ok" },
+        conditional: { label: "Permitted with conditions", className: "status-conditional" },
+        decision: { label: "Publisher or journal decision", className: "status-decision" },
+        scope: { label: "Out of scope", className: "status-scope" }
+      };
+
+      const rows = [
+        {
+          useCase: "Literature review",
+          details: [
+            "Use AI to discover papers, cluster themes, and draft candidate summaries.",
+            "Always validate citations and claims against primary sources.",
+            "Disclose when AI materially shapes review methods or manuscript text."
+          ],
+          tnf: {
+            status: "conditional",
+            note: "Supports literature classification and LLM-enhanced search, with author accountability and disclosure."
+          },
+          wiley: {
+            status: "conditional",
+            note: "Explicitly supports literature review with AI, but requires verification and methods disclosure."
+          },
+          stm: {
+            status: "decision",
+            note: "Closest class is Activity 8 (assisting with references); publishers decide what is allowed and declared."
+          }
+        },
+        {
+          useCase: "Trend analysis",
+          details: [
+            "AI can surface temporal patterns in literature or discourse.",
+            "Treat model output as candidate insight, not evidence.",
+            "Document prompts/tools if findings feed the manuscript narrative."
+          ],
+          tnf: {
+            status: "conditional",
+            note: "Fits idea exploration and literature classification pathways, with strong human verification expected."
+          },
+          wiley: {
+            status: "conditional",
+            note: "Aligned with literature and drafting guidance if claims are verified and analysis remains author-led."
+          },
+          stm: {
+            status: "scope",
+            note: "Often sits in research-process analysis, which STM states is outside this manuscript-prep scope."
+          }
+        },
+        {
+          useCase: "Expanding search terms via vector search",
+          details: [
+            "Use embedding or semantic search to broaden query vocabulary.",
+            "Re-check candidate papers in trusted indexes and publisher pages.",
+            "Keep a short retrieval log for reproducibility and disclosure."
+          ],
+          tnf: {
+            status: "ok",
+            note: "Explicitly listed: interactive online search with LLM-enhanced search engines."
+          },
+          wiley: {
+            status: "conditional",
+            note: "Supports semantic literature workflows, but warns against fabricated references and requires checking."
+          },
+          stm: {
+            status: "scope",
+            note: "If used to support broader research exploration, STM marks this as outside scope; manuscript references map to Activity 8."
+          }
+        },
+        {
+          useCase: "AI as \"reviewer 3\" to stress-test thinking",
+          details: [
+            "Good for finding logical gaps and weak transitions.",
+            "Do not outsource core reasoning or final claims.",
+            "Disclose if AI materially restructures argument or drafted text."
+          ],
+          tnf: {
+            status: "conditional",
+            note: "Consistent with idea exploration, but cannot replace core researcher responsibilities."
+          },
+          wiley: {
+            status: "conditional",
+            note: "Supported as drafting/thinking aid if you retain intellectual leadership and disclose substantive AI drafting help."
+          },
+          stm: {
+            status: "decision",
+            note: "Not a direct STM category unless it becomes drafting/rewriting (Activity 2), which publishers then govern."
+          }
+        },
+        {
+          useCase: "Hypothesis generation and iteration",
+          details: [
+            "Useful for branching question space and testable variants.",
+            "Run independent validation before promoting hypotheses to claims.",
+            "Treat as ideation aid, not evidence of truth."
+          ],
+          tnf: {
+            status: "ok",
+            note: "Explicitly compatible with idea generation and exploration."
+          },
+          wiley: {
+            status: "decision",
+            note: "Not directly codified as a single permitted category here; apply intellectual leadership, verification, and transparency principles."
+          },
+          stm: {
+            status: "scope",
+            note: "Hypothesis generation belongs to research process; STM says those uses are outside this classification scope."
+          }
+        },
+        {
+          useCase: "Domain translation",
+          details: [
+            "Translate between disciplinary language, or into a second publication language.",
+            "Preserve technical precision after translation passes.",
+            "Disclose translation assistance when it materially edits manuscript content."
+          ],
+          tnf: {
+            status: "ok",
+            note: "Supports language improvement and non-native language expression support."
+          },
+          wiley: {
+            status: "conditional",
+            note: "Translation support is allowed, with disclosure expectations (typically in Acknowledgments for drafting/editing/translation)."
+          },
+          stm: {
+            status: "decision",
+            note: "Directly mapped to Activity 3 (translation of manuscript text); publishers set permissibility and declaration rules."
+          }
+        }
+      ];
+
+      const frameworks = [
+        { key: "tnf", title: "Taylor & Francis", dot: "tnf" },
+        { key: "wiley", title: "Wiley", dot: "wiley" },
+        { key: "stm", title: "STM (2025)" , dot: "stm"}
+      ];
+
+      function pill(status) {
+        const meta = statusMeta[status];
+        return `<span class="pill ${meta.className}">${meta.label}</span>`;
+      }
+
+      function renderTable() {
+        const body = document.getElementById("matrixBody");
+        body.innerHTML = rows
+          .map((row) => {
+            const cells = frameworks
+              .map((f) => {
+                const entry = row[f.key];
+                return `
+                  <td class="cell">
+                    ${pill(entry.status)}
+                    <div class="note">${entry.note}</div>
+                  </td>
+                `;
+              })
+              .join("");
+
+            return `
+              <tr>
+                <td class="usecase">${row.useCase}</td>
+                ${cells}
+              </tr>
+            `;
+          })
+          .join("");
+      }
+
+      function renderFrameworkCards() {
+        const cardWrap = document.getElementById("frameworkCards");
+        cardWrap.innerHTML = frameworks
+          .map((fw, idx) => {
+            const counts = rows.reduce(
+              (acc, row) => {
+                const status = row[fw.key].status;
+                acc[status] += 1;
+                return acc;
+              },
+              { ok: 0, conditional: 0, decision: 0, scope: 0 }
+            );
+
+            return `
+              <article class="f-card animated" style="animation-delay: ${0.03 + idx * 0.03}s">
+                <div class="f-head">
+                  <span class="dot ${fw.dot}" aria-hidden="true"></span>
+                  ${fw.title}
+                </div>
+                <div class="f-stats">
+                  ${counts.ok} permitted · ${counts.conditional} conditional · ${counts.decision} policy-decided · ${counts.scope} out-of-scope
+                </div>
+              </article>
+            `;
+          })
+          .join("");
+      }
+
+      function renderDetails() {
+        const detailsGrid = document.getElementById("detailsGrid");
+        detailsGrid.innerHTML = rows
+          .map((row, i) => {
+            const list = row.details.map((item) => `<li>${item}</li>`).join("");
+            return `
+              <details class="animated" style="animation-delay: ${0.08 + i * 0.03}s">
+                <summary>${row.useCase}: practical guardrails</summary>
+                <div class="detail-body">
+                  <ul>${list}</ul>
+                </div>
+              </details>
+            `;
+          })
+          .join("");
+      }
+
+      renderTable();
+      renderFrameworkCards();
+      renderDetails();
+    </script>
+  </body>
+</html>
