@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reviewer #2: AI Panic Mode</title>
+    <style>
+      :root {
+        --ink: #1f1f1f;
+        --paper: #fffdf8;
+        --accent: #e7742e;
+        --accent2: #09706f;
+        --bg1: #f7efe3;
+        --bg2: #dff1ea;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(circle at 15% 15%, #ffd8bf 0, transparent 28%),
+          radial-gradient(circle at 88% 80%, #bfe5ff 0, transparent 30%),
+          linear-gradient(130deg, var(--bg1), var(--bg2));
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+      }
+
+      .app {
+        width: min(950px, 100%);
+        background: var(--paper);
+        border: 2px solid #222;
+        border-radius: 16px;
+        box-shadow: 8px 8px 0 #222;
+        overflow: hidden;
+      }
+
+      .top {
+        background: #1f1f1f;
+        color: #fff;
+        padding: 0.8rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+        font-weight: 700;
+      }
+
+      .main {
+        padding: 1rem;
+      }
+
+      .screen {
+        display: none;
+        border: 2px solid #222;
+        border-radius: 12px;
+        background: #fff;
+        padding: 1rem;
+      }
+
+      .screen.active {
+        display: block;
+      }
+
+      .hud {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .card {
+        border: 2px solid #222;
+        border-radius: 10px;
+        padding: 0.5rem 0.65rem;
+        background: #fffef6;
+      }
+
+      .k {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+
+      .v {
+        font-size: 1.15rem;
+        font-weight: 800;
+      }
+
+      .bar-wrap {
+        border: 2px solid #222;
+        border-radius: 999px;
+        overflow: hidden;
+        height: 12px;
+        margin-bottom: 1rem;
+      }
+
+      .bar {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, var(--accent), #f2ba48);
+        transition: width 200ms ease;
+      }
+
+      h1,
+      h2 {
+        margin: 0.2rem 0 0.7rem;
+      }
+
+      p {
+        line-height: 1.4;
+      }
+
+      .choices {
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      button {
+        border: 2px solid #222;
+        border-radius: 10px;
+        padding: 0.7rem 0.8rem;
+        background: #fff;
+        color: var(--ink);
+        text-align: left;
+        cursor: pointer;
+        font: inherit;
+        transition: transform 120ms ease, box-shadow 120ms ease;
+      }
+
+      button:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 #222;
+      }
+
+      .primary {
+        background: var(--accent);
+        font-weight: 700;
+      }
+
+      .feedback {
+        display: none;
+        margin-top: 0.8rem;
+        border: 2px dashed #222;
+        border-radius: 10px;
+        padding: 0.7rem;
+        background: #fff8e8;
+      }
+
+      .feedback.open {
+        display: block;
+      }
+
+      .chips span {
+        display: inline-block;
+        border: 1px solid #222;
+        border-radius: 999px;
+        padding: 0.1rem 0.45rem;
+        margin-right: 0.3rem;
+        font-size: 0.75rem;
+        background: #edf8f7;
+      }
+
+      .banner {
+        border: 2px solid #222;
+        border-radius: 10px;
+        padding: 0.55rem 0.7rem;
+        font-weight: 700;
+        margin-bottom: 0.8rem;
+      }
+
+      .good {
+        background: #e5f8ea;
+      }
+
+      .warn {
+        background: #fff1dd;
+      }
+
+      .bad {
+        background: #ffe6e6;
+      }
+
+      .summary {
+        display: grid;
+        gap: 0.6rem;
+      }
+
+      .summary div {
+        border: 2px solid #222;
+        border-radius: 10px;
+        padding: 0.55rem 0.65rem;
+        background: #fff;
+      }
+
+      .src {
+        margin-top: 0.8rem;
+        border-top: 2px solid #222;
+        padding-top: 0.7rem;
+        font-size: 0.92rem;
+      }
+
+      @media (max-width: 720px) {
+        .hud {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <div class="top">
+        <div>Reviewer #2: AI Panic Mode</div>
+        <div id="roundBadge">Round 0 / 8</div>
+      </div>
+
+      <div class="main">
+        <section id="intro" class="screen active">
+          <h1>Write. Disclose. Survive.</h1>
+          <p>
+            You have one deadline, three co-authors, and several questionable AI
+            suggestions. Choose what to do each round.
+          </p>
+          <p>
+            Scoring balances <strong>Integrity</strong>, <strong>Transparency</strong>,
+            and <strong>Time</strong>. Fast is tempting. Retraction is slower.
+          </p>
+          <button id="start" class="primary">Start game</button>
+        </section>
+
+        <section id="game" class="screen">
+          <div class="hud">
+            <div class="card">
+              <div class="k">Integrity</div>
+              <div id="integrity" class="v">70</div>
+            </div>
+            <div class="card">
+              <div class="k">Transparency</div>
+              <div id="transparency" class="v">70</div>
+            </div>
+            <div class="card">
+              <div class="k">Time Buffer</div>
+              <div id="time" class="v">70</div>
+            </div>
+          </div>
+
+          <div class="bar-wrap"><div id="bar" class="bar"></div></div>
+
+          <h2 id="title"></h2>
+          <p id="text"></p>
+          <div id="choices" class="choices"></div>
+
+          <div id="feedback" class="feedback">
+            <div id="chips" class="chips"></div>
+            <p id="why"></p>
+            <button id="next">Next dilemma</button>
+          </div>
+        </section>
+
+        <section id="result" class="screen">
+          <h2 id="endingTitle"></h2>
+          <div id="banner" class="banner"></div>
+          <p id="endingText"></p>
+          <div id="summary" class="summary"></div>
+          <button id="restart" class="primary">Play again</button>
+          <div class="src">
+            Built from local docs:
+            <code>STM_AI_Classification_Recs_19_Sept2025-1.pdf</code> and
+            <code>wiley_ai.html</code>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      const TOTAL_ROUNDS = 8;
+      const BASE = { integrity: 70, transparency: 70, time: 70 };
+
+      const scenarios = [
+        {
+          title: "Grammar Goblin",
+          text: "You used AI to polish grammar on text you wrote. Submission asks about AI use.",
+          tags: ["STM: language refinement", "Wiley: disclosure"],
+          options: [
+            {
+              label: "Disclose tool + purpose clearly.",
+              delta: { integrity: 4, transparency: 8, time: -2 },
+              why: "Good. Transparency about scope of use keeps the record clear."
+            },
+            {
+              label: "Skip disclosure because it was minor.",
+              delta: { integrity: -5, transparency: -9, time: 3 },
+              why: "Common mistake. Small uses can still need declaration."
+            },
+            {
+              label: "Delete all notes and deny use.",
+              delta: { integrity: -11, transparency: -15, time: 4 },
+              why: "If questioned, this becomes an integrity problem quickly."
+            }
+          ]
+        },
+        {
+          title: "Citation Roulette",
+          text: "AI returns 15 references. Some look excellent. You checked zero.",
+          tags: ["STM: references", "Wiley: verify citations"],
+          options: [
+            {
+              label: "Verify DOI, source, and claim match for every citation.",
+              delta: { integrity: 11, transparency: 4, time: -8 },
+              why: "Correct. Fake but plausible references are a known failure mode."
+            },
+            {
+              label: "Use now, verify only if reviewers complain.",
+              delta: { integrity: -8, transparency: -6, time: 6 },
+              why: "Risky. This pushes quality control into peer review."
+            },
+            {
+              label: "Keep made-up references because they sound academic.",
+              delta: { integrity: -16, transparency: -11, time: 7 },
+              why: "Major integrity red flag and possible rejection trigger."
+            }
+          ]
+        },
+        {
+          title: "Reviewer Confidentiality Trap",
+          text: "You are reviewing a confidential manuscript and want AI to summarize it.",
+          tags: ["Wiley: peer review confidentiality"],
+          options: [
+            {
+              label: "Do not upload manuscript content; ask general method questions only.",
+              delta: { integrity: 10, transparency: 3, time: -3 },
+              why: "Correct. Under-review manuscripts are confidential."
+            },
+            {
+              label: "Upload only the Discussion section.",
+              delta: { integrity: -10, transparency: -8, time: 4 },
+              why: "Partial upload is still confidential disclosure."
+            },
+            {
+              label: "Upload full paper and ask AI to draft your review.",
+              delta: { integrity: -18, transparency: -12, time: 8 },
+              why: "Fast, but ethically unacceptable."
+            }
+          ]
+        },
+        {
+          title: "Figure Sprint",
+          text: "You use AI for a conceptual figure and a data plot.",
+          tags: ["STM: figures", "Wiley: disclose + verify"],
+          options: [
+            {
+              label: "Disclose use and verify every visual element against real data.",
+              delta: { integrity: 8, transparency: 8, time: -4 },
+              why: "Aligned with guidance for responsible visual workflows."
+            },
+            {
+              label: "Keep it, skip disclosure, hope formatting distracts everyone.",
+              delta: { integrity: -7, transparency: -10, time: 6 },
+              why: "Looks polished, fails transparency."
+            },
+            {
+              label: "Present AI-generated synthetic chart as real experiment output.",
+              delta: { integrity: -18, transparency: -10, time: 5 },
+              why: "Prohibited behavior in STM classification."
+            }
+          ]
+        },
+        {
+          title: "Photo Enhancement Panic",
+          text: "Microscopy image is messy. AI enhancer can make it beautiful in one click.",
+          tags: ["Wiley: no AI photo enhancement"],
+          options: [
+            {
+              label: "Use standard minimal image processing only; document edits.",
+              delta: { integrity: 10, transparency: 4, time: -3 },
+              why: "Correct boundary for evidence-bearing photos."
+            },
+            {
+              label: "Enhance with AI but do not mention it.",
+              delta: { integrity: -13, transparency: -9, time: 6 },
+              why: "Can alter evidentiary details and reproducibility."
+            },
+            {
+              label: "Enhance and crop inconvenient features.",
+              delta: { integrity: -19, transparency: -12, time: 7 },
+              why: "Direct hit to research integrity."
+            }
+          ]
+        },
+        {
+          title: "Policy Pinball",
+          text: "Funder, institution, and journal each require different AI disclosures.",
+          tags: ["Wiley: policy navigation", "STM: declaration clarity"],
+          options: [
+            {
+              label: "Maintain a detailed AI-use log and tailor disclosures by venue.",
+              delta: { integrity: 7, transparency: 10, time: -5 },
+              why: "Best way to adapt across policy differences."
+            },
+            {
+              label: "Use one vague sentence everywhere.",
+              delta: { integrity: -6, transparency: -8, time: 4 },
+              why: "Often too weak for specific policy requirements."
+            },
+            {
+              label: "Disclose nothing to avoid admin overhead.",
+              delta: { integrity: -14, transparency: -15, time: 5 },
+              why: "Short-term convenience, long-term risk."
+            }
+          ]
+        },
+        {
+          title: "Co-Author Chaos",
+          text: "Each co-author used different AI tools, and nobody coordinated disclosure.",
+          tags: ["Wiley: co-author coordination", "STM: activity types"],
+          options: [
+            {
+              label: "Hold one reconciliation pass and submit one complete disclosure.",
+              delta: { integrity: 8, transparency: 9, time: -6 },
+              why: "Strong team process and lower mismatch risk."
+            },
+            {
+              label: "Let everyone mention things independently if they remember.",
+              delta: { integrity: -4, transparency: -5, time: 2 },
+              why: "Fragmented reporting causes inconsistency."
+            },
+            {
+              label: "Agree to silence for efficiency.",
+              delta: { integrity: -13, transparency: -14, time: 5 },
+              why: "Efficiency is not a defense in integrity review."
+            }
+          ]
+        },
+        {
+          title: "Literature Review Shortcut",
+          text: "AI generated a polished review section. You have not read half the cited papers.",
+          tags: ["Wiley: authentic engagement", "citation integrity"],
+          options: [
+            {
+              label: "Read, verify, and rewrite with your own critical synthesis.",
+              delta: { integrity: 9, transparency: 3, time: -8 },
+              why: "Best practice. AI assists; scholarship stays human-led."
+            },
+            {
+              label: "Use it with tiny edits and trust the model confidence.",
+              delta: { integrity: -8, transparency: -5, time: 5 },
+              why: "Confident text is not verified evidence."
+            },
+            {
+              label: "Paste verbatim and add more AI references.",
+              delta: { integrity: -15, transparency: -8, time: 7 },
+              why: "Compounds unsupported claims and fake-citation risk."
+            }
+          ]
+        },
+        {
+          title: "AI Co-Author Meme",
+          text: "Labmate jokes about listing the chatbot as first author because it drafted a lot.",
+          tags: ["Wiley: human accountability"],
+          options: [
+            {
+              label: "Decline. Human authors keep responsibility; disclose assistance.",
+              delta: { integrity: 7, transparency: 6, time: -1 },
+              why: "Correct. Accountability cannot be delegated to a tool."
+            },
+            {
+              label: "Mention tool vaguely in acknowledgments with no detail.",
+              delta: { integrity: -2, transparency: -4, time: 1 },
+              why: "Better than authorship listing, still weak disclosure."
+            },
+            {
+              label: "List AI as co-author for innovation points.",
+              delta: { integrity: -17, transparency: -9, time: 3 },
+              why: "No innovation points were awarded."
+            }
+          ]
+        },
+        {
+          title: "Code Cleanup Corner",
+          text: "AI can reformat your code snippet for readability before manuscript submission.",
+          tags: ["STM: code formatting"],
+          options: [
+            {
+              label: "Use AI for readability only; keep function unchanged and disclose if required.",
+              delta: { integrity: 7, transparency: 6, time: -3 },
+              why: "Matches STM distinction between formatting and changing research function."
+            },
+            {
+              label: "Let AI rewrite logic to produce cleaner results.",
+              delta: { integrity: -12, transparency: -7, time: 5 },
+              why: "Changing functionality risks untracked methodological drift."
+            },
+            {
+              label: "Let AI generate new analysis code and report as original workflow.",
+              delta: { integrity: -18, transparency: -11, time: 7 },
+              why: "This can misrepresent methods and provenance."
+            }
+          ]
+        }
+      ];
+
+      const el = {
+        intro: document.getElementById("intro"),
+        game: document.getElementById("game"),
+        result: document.getElementById("result"),
+        roundBadge: document.getElementById("roundBadge"),
+        bar: document.getElementById("bar"),
+        integrity: document.getElementById("integrity"),
+        transparency: document.getElementById("transparency"),
+        time: document.getElementById("time"),
+        title: document.getElementById("title"),
+        text: document.getElementById("text"),
+        choices: document.getElementById("choices"),
+        feedback: document.getElementById("feedback"),
+        chips: document.getElementById("chips"),
+        why: document.getElementById("why"),
+        endingTitle: document.getElementById("endingTitle"),
+        endingText: document.getElementById("endingText"),
+        banner: document.getElementById("banner"),
+        summary: document.getElementById("summary"),
+        start: document.getElementById("start"),
+        next: document.getElementById("next"),
+        restart: document.getElementById("restart")
+      };
+
+      let deck = [];
+      let i = 0;
+      let scores = { ...BASE };
+      let current = null;
+
+      function clamp(n) {
+        return Math.max(0, Math.min(100, n));
+      }
+
+      function shuffle(list) {
+        const copy = [...list];
+        for (let x = copy.length - 1; x > 0; x -= 1) {
+          const y = Math.floor(Math.random() * (x + 1));
+          [copy[x], copy[y]] = [copy[y], copy[x]];
+        }
+        return copy;
+      }
+
+      function show(screen) {
+        el.intro.classList.remove("active");
+        el.game.classList.remove("active");
+        el.result.classList.remove("active");
+        screen.classList.add("active");
+      }
+
+      function hud() {
+        el.integrity.textContent = scores.integrity;
+        el.transparency.textContent = scores.transparency;
+        el.time.textContent = scores.time;
+        const shownRound = Math.min(i + 1, TOTAL_ROUNDS);
+        el.roundBadge.textContent = `Round ${shownRound} / ${TOTAL_ROUNDS}`;
+        el.bar.style.width = `${(i / TOTAL_ROUNDS) * 100}%`;
+      }
+
+      function apply(delta) {
+        scores.integrity = clamp(scores.integrity + delta.integrity);
+        scores.transparency = clamp(scores.transparency + delta.transparency);
+        scores.time = clamp(scores.time + delta.time);
+      }
+
+      function renderRound() {
+        current = deck[i];
+        el.title.textContent = current.title;
+        el.text.textContent = current.text;
+        el.choices.innerHTML = "";
+        el.feedback.classList.remove("open");
+
+        current.options.forEach((opt) => {
+          const b = document.createElement("button");
+          b.textContent = opt.label;
+          b.addEventListener("click", () => choose(opt));
+          el.choices.appendChild(b);
+        });
+        hud();
+      }
+
+      function choose(opt) {
+        apply(opt.delta);
+        [...el.choices.children].forEach((b) => {
+          b.disabled = true;
+          b.style.opacity = "0.66";
+          b.style.cursor = "default";
+          b.style.transform = "none";
+          b.style.boxShadow = "none";
+        });
+
+        el.chips.innerHTML = "";
+        current.tags.forEach((tag) => {
+          const s = document.createElement("span");
+          s.textContent = tag;
+          el.chips.appendChild(s);
+        });
+        el.why.textContent = opt.why;
+        el.feedback.classList.add("open");
+        hud();
+      }
+
+      function finish() {
+        show(el.result);
+        el.roundBadge.textContent = "Final Decision";
+        el.bar.style.width = "100%";
+
+        const total = scores.integrity + scores.transparency + scores.time;
+        let tier = "warn";
+        let t = "Major Revisions";
+        let d = "You survived submission, but your AI-use reporting and checks need tightening.";
+
+        if (scores.integrity >= 80 && scores.transparency >= 80 && total >= 230) {
+          tier = "good";
+          t = "Accepted";
+          d = "You balanced speed, rigor, and disclosure. Reviewer #2 grumbles respectfully.";
+        } else if (scores.integrity < 45 || scores.transparency < 45) {
+          tier = "bad";
+          t = "Desk Rejected";
+          d = "Integrity/disclosure issues were too severe. The metadata remembers everything.";
+        }
+
+        el.endingTitle.textContent = t;
+        el.endingText.textContent = d;
+        el.banner.className = `banner ${tier}`;
+        el.banner.textContent = `Integrity ${scores.integrity} | Transparency ${scores.transparency} | Time ${scores.time}`;
+
+        el.summary.innerHTML = "";
+        [
+          "AI can support drafting/editing, but human authors remain fully accountable.",
+          "Verify citations and data visuals; plausible output is not evidence.",
+          "In peer review, do not upload confidential manuscript content to external AI tools.",
+          "Track AI usage details so disclosures can match journal/funder/institution rules."
+        ].forEach((line) => {
+          const div = document.createElement("div");
+          div.textContent = line;
+          el.summary.appendChild(div);
+        });
+      }
+
+      function nextRound() {
+        i += 1;
+        if (i >= TOTAL_ROUNDS) {
+          finish();
+          return;
+        }
+        renderRound();
+      }
+
+      function start() {
+        deck = shuffle(scenarios).slice(0, TOTAL_ROUNDS);
+        i = 0;
+        scores = { ...BASE };
+        show(el.game);
+        renderRound();
+      }
+
+      el.start.addEventListener("click", start);
+      el.next.addEventListener("click", nextRound);
+      el.restart.addEventListener("click", start);
+      hud();
+    </script>
+  </body>
+</html>
