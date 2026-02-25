@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>08 - Neon Control Room</title>
+  <style>
+    :root {
+      --bg: #070b14;
+      --cyan: #2ff3ff;
+      --lime: #9dff6f;
+      --pink: #ff6ec7;
+      --ink: #e8fbff;
+      --panel: #0f1a2e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Consolas", "Courier New", monospace;
+      background:
+        radial-gradient(circle at 15% 25%, #16355f 0 18%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #2f1454 0 20%, transparent 35%),
+        var(--bg);
+      min-height: 100vh;
+    }
+    main { width: min(1150px, 94vw); margin: 1rem auto 3rem; }
+    .top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+    h1 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.7rem); letter-spacing: 0.03em; text-shadow: 0 0 8px #2ff3ff70; }
+    a { color: var(--cyan); }
+    .grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.9rem;
+    }
+    .panel {
+      border: 1px solid #2f5f85;
+      background: linear-gradient(180deg, #0f1e33, #0b1324);
+      border-radius: 14px;
+      padding: 0.9rem;
+      box-shadow: inset 0 0 20px #193e6760, 0 0 12px #1d5f8d40;
+    }
+    h2 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--cyan); }
+    .meter { height: 12px; border: 1px solid #3a5675; border-radius: 999px; overflow: hidden; background: #08111e; }
+    .bar { height: 100%; background: linear-gradient(90deg, var(--lime), var(--cyan)); width: 0; animation: load 1.8s ease forwards; }
+    .warn { background: linear-gradient(90deg, #ffb364, var(--pink)); }
+    ul { margin: 0.2rem 0 0; padding-left: 1rem; line-height: 1.45; font-size: 0.93rem; }
+    .small { font-size: 0.9rem; color: #b7ddff; line-height: 1.4; }
+    @keyframes load { to { width: var(--w, 75%); } }
+    @media (max-width: 850px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <h1>08. Neon AI Governance Control Room</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </div>
+    <section class="grid">
+      <article class="panel">
+        <h2>Disclosure Completeness</h2>
+        <div class="meter"><div class="bar" style="--w: 96%"></div></div>
+        <ul>
+          <li>Tool and version documented</li>
+          <li>Purpose and workflow documented</li>
+          <li>Placement in required section confirmed</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Accuracy and Citation Risk</h2>
+        <div class="meter"><div class="bar warn" style="--w: 62%"></div></div>
+        <ul>
+          <li>Check for fabricated references</li>
+          <li>Re-validate quoted claims and numbers</li>
+          <li>Confirm field-specific terminology</li>
+        </ul>
+      </article>
+      <article class="panel">
+        <h2>Confidentiality Shield</h2>
+        <div class="meter"><div class="bar" style="--w: 88%"></div></div>
+        <p class="small">
+          Keep unpublished content out of public tools. Use protected environments when manuscript privacy is required.
+        </p>
+      </article>
+      <article class="panel">
+        <h2>Hard Rule</h2>
+        <p class="small">
+          AI may support drafting and editing. AI may not be listed as author. Final scientific and ethical accountability remains human.
+        </p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

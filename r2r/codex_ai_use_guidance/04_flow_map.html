@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>04 - Flow Map</title>
+  <style>
+    :root {
+      --bg: #f1f6ff;
+      --ink: #10203a;
+      --line: #18386b;
+      --node: #ffffff;
+      --yes: #1c8e4f;
+      --warn: #ca7a00;
+      --stop: #b92020;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: "Tahoma", sans-serif; background: var(--bg); color: var(--ink); }
+    main { width: min(1050px, 94vw); margin: 1.5rem auto 3rem; }
+    .top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.6rem); }
+    a { color: #0f3b9a; }
+    .flow {
+      margin-top: 1rem;
+      display: grid;
+      gap: 0.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+    .node {
+      background: var(--node);
+      border: 2px solid var(--line);
+      border-radius: 14px;
+      padding: 0.8rem;
+      min-height: 145px;
+      box-shadow: 0 4px 0 #aac5f2;
+      position: relative;
+    }
+    .node::before {
+      content: "->";
+      position: absolute;
+      right: -0.65rem;
+      top: 45%;
+      font: 700 1rem/1 "Courier New", monospace;
+      color: var(--line);
+      background: var(--bg);
+      padding: 0 0.2rem;
+    }
+    .node:last-child::before { content: ""; }
+    h2 { margin: 0 0 0.4rem; font-size: 1rem; }
+    p { margin: 0; font-size: 0.94rem; line-height: 1.35; }
+    .yes { color: var(--yes); font-weight: 700; }
+    .warn { color: var(--warn); font-weight: 700; }
+    .stop { color: var(--stop); font-weight: 700; }
+    .legend {
+      margin-top: 0.9rem;
+      padding: 0.7rem 0.8rem;
+      border-left: 4px solid var(--line);
+      background: #e7f0ff;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <h1>04. Should I Use AI Here?</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </div>
+
+    <section class="flow">
+      <article class="node"><h2>1. Define Task</h2><p>Is AI assisting language, structure, coding, or visualization? Be explicit.</p></article>
+      <article class="node"><h2>2. Check Policy</h2><p>Read the target journal/publisher rules for this task.</p></article>
+      <article class="node"><h2>3. Run Securely</h2><p>Use tools that protect confidentiality and IP. Do not expose unpublished content.</p></article>
+      <article class="node"><h2>4. Verify Output</h2><p>Review for factual errors, bias, false citations, and plagiarism.</p></article>
+      <article class="node"><h2>5. Declare Use</h2><p>Add disclosure: tool, version, reason, and how the output was reviewed.</p></article>
+      <article class="node"><h2>6. Final Human Review</h2><p><span class="yes">GO:</span> accurate, transparent, and compliant.</p><p><span class="warn">REWORK:</span> weak citations or unclear disclosure.</p><p><span class="stop">STOP:</span> policy or confidentiality breach.</p></article>
+    </section>
+    <div class="legend">Core principle: AI is assistive. Human authors remain responsible for the final manuscript.</div>
+  </main>
+</body>
+</html>

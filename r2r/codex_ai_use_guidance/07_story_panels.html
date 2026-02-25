@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>07 - Story Panels</title>
+  <style>
+    :root {
+      --bg: #f4efe4;
+      --ink: #1b1813;
+      --line: #111;
+      --a: #ffcc7e;
+      --b: #ffd9df;
+      --c: #b9f0da;
+      --d: #bfdbff;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Comic Sans MS", "Trebuchet MS", sans-serif; }
+    main { width: min(1120px, 95vw); margin: 1rem auto 3rem; }
+    .top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.7rem; }
+    h1 { margin: 0; font-size: clamp(1.7rem, 4.5vw, 3rem); }
+    a { color: #003891; }
+    .grid {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.85rem;
+    }
+    .panel {
+      border: 3px solid var(--line);
+      border-radius: 16px;
+      padding: 0.8rem;
+      box-shadow: 6px 6px 0 #1f1f1f;
+      min-height: 230px;
+      position: relative;
+    }
+    .p1 { background: var(--a); }
+    .p2 { background: var(--b); }
+    .p3 { background: var(--c); }
+    .p4 { background: var(--d); }
+    .bubble {
+      border: 2px solid #222;
+      background: #fff;
+      border-radius: 16px;
+      padding: 0.5rem 0.6rem;
+      font-size: 0.93rem;
+      line-height: 1.35;
+      position: relative;
+    }
+    .bubble::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border-right: 2px solid #222;
+      border-bottom: 2px solid #222;
+      background: #fff;
+      position: absolute;
+      left: 16px;
+      bottom: -9px;
+      transform: rotate(45deg);
+    }
+    h2 { margin: 0 0 0.45rem; font-size: 1rem; text-transform: uppercase; }
+    .stamp {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      border: 2px dashed #111;
+      padding: 0.2rem 0.35rem;
+      font: 700 0.72rem/1 "Courier New", monospace;
+      background: #ffffffb0;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <h1>07. Author Comic: "AI Assistant, Not AI Author"</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </div>
+    <section class="grid">
+      <article class="panel p1">
+        <h2>Panel 1: The Draft</h2>
+        <div class="bubble">"I used AI to tighten language and summarize notes. Great start."</div>
+        <span class="stamp">ASSIST</span>
+      </article>
+      <article class="panel p2">
+        <h2>Panel 2: The Reality Check</h2>
+        <div class="bubble">"Three references were fake. I verified and replaced each one."</div>
+        <span class="stamp">VERIFY</span>
+      </article>
+      <article class="panel p3">
+        <h2>Panel 3: The Ethics Call</h2>
+        <div class="bubble">"No unpublished manuscript text in public tools. Confidentiality first."</div>
+        <span class="stamp">PROTECT</span>
+      </article>
+      <article class="panel p4">
+        <h2>Panel 4: Submission</h2>
+        <div class="bubble">"I disclosed tool, version, reason, and method. Humans remain accountable."</div>
+        <span class="stamp">DISCLOSE</span>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

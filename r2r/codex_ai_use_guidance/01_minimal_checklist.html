@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>01 - Minimal Checklist</title>
+  <style>
+    :root { --bg: #f7f7f7; --ink: #171717; --muted: #5b5b5b; --line: #d3d3d3; --good: #0b7f3b; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Georgia, "Times New Roman", serif; background: var(--bg); color: var(--ink); }
+    main { width: min(900px, 92vw); margin: 2rem auto 3rem; background: #fff; border: 1px solid var(--line); }
+    header { padding: 1.2rem 1.3rem; border-bottom: 1px solid var(--line); }
+    h1 { margin: 0; font-size: clamp(1.5rem, 3vw, 2.1rem); }
+    p { color: var(--muted); line-height: 1.45; }
+    .top { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+    a { color: #00378c; }
+    ul { margin: 0; padding: 0 1.4rem 1.2rem 2.1rem; }
+    li { padding: 0.4rem 0; line-height: 1.4; }
+    .tick { color: var(--good); font-weight: 700; margin-right: 0.4rem; }
+    table { width: 100%; border-collapse: collapse; font-family: "Courier New", monospace; font-size: 0.9rem; }
+    th, td { border-top: 1px solid var(--line); padding: 0.55rem 0.8rem; text-align: left; vertical-align: top; }
+    th { background: #fafafa; }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="top">
+        <h1>01. Minimal AI Author Checklist</h1>
+        <a href="./index.html">Back to Gallery</a>
+      </div>
+      <p>Simple policy baseline synthesized from BMJ, STM, Wiley, and Taylor &amp; Francis documents in this folder.</p>
+    </header>
+    <ul>
+      <li><span class="tick">[+]</span>Disclose AI use: tool name/version, why you used it, and how you used it.</li>
+      <li><span class="tick">[+]</span>Place disclosure in Methods, Acknowledgments, or contributor statements as required.</li>
+      <li><span class="tick">[+]</span>Never list AI as an author. Authorship remains human only.</li>
+      <li><span class="tick">[+]</span>Human authors remain accountable for accuracy, references, and originality.</li>
+      <li><span class="tick">[+]</span>Verify all AI outputs for hallucinations, bias, and citation errors.</li>
+      <li><span class="tick">[+]</span>Do not upload confidential unpublished manuscript content to public AI tools.</li>
+      <li><span class="tick">[+]</span>Check journal-specific limits, especially around image and figure generation/editing.</li>
+      <li><span class="tick">[+]</span>Keep intellectual leadership and final decisions with the author team.</li>
+    </ul>
+    <table>
+      <thead>
+        <tr><th>Action</th><th>Do</th><th>Avoid</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Drafting</td><td>Use AI for language assistance with review.</td><td>Submitting unreviewed generated text.</td></tr>
+        <tr><td>References</td><td>Cross-check every citation manually.</td><td>Trusting generated references blindly.</td></tr>
+        <tr><td>Peer review files</td><td>Keep files private and secure.</td><td>Pasting confidential files into open tools.</td></tr>
+        <tr><td>Images</td><td>Follow each publisher's image rules.</td><td>Assuming image generation is always allowed.</td></tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Guidelines Visual Studio</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --ink: #1e1d1a;
+      --accent: #e04a2a;
+      --card: #fff9f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Trebuchet MS", "Gill Sans", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, #ffd7b5 0 15%, transparent 15%),
+        radial-gradient(circle at 90% 85%, #bde1ff 0 18%, transparent 18%),
+        var(--bg);
+    }
+    main { width: min(1100px, 92vw); margin: 2rem auto 4rem; }
+    h1 {
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 0.25rem;
+    }
+    p { line-height: 1.45; max-width: 75ch; }
+    .grid {
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+    }
+    .card {
+      text-decoration: none;
+      color: var(--ink);
+      background: var(--card);
+      border: 2px solid #151515;
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      box-shadow: 4px 4px 0 #151515;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+    .card:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 8px 8px 0 #151515;
+    }
+    .n {
+      font: 700 0.8rem/1 "Courier New", monospace;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+    .title {
+      display: block;
+      font-weight: 700;
+      margin-top: 0.35rem;
+      margin-bottom: 0.25rem;
+    }
+    .note {
+      margin-top: 1.3rem;
+      font-size: 0.95rem;
+      padding: 0.8rem 0.9rem;
+      border-left: 4px solid var(--accent);
+      background: #fff4e7;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>AI Guidelines Visual Studio</h1>
+    <p>
+      Ten browser-ready concepts for authors, progressing from simple and practical to colorful and bold.
+      These synthesize local policy themes from BMJ, STM, Wiley, and Taylor &amp; Francis.
+    </p>
+    <div class="grid">
+      <a class="card" href="./01_minimal_checklist.html"><span class="n">01 BASIC</span><span class="title">Minimal Checklist</span>Clean essentials in one page.</a>
+      <a class="card" href="./02_color_cards.html"><span class="n">02</span><span class="title">Color Card Deck</span>Policy as vivid action cards.</a>
+      <a class="card" href="./03_editorial_poster.html"><span class="n">03</span><span class="title">Editorial Poster</span>Magazine-style manifesto layout.</a>
+      <a class="card" href="./04_flow_map.html"><span class="n">04</span><span class="title">Flow Map</span>Decision path for AI usage.</a>
+      <a class="card" href="./05_rule_orbit.html"><span class="n">05</span><span class="title">Rule Orbit</span>Interactive radial navigator.</a>
+      <a class="card" href="./06_subway_policy.html"><span class="n">06</span><span class="title">Subway Policy</span>Transit map metaphor for compliance.</a>
+      <a class="card" href="./07_story_panels.html"><span class="n">07</span><span class="title">Story Panels</span>Comic-style author journey.</a>
+      <a class="card" href="./08_neon_control_room.html"><span class="n">08</span><span class="title">Neon Control Room</span>Futuristic dashboard and toggles.</a>
+      <a class="card" href="./09_kinetic_manifesto.html"><span class="n">09</span><span class="title">Kinetic Manifesto</span>Animated typographic art page.</a>
+      <a class="card" href="./10_cosmic_constellation.html"><span class="n">10 ASTONISHING</span><span class="title">Cosmic Constellation</span>Immersive starfield guideline system.</a>
+    </div>
+    <div class="note">
+      Tip: open this folder in any browser and start with `index.html`.
+    </div>
+  </main>
+</body>
+</html>

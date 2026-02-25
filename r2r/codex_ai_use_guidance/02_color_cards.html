@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>02 - Color Card Deck</title>
+  <style>
+    :root {
+      --bg: #f6efe5;
+      --ink: #1a1a1a;
+      --line: #222;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Verdana", "Geneva", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(125deg, #ffd8b8, transparent 40%),
+        linear-gradient(315deg, #c6e4ff, transparent 45%),
+        var(--bg);
+    }
+    main { width: min(1100px, 94vw); margin: 1.3rem auto 3rem; }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    h1 { margin: 0.2rem 0 0.4rem; font-size: clamp(1.8rem, 4vw, 2.8rem); }
+    a { color: #053992; }
+    .deck {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 0.95rem;
+      margin-top: 1rem;
+    }
+    .card {
+      border: 2px solid var(--line);
+      border-radius: 16px;
+      padding: 1rem;
+      box-shadow: 5px 5px 0 #1c1c1c;
+      min-height: 220px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::after {
+      content: "";
+      position: absolute;
+      right: -36px;
+      bottom: -36px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: #ffffff80;
+      border: 2px dashed #222;
+    }
+    .c1 { background: #ffb6a3; }
+    .c2 { background: #ffe38f; }
+    .c3 { background: #c9f0c9; }
+    .c4 { background: #c5dcff; }
+    .c5 { background: #e0ccff; }
+    .c6 { background: #ffc8e8; }
+    h2 { margin: 0 0 0.45rem; font-size: 1.05rem; }
+    p { margin: 0; line-height: 1.45; max-width: 30ch; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <h1>02. Color Card Deck for Authors</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </div>
+    <div class="deck">
+      <article class="card c1"><h2>Declare It</h2><p>State tool name, version, purpose, and task. Put the disclosure where the journal expects it.</p></article>
+      <article class="card c2"><h2>Human Leads</h2><p>AI can assist, but human authors keep intellectual ownership and editorial control.</p></article>
+      <article class="card c3"><h2>No AI Author</h2><p>Do not list AI as an author. Accountability, consent, and legal obligations are human responsibilities.</p></article>
+      <article class="card c4"><h2>Verify Everything</h2><p>Fact-check outputs, numbers, citations, and quotations before submission.</p></article>
+      <article class="card c5"><h2>Protect Confidentiality</h2><p>Avoid sharing unpublished manuscripts, reviewer files, or private data in public AI systems.</p></article>
+      <article class="card c6"><h2>Image Caution</h2><p>Image and figure policies vary by publisher. Check local rules before creating or editing visuals with AI.</p></article>
+    </div>
+  </main>
+</body>
+</html>

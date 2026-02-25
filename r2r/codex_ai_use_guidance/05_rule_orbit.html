@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>05 - Rule Orbit</title>
+  <style>
+    :root {
+      --bg: #100f1d;
+      --ink: #f5f4ff;
+      --soft: #d9d5ff;
+      --ring: #8a73ff;
+      --dot: #ff6f8b;
+      --panel: #1c1a34;
+      --line: #5c4bba;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      font-family: "Lucida Sans", "Geneva", sans-serif;
+      background:
+        radial-gradient(circle at 30% 25%, #2a2458 0 30%, transparent 40%),
+        radial-gradient(circle at 75% 70%, #3f2965 0 35%, transparent 45%),
+        var(--bg);
+      min-height: 100vh;
+    }
+    main { width: min(1100px, 94vw); margin: 1rem auto 3rem; }
+    .top { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.8rem; }
+    h1 { margin: 0; font-size: clamp(1.6rem, 4vw, 2.7rem); }
+    a { color: #cabfff; }
+    .wrap {
+      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .stage {
+      aspect-ratio: 1 / 1;
+      max-height: 70vh;
+      border: 2px solid var(--line);
+      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      background: #140f2d;
+      position: relative;
+      overflow: hidden;
+    }
+    .center {
+      width: 170px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border: 2px solid var(--ring);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 700;
+      background: #221646;
+      z-index: 2;
+      box-shadow: 0 0 25px #8a73ff40;
+    }
+    .ring {
+      position: absolute;
+      inset: 10%;
+      border-radius: 50%;
+      border: 2px dashed #6d5cc9;
+      animation: spin 28s linear infinite;
+    }
+    .dot {
+      position: absolute;
+      width: 92px;
+      border-radius: 999px;
+      border: 1px solid #120e26;
+      padding: 0.35rem 0.5rem;
+      font-size: 0.75rem;
+      text-align: center;
+      background: var(--dot);
+      color: #1a1028;
+      cursor: pointer;
+      font-weight: 700;
+    }
+    .d1 { top: 10%; left: 46%; }
+    .d2 { top: 25%; right: 8%; }
+    .d3 { top: 48%; right: 3%; }
+    .d4 { bottom: 16%; right: 15%; }
+    .d5 { bottom: 6%; left: 47%; }
+    .d6 { bottom: 18%; left: 10%; }
+    .d7 { top: 50%; left: 2%; }
+    .d8 { top: 23%; left: 10%; }
+    .panel {
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: var(--panel);
+      padding: 1rem;
+      min-height: 320px;
+    }
+    .panel h2 { margin: 0 0 0.5rem; font-size: 1.2rem; color: #ffb5c4; }
+    .panel p { margin: 0; line-height: 1.5; color: var(--soft); }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    @media (max-width: 880px) { .wrap { grid-template-columns: 1fr; } .stage { max-height: 52vh; } }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <h1>05. Rule Orbit Navigator</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </div>
+    <section class="wrap">
+      <div class="stage">
+        <div class="ring"></div>
+        <div class="center">Author<br>Control<br>Hub</div>
+        <button class="dot d1" data-k="declare">Declare</button>
+        <button class="dot d2" data-k="authorship">Authorship</button>
+        <button class="dot d3" data-k="verify">Verify</button>
+        <button class="dot d4" data-k="citations">Citations</button>
+        <button class="dot d5" data-k="privacy">Privacy</button>
+        <button class="dot d6" data-k="images">Images</button>
+        <button class="dot d7" data-k="journal">Journal Rules</button>
+        <button class="dot d8" data-k="human">Human Oversight</button>
+      </div>
+      <aside class="panel">
+        <h2 id="title">Pick a node</h2>
+        <p id="body">Click any orbit label to reveal an author-ready guideline summary.</p>
+      </aside>
+    </section>
+  </main>
+  <script>
+    const notes = {
+      declare: ["Declare AI Use", "Document tool name/version, purpose, and usage process in required manuscript sections."],
+      authorship: ["No AI Authorship", "AI systems cannot be listed as authors because they cannot accept accountability or legal obligations."],
+      verify: ["Output Verification", "Treat AI output as draft material. Validate facts, logic, and discipline-specific terminology."],
+      citations: ["Citation Safety", "Generated references can be fabricated or incorrect. Verify every reference against real sources."],
+      privacy: ["Confidentiality", "Do not paste unpublished manuscripts, reviewer files, or sensitive data into open/public AI tools."],
+      images: ["Image Boundaries", "Publisher rules differ for AI-generated images or edits. Check figure policy before submission."],
+      journal: ["Local Rules First", "Global principles help, but each journal and publisher may define stricter or different requirements."],
+      human: ["Human Leadership", "Keep creative, analytical, and ethical judgment with the author team at every stage."]
+    };
+    document.querySelectorAll(".dot").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const item = notes[btn.dataset.k];
+        document.getElementById("title").textContent = item[0];
+        document.getElementById("body").textContent = item[1];
+      });
+    });
+  </script>
+</body>
+</html>

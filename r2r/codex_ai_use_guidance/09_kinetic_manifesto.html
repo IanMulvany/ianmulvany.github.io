@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>09 - Kinetic Manifesto</title>
+  <style>
+    :root {
+      --bg: #f2eadf;
+      --ink: #131210;
+      --red: #e4451f;
+      --blue: #0f4dab;
+      --green: #21844d;
+      --yellow: #f2bd2d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Impact", "Haettenschweiler", "Arial Narrow Bold", sans-serif;
+      overflow-x: hidden;
+    }
+    main { width: min(1100px, 94vw); margin: 0 auto 3rem; padding-top: 1rem; }
+    .top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+    h1 { margin: 0; font-size: clamp(2rem, 6vw, 4.4rem); line-height: 0.95; letter-spacing: 0.02em; }
+    a { color: #053b97; font-family: "Trebuchet MS", sans-serif; font-size: 0.95rem; }
+    .zone {
+      margin-top: 1rem;
+      border: 3px solid #111;
+      background: #fff7e8;
+      padding: 1rem;
+      position: relative;
+      min-height: 66vh;
+      overflow: hidden;
+    }
+    .word {
+      position: absolute;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      animation: drift 9s ease-in-out infinite alternate;
+      opacity: 0.95;
+      user-select: none;
+    }
+    .w1 { top: 6%; left: 6%; font-size: clamp(1.8rem, 4vw, 3.8rem); color: var(--red); --dx: 12px; }
+    .w2 { top: 25%; left: 42%; font-size: clamp(1.2rem, 2.8vw, 2.4rem); color: var(--blue); --dx: -18px; animation-duration: 7s; }
+    .w3 { top: 54%; left: 10%; font-size: clamp(1.6rem, 3.8vw, 3.2rem); color: var(--green); --dx: 16px; animation-duration: 8s; }
+    .w4 { top: 72%; left: 55%; font-size: clamp(1.1rem, 2.5vw, 2.1rem); color: #222; --dx: -10px; animation-duration: 6.6s; }
+    .w5 { top: 15%; left: 70%; font-size: clamp(1.2rem, 2.8vw, 2.6rem); color: #6c2c96; --dx: 13px; }
+    .w6 { top: 41%; left: 54%; font-size: clamp(1.7rem, 3.8vw, 3rem); color: #0f0f0f; --dx: -14px; animation-duration: 7.4s; }
+    .w7 { top: 82%; left: 18%; font-size: clamp(1.1rem, 2.4vw, 2rem); color: #8b2319; --dx: 9px; animation-duration: 5.8s; }
+    .block {
+      position: absolute;
+      right: 2.2rem;
+      bottom: 1.6rem;
+      width: min(480px, 70vw);
+      border: 2px solid #111;
+      background: #ffffffd9;
+      padding: 0.8rem;
+      font-family: "Trebuchet MS", sans-serif;
+      font-size: 0.92rem;
+      line-height: 1.45;
+      box-shadow: 5px 5px 0 #111;
+    }
+    @keyframes drift {
+      from { transform: translateX(0) rotate(0.4deg); }
+      to { transform: translateX(var(--dx)) rotate(-0.5deg); }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="top">
+      <h1>09. Kinetic<br>Policy Manifesto</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </div>
+    <section class="zone">
+      <div class="word w1">Declare AI Use</div>
+      <div class="word w2">Human Authorship Only</div>
+      <div class="word w3">Verify Every Citation</div>
+      <div class="word w4">Protect Confidential Files</div>
+      <div class="word w5">No Blind Trust in Output</div>
+      <div class="word w6">Keep Intellectual Leadership</div>
+      <div class="word w7">Journal Rules Win</div>
+      <aside class="block">
+        AI policies are not anti-innovation; they are anti-ambiguity.
+        This page turns core safeguards into moving typography so each rule feels active, not static.
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

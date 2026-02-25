@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>10 - Cosmic Constellation</title>
+  <style>
+    :root {
+      --ink: #ecf6ff;
+      --soft: #a8c5df;
+      --line: #4fc6ff;
+      --panel: #101f3dd6;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: #070d1b;
+      overflow: hidden;
+    }
+    canvas {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: block;
+    }
+    .ui {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      padding: 1rem;
+    }
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      flex-wrap: wrap;
+      text-shadow: 0 0 14px #66bfff55;
+    }
+    h1 { margin: 0; font-size: clamp(1.5rem, 4.6vw, 3rem); letter-spacing: 0.02em; }
+    a { color: #9fdfff; }
+    .middle {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 1rem;
+      align-items: center;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid #2d5f87;
+      border-radius: 16px;
+      padding: 1rem;
+      backdrop-filter: blur(4px);
+      box-shadow: 0 0 28px #2d70b655;
+    }
+    .panel h2 { margin: 0 0 0.5rem; font-size: 1.1rem; color: #9fdfff; }
+    .panel p { margin: 0; line-height: 1.5; color: var(--soft); font-size: 0.95rem; }
+    .constellation {
+      position: relative;
+      min-height: 55vh;
+      border: 1px solid #27557a66;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #0c1831aa, #090f1dbf);
+      overflow: hidden;
+    }
+    .star {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #d9f1ff;
+      box-shadow: 0 0 18px #a5e2ff;
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+    .star::after {
+      content: attr(data-label);
+      position: absolute;
+      top: -1.8rem;
+      left: 0.8rem;
+      font-size: 0.78rem;
+      color: #d2ecff;
+      white-space: nowrap;
+      text-shadow: 0 0 8px #001d37;
+    }
+    .line {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(90deg, #3dc2ff, #a0e6ff);
+      transform-origin: left center;
+      opacity: 0.7;
+    }
+    .foot {
+      justify-self: center;
+      font-size: 0.85rem;
+      color: #9bc2dd;
+      background: #071329a6;
+      border: 1px solid #2e567b;
+      border-radius: 999px;
+      padding: 0.35rem 0.7rem;
+    }
+    @media (max-width: 940px) {
+      .middle { grid-template-columns: 1fr; }
+      .constellation { min-height: 46vh; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="sky"></canvas>
+  <div class="ui">
+    <header class="top">
+      <h1>10. Cosmic Constellation of AI Guidelines</h1>
+      <a href="./index.html">Back to Gallery</a>
+    </header>
+    <section class="middle">
+      <aside class="panel">
+        <h2 id="ruleTitle">Select a star</h2>
+        <p id="ruleBody">Each constellation node maps to a high-priority policy commitment for authors.</p>
+      </aside>
+      <div class="constellation" id="constellation"></div>
+    </section>
+    <div class="foot">Astonishing mode: policy as navigable galaxy</div>
+  </div>
+
+  <script>
+    const data = [
+      { id: "s1", label: "Declare", x: 16, y: 58, text: "Disclose tool name/version, purpose, and workflow." },
+      { id: "s2", label: "Human Author", x: 32, y: 36, text: "AI cannot be an author. Humans carry accountability." },
+      { id: "s3", label: "Verify", x: 52, y: 50, text: "Check all factual claims, calculations, and language accuracy." },
+      { id: "s4", label: "Citations", x: 67, y: 30, text: "Validate every reference; AI can invent plausible citations." },
+      { id: "s5", label: "Confidentiality", x: 76, y: 58, text: "Protect unpublished manuscripts and peer-review materials." },
+      { id: "s6", label: "Image Policy", x: 56, y: 72, text: "Image-generation/editing rules vary. Check journal requirements." },
+      { id: "s7", label: "Human Oversight", x: 36, y: 74, text: "Final judgment, interpretation, and ethics remain human-led." }
+    ];
+    const links = [["s1","s2"],["s2","s3"],["s3","s4"],["s4","s5"],["s5","s6"],["s6","s7"],["s7","s1"],["s3","s6"]];
+
+    const container = document.getElementById("constellation");
+    const title = document.getElementById("ruleTitle");
+    const body = document.getElementById("ruleBody");
+
+    function place() {
+      const rect = container.getBoundingClientRect();
+      container.querySelectorAll(".star,.line").forEach((n) => n.remove());
+
+      const points = {};
+      for (const s of data) {
+        const x = (s.x / 100) * rect.width;
+        const y = (s.y / 100) * rect.height;
+        points[s.id] = { x, y };
+        const el = document.createElement("button");
+        el.className = "star";
+        el.style.left = `${x - 7}px`;
+        el.style.top = `${y - 7}px`;
+        el.dataset.label = s.label;
+        el.addEventListener("click", () => {
+          title.textContent = s.label;
+          body.textContent = s.text;
+        });
+        container.appendChild(el);
+      }
+
+      for (const [a, b] of links) {
+        const p1 = points[a];
+        const p2 = points[b];
+        const dx = p2.x - p1.x;
+        const dy = p2.y - p1.y;
+        const len = Math.hypot(dx, dy);
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+        const line = document.createElement("div");
+        line.className = "line";
+        line.style.width = `${len}px`;
+        line.style.left = `${p1.x}px`;
+        line.style.top = `${p1.y}px`;
+        line.style.transform = `rotate(${angle}deg)`;
+        container.appendChild(line);
+      }
+    }
+
+    const canvas = document.getElementById("sky");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+
+    function resizeSky() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      stars = Array.from({ length: Math.min(220, Math.floor(canvas.width / 8)) }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 1.7 + 0.4,
+        a: Math.random() * 0.8 + 0.2,
+        s: Math.random() * 0.012 + 0.002
+      }));
+      place();
+    }
+
+    function drawSky() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (const s of stars) {
+        s.a += s.s;
+        if (s.a > 1 || s.a < 0.2) s.s *= -1;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(176, 226, 255, ${s.a})`;
+        ctx.fill();
+      }
+      requestAnimationFrame(drawSky);
+    }
+
+    window.addEventListener("resize", resizeSky);
+    resizeSky();
+    drawSky();
+  </script>
+</body>
+</html>
