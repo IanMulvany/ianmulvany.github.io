@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>R2R Conference AI Artifacts</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-1: #f4fbff;
+      --bg-2: #f6f2ea;
+      --ink: #20323f;
+      --ink-soft: #4f6778;
+      --card: rgba(255, 255, 255, 0.84);
+      --edge: rgba(32, 50, 63, 0.15);
+      --accent: #ff7a2f;
+      --accent-2: #138a7d;
+      --shadow: 0 18px 40px rgba(15, 47, 70, 0.15);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Manrope", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(19, 138, 125, 0.14) 0%, transparent 38%),
+        radial-gradient(circle at 92% 22%, rgba(255, 122, 47, 0.15) 0%, transparent 44%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      line-height: 1.6;
+    }
+
+    .ambient {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      overflow: hidden;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(8px);
+      opacity: 0.5;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    .blob.one {
+      width: 300px;
+      height: 300px;
+      background: rgba(19, 138, 125, 0.2);
+      top: -80px;
+      left: -80px;
+    }
+
+    .blob.two {
+      width: 260px;
+      height: 260px;
+      background: rgba(255, 122, 47, 0.2);
+      right: -70px;
+      top: 35%;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes drift {
+      0% { transform: translateY(0) translateX(0) scale(1); }
+      100% { transform: translateY(22px) translateX(-14px) scale(1.06); }
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2.2rem 1.2rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-copy,
+    .hero-image {
+      background: var(--card);
+      border: 1px solid var(--edge);
+      border-radius: 22px;
+      backdrop-filter: blur(5px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: reveal 0.8s ease both;
+    }
+
+    .hero-copy {
+      padding: 1.6rem;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 0.28rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(19, 138, 125, 0.12);
+      color: #0d6d61;
+      font-weight: 700;
+      font-size: 0.82rem;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.9rem;
+    }
+
+    h1,
+    h2 {
+      font-family: "Fraunces", Georgia, serif;
+      line-height: 1.2;
+      margin: 0 0 0.8rem;
+    }
+
+    h1 {
+      font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.02rem;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 1rem;
+    }
+
+    .panel {
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--edge);
+      border-radius: 18px;
+      padding: 1.2rem 1.15rem;
+      box-shadow: var(--shadow);
+      animation: reveal 0.85s ease both;
+    }
+
+    .panel p {
+      margin: 0;
+      color: var(--ink-soft);
+    }
+
+    .panel a {
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+    }
+
+    .panel a:hover {
+      color: var(--accent);
+    }
+
+    .list {
+      margin: 0.55rem 0 0;
+      padding-left: 1.1rem;
+    }
+
+    .list li + li {
+      margin-top: 0.46rem;
+    }
+
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 0.6rem;
+    }
+
+    .mini {
+      border: 1px solid var(--edge);
+      border-radius: 14px;
+      padding: 0.95rem;
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .mini h3 {
+      margin: 0 0 0.5rem;
+      font-family: "Fraunces", Georgia, serif;
+      font-size: 1.08rem;
+    }
+
+    .mini p {
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      margin-top: 1.4rem;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      text-align: center;
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image img {
+        min-height: 220px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .columns {
+        grid-template-columns: 1fr;
+      }
+
+      .page {
+        padding: 1.1rem 0.8rem 2.4rem;
+      }
+
+      .hero-copy {
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <div class="blob one"></div>
+    <div class="blob two"></div>
+  </div>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">R2R Conference Workspace</span>
+        <h1>AI-generated session artifacts and visual experiments</h1>
+        <p class="lead">
+          This folder collects outputs created during the <a href="https://r2rconf.com/r2r-conference-programme/" target="_blank" rel="noopener noreferrer">Researcher to Reader conference programme</a>.
+          Use this homepage as a quick way to browse files, compare versions, and jump into each artifact.
+        </p>
+      </div>
+      <figure class="hero-image">
+        <img src="gemini_cartoon/ai_robot_discussion.jpg" alt="Cartoon of a robot and people discussing AI" />
+      </figure>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <h2>Top-level artifacts</h2>
+        <p>
+          These are standalone interactive pieces produced from conference discussions about responsible AI in publishing.
+          They are designed to be quick to explore, but each one maps to real policy themes such as disclosure, accountability,
+          authorship, confidentiality, and verification.
+        </p>
+        <ul class="list">
+          <li>
+            <a href="ai_use_game.html">ai_use_game.html</a>
+            - "Reviewer #2: AI Panic Mode" is a fast, scenario-driven game where you balance integrity, transparency, and deadline pressure.
+            Each round gives you realistic author decisions and shows how "quick AI shortcuts" can create policy or ethics risks if you
+            skip disclosure or verification.
+          </li>
+          <li>
+            <a href="ai_use_policy_analysis.html">ai_use_policy_analysis.html</a>
+            - "AI Use-Case Permission Map" is a side-by-side matrix comparing six common AI use cases across Taylor &amp; Francis, Wiley,
+            and STM guidance. It is useful when you need a practical "can I do this?" view before writing, revising, or submitting.
+          </li>
+          <li>
+            <a href="https://claude.ai/public/artifacts/5cc5a1fd-8d1b-4257-b967-3bffc28fe6ed" target="_blank" rel="noopener noreferrer">Claude artifact: The Peer Review: AI Edition</a>
+            - The Peer Review: AI Edition is a quick, fun quiz game that tests your knowledge of responsible AI use in academic publishing. Styled like a vintage scholarly journal, complete with approval stamps, streaks, and editorial rankings, it puts you in the hot seat with 12 scenario-based questions drawn from real industry guidelines. You'll meet fictional researchers making genuinely tricky decisions: the doctor who let ChatGPT draft half their paper, the peer reviewer who outsourced their review, the chemist who faked their results with an image generator. Your job is to judge whether they've crossed a line, and how badly. Along the way you'll pick up practical knowledge of the STM Association's 9 AI activity classifications and Wiley's disclosure principles, the actual frameworks that publishers use today. Each answer comes with a clear explanation and a pointer to the relevant guideline, so you're learning as you play rather than just being told you got it wrong. Work your way up from Junior Reviewer to Editor-in-Chief (or, if you're feeling smug, Distinguished Fellow). Takes about 5-7 minutes to complete.
+          </li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>Guidance collection: <code>codex_ai_use_guidance/</code></h2>
+        <p>
+          This subdirectory is an "AI guidelines visual studio": ten different visual interpretations of the same core publishing guidance.
+          Instead of changing the policy message, each page changes the presentation style (checklist, cards, flow map, comic, dashboard,
+          constellation, and more) so you can test which format helps people understand and remember the rules.
+        </p>
+        <p>
+          The core message across the set is consistent: disclose AI use clearly, keep humans accountable for authorship and judgment, verify
+          outputs and citations, and protect confidential content.
+        </p>
+        <div class="columns">
+          <div class="mini">
+            <h3>Directory index</h3>
+            <p>
+              <a href="codex_ai_use_guidance/index.html">codex_ai_use_guidance/index.html</a> is the gallery landing page for this series,
+              with quick cards that let you jump between all ten concepts.
+            </p>
+          </div>
+          <div class="mini">
+            <h3>Variant pages</h3>
+            <ul class="list">
+              <li><a href="codex_ai_use_guidance/01_minimal_checklist.html">01_minimal_checklist.html</a> - the essentials in one concise author checklist.</li>
+              <li><a href="codex_ai_use_guidance/02_color_cards.html">02_color_cards.html</a> - policy guidance as practical, color-coded action cards.</li>
+              <li><a href="codex_ai_use_guidance/03_editorial_poster.html">03_editorial_poster.html</a> - a manifesto-style poster emphasizing human editorial judgment.</li>
+              <li><a href="codex_ai_use_guidance/04_flow_map.html">04_flow_map.html</a> - a step-by-step decision path for "Should I use AI here?"</li>
+              <li><a href="codex_ai_use_guidance/05_rule_orbit.html">05_rule_orbit.html</a> - an interactive radial navigator for exploring key rules.</li>
+              <li><a href="codex_ai_use_guidance/06_subway_policy.html">06_subway_policy.html</a> - a transit-map metaphor for navigating compliance checkpoints.</li>
+              <li><a href="codex_ai_use_guidance/07_story_panels.html">07_story_panels.html</a> - a comic-style author journey from draft to compliant submission.</li>
+              <li><a href="codex_ai_use_guidance/08_neon_control_room.html">08_neon_control_room.html</a> - a dashboard-style control room for policy risk checks.</li>
+              <li><a href="codex_ai_use_guidance/09_kinetic_manifesto.html">09_kinetic_manifesto.html</a> - animated typographic guidance with strong editorial framing.</li>
+              <li><a href="codex_ai_use_guidance/10_cosmic_constellation.html">10_cosmic_constellation.html</a> - an immersive star-map interface linking guideline topics.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>Image assets</h2>
+        <ul class="list">
+          <li>
+            <a href="gemini_cartoon/ai_robot_discussion.jpg">gemini_cartoon/ai_robot_discussion.jpg</a>
+            - a friendly conference-style cartoon showing human/AI discussion dynamics; used as the hero visual for this homepage and useful
+            as a reusable slide or section image for talks on AI collaboration in scholarly publishing.
+          </li>
+        </ul>
+      </article>
+    </section>
+
+    <p class="footer">Built as a simple home page for browsing conference-generated AI artifacts.</p>
+  </main>
+</body>
+</html>
