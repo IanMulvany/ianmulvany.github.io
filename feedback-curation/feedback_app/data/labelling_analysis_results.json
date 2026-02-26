@@ -1,4 +1,41 @@
 {
+  "data_sources": {
+    "annotators_loaded": [
+      "hm",
+      "im",
+      "jw",
+      "nn"
+    ],
+    "inter_annotator_pair": [
+      "im",
+      "nn"
+    ],
+    "extra_annotator_items": {
+      "hm": {
+        "total_items": 329,
+        "labeled_items_used": 0
+      },
+      "jw": {
+        "total_items": 329,
+        "labeled_items_used": 0
+      }
+    },
+    "extra_annotator_distributions": {
+      "hm": {
+        "positive": 95,
+        "negative": 126,
+        "neutral": 92,
+        "bug": 15
+      },
+      "jw": {
+        "positive": 115,
+        "negative": 61,
+        "neutral": 141,
+        "bug": 12
+      }
+    },
+    "analysis_total_items": 329
+  },
   "inter_annotator": {
     "total_items": 329,
     "agreement_count": 187,
@@ -26,104 +63,408 @@
       "positive->bug": 1,
       "positive->negative": 13,
       "bug->neutral": 1
+    },
+    "overlap_annotators": [
+      "hm",
+      "jw"
+    ],
+    "hm_distribution": {
+      "positive": 95,
+      "negative": 126,
+      "neutral": 92,
+      "bug": 15,
+      "null": 1
+    },
+    "jw_distribution": {
+      "positive": 115,
+      "negative": 61,
+      "neutral": 141,
+      "bug": 12
     }
   },
   "consensus_distribution": {
-    "neutral": 76,
-    "positive": 79,
-    "negative": 148,
-    "bug": 26
+    "positive": 111,
+    "negative": 74,
+    "neutral": 124,
+    "bug": 20
   },
+  "consensus_total_items": 329,
   "agent_helpfulness_ranking": [
     {
       "agent": "methodology_reporting",
       "avg_score": 3.55,
-      "rated_count": 190
+      "rated_count": 760
     },
     {
       "agent": "methodology_validation",
       "avg_score": 3.5,
-      "rated_count": 252
+      "rated_count": 1008
     },
     {
       "agent": "novelty",
       "avg_score": 3.18,
-      "rated_count": 122
+      "rated_count": 488
     },
     {
       "agent": "integrity",
       "avg_score": 2.94,
-      "rated_count": 281
+      "rated_count": 1124
     },
     {
       "agent": "scope",
       "avg_score": 1.99,
-      "rated_count": 267
+      "rated_count": 1068
     },
     {
       "agent": "ethics",
       "avg_score": 1.88,
-      "rated_count": 317
+      "rated_count": 1268
     }
   ],
   "agent_sentiment": {
     "novelty": {
-      "neutral": 10,
-      "bug": 3,
-      "positive": 16,
-      "negative": 6
+      "positive": 29,
+      "neutral": 15,
+      "bug": 4,
+      "negative": 8
     },
     "scope": {
-      "positive": 6,
-      "negative": 12,
-      "neutral": 5,
+      "positive": 13,
+      "neutral": 16,
+      "negative": 16,
       "bug": 3
     },
     "ethics": {
-      "positive": 6,
-      "negative": 29,
-      "neutral": 8,
-      "bug": 2
+      "positive": 16,
+      "negative": 25,
+      "neutral": 27,
+      "bug": 1
     },
     "methodology_reporting": {
-      "neutral": 12,
-      "bug": 6,
-      "positive": 16,
-      "negative": 22
+      "positive": 33,
+      "neutral": 23,
+      "bug": 8,
+      "negative": 13
     },
     "methodology_validation": {
-      "neutral": 13,
-      "positive": 12,
-      "negative": 9,
-      "bug": 7
+      "positive": 26,
+      "neutral": 28,
+      "negative": 4,
+      "bug": 10
     },
     "integrity": {
-      "positive": 13,
-      "negative": 7,
-      "neutral": 3,
-      "bug": 1
+      "positive": 24,
+      "neutral": 18,
+      "negative": 5,
+      "bug": 2
     }
   },
   "negative_analysis": {
-    "total": 148,
+    "total": 74,
     "categories": {
-      "other": 62,
-      "research_flaw": 19,
-      "prompt_context_improvement": 31,
-      "engineering_change": 63
+      "other": 26,
+      "research_flaw": 18,
+      "prompt_context_improvement": 18,
+      "engineering_change": 30
     },
-    "research_flaw_count": 19,
-    "prompt_context_count": 31
+    "research_flaw_count": 18,
+    "prompt_context_count": 18,
+    "research_flaw_items": [
+      {
+        "item_id": "csv_fb_0005",
+        "feedback_text": "I'm not clear on how the ethics agent works as it seems to check irrelevant sources, e.g. in case of a SR protocol which is clearly exempt from ethics approval.",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "improvement"
+      },
+      {
+        "item_id": "csv_fb_0008",
+        "feedback_text": "As this seems to take the information on scope from the particular journal website, we may need to look at the information provided there. For example, the tool wrongly identified a case series as in scope for Open. We do not seem to provide a specific statement on this particular study design in our submission guidelines which the tool seems to interpret as being ok (instead of stating an uncertainty).",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "agent_feedback_scope"
+      },
+      {
+        "item_id": "csv_fb_0016",
+        "feedback_text": "Sometimes they missed the nuisance of designs and some of the agents produced a high volume.",
+        "agents": [
+          "methodology_validation",
+          "methodology_reporting",
+          "scope",
+          "novelty",
+          "ethics",
+          "integrity"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0106",
+        "feedback_text": "While this didn't show in the results, in the activity log, the text from the manuscript '\"first 50 articles will be screened independently\" was interpreted as 'this is a planned pilot'. This was taken out of context and is incorrect",
+        "agents": [],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0107",
+        "feedback_text": "Sonnet/Haiku: There also seems to exist some inconsistency between sonnet (1 error based on checking claims) and haiku (2 errors based on checking 15 claims). In the results of haiku the percentage error is classed as major (minor in sonnet) and an additional minor error in formatting is noted.",
+        "agents": [],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0119",
+        "feedback_text": "Haiku: It identified this study wrongly as a clinical trial and lists a number of minor and major gaps.",
+        "agents": [],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0121",
+        "feedback_text": "reject. It identified this study wrongly as a clinical trial and lists a number of minor and major gaps. The explanations correctly note that this is a qualitative study",
+        "agents": [],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0126",
+        "feedback_text": "I only looked at the scoping agent for this case series and it incorrectly assessed this submission as 'in scope' for Open.",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0127",
+        "feedback_text": "The scoping agent was wrong. I made a general comment on this in the other form. I assume it takes the information from our website and as we don't specify that case series/reports aren't in scope this agent may assume it is. It would be better if it would highlight uncertainty if something isn't clear (relevant for all agents I'd say).",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0144",
+        "feedback_text": "The ethics agent was wrong about this paper and failed to understand the methods. The integrity agent was ok",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0160",
+        "feedback_text": "Also there were certain items that were simply incorrect.",
+        "agents": [],
+        "question_type": "anything_else"
+      },
+      {
+        "item_id": "csv_fb_0163",
+        "feedback_text": "However a couple of the points raised in the Methods Reporting Agent were incorrect, so all reports would need to be double checked by an Editor",
+        "agents": [
+          "methodology_reporting"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0189",
+        "feedback_text": "but the agents missed several of my primary decision points (adding dates to methods, revising strengths and limitations, including full search strategy). These omissions likely stem from the critical Methodology Reporting Agent error, which handles the most important aspect of BMJ Open editorial review. Greater calibration against actual editor decision notes is essential",
+        "agents": [
+          "methodology_reporting"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0220",
+        "feedback_text": "However excessive length and repetition undermined utility, and the agents completely missed editors' well-established wariness of retrospective cohort/secondary analyses of large databases (particularly national surveys). These manuscript types raise major red flags for publish-or-perish mentality and papermill culture",
+        "agents": [],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0237",
+        "feedback_text": "However Scoping lacked critical field context, and Ethics overemphasised irrelevant protocol requirements for BMJ Open. The agents conveyed appropriate reject \"vibe\"",
+        "agents": [
+          "ethics",
+          "scope"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0298",
+        "feedback_text": "No, I think there is an issue with this in that it took place across several countries, so it would need multiple ethical approvals. It looks like it missed that point completely. So",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0315",
+        "feedback_text": "No, it missed key issues that would make this not in scope for BMJ Open. It's also a very poor study, which the agents didn't seem to pick up on.",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0316",
+        "feedback_text": "Largely disagreed. This is not in scope for BMJ Open and is a very small study. The agents read it as a case series, which is not a study that we would consider in BMJ Open and is a very low quality of evidence. Also it should have picked up on an issue with informed consent--it's a retrospective study, so it's odd that the paper said they obtained informed consent. It missed this as a red flag.",
+        "agents": [],
+        "question_type": "agree_eval"
+      }
+    ],
+    "prompt_context_items": [
+      {
+        "item_id": "csv_fb_0008",
+        "feedback_text": "As this seems to take the information on scope from the particular journal website, we may need to look at the information provided there. For example, the tool wrongly identified a case series as in scope for Open. We do not seem to provide a specific statement on this particular study design in our submission guidelines which the tool seems to interpret as being ok (instead of stating an uncertainty).",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "agent_feedback_scope"
+      },
+      {
+        "item_id": "csv_fb_0010",
+        "feedback_text": "The extend of the information felt overwhelming and not necessarily relevant. There were some issues with not identifying a vague statement about ethics approval for all participating centres and identifying a major gap of 'no trial registration number' for a cross-sectional study.",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "agent_feedback_ethics"
+      },
+      {
+        "item_id": "csv_fb_0024",
+        "feedback_text": "However excessive length/repetition reduced usability, Methodology Reporting errors caused knock-on misses of my core decision points (methods dates, search strategy), and agents lacked BMJ Open-specific context (e.g., repetitive database study risks, protocol requirements). Novelty and Integrity added the most unique insight for standard workflows",
+        "agents": [
+          "methodology_validation",
+          "methodology_reporting",
+          "scope",
+          "novelty",
+          "ethics",
+          "integrity"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0028",
+        "feedback_text": "Retro cohort study (not helpful): Superficial",
+        "agents": [
+          "methodology_reporting",
+          "scope"
+        ],
+        "question_type": "agent_feedback_scope"
+      },
+      {
+        "item_id": "csv_fb_0040",
+        "feedback_text": "NB:WAY MORE DETAIL GIVEN IN SPECIFIC MANUSCRIPT FEEDBACK FORMS FOR BELOW QUESTIONS:",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "agent_feedback_ethics"
+      },
+      {
+        "item_id": "csv_fb_0087",
+        "feedback_text": "It seemed that this one is quite flawed due to the nuance of ethical issues. For exceptions, it didn't look into whether they were valid",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "agent_feedback_ethics"
+      },
+      {
+        "item_id": "csv_fb_0106",
+        "feedback_text": "While this didn't show in the results, in the activity log, the text from the manuscript '\"first 50 articles will be screened independently\" was interpreted as 'this is a planned pilot'. This was taken out of context and is incorrect",
+        "agents": [],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0126",
+        "feedback_text": "I only looked at the scoping agent for this case series and it incorrectly assessed this submission as 'in scope' for Open.",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0127",
+        "feedback_text": "The scoping agent was wrong. I made a general comment on this in the other form. I assume it takes the information from our website and as we don't specify that case series/reports aren't in scope this agent may assume it is. It would be better if it would highlight uncertainty if something isn't clear (relevant for all agents I'd say).",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0132",
+        "feedback_text": "information too convoluted, not picked up on vague statement relating to all participating centres",
+        "agents": [
+          "ethics"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0203",
+        "feedback_text": "Scope-narrowing suggestion inappropriate for editors (peer reviewer territory).",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0230",
+        "feedback_text": "Scoping (not helpful): Superficial",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0233",
+        "feedback_text": "unnecessary Declaration of Helsinki detail. BMJ Open doesn't require protocols for this manuscript type",
+        "agents": [
+          "ethics",
+          "methodology_reporting"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0237",
+        "feedback_text": "However Scoping lacked critical field context, and Ethics overemphasised irrelevant protocol requirements for BMJ Open. The agents conveyed appropriate reject \"vibe\"",
+        "agents": [
+          "ethics",
+          "scope"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0266",
+        "feedback_text": "The scoping agent was a bit off on its reasoning. It compared this study to one on risk factors for poo outcomes in patient on dialysis who have cardiac arrest which we said was out of scope. The agent said that this had nothing to do with emergency care delivery, triage, or management",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "agree_eval"
+      },
+      {
+        "item_id": "csv_fb_0292",
+        "feedback_text": "I am not sure how helpful the agent advice was for this one, as it seemed to miss the bigger picture about importance, especially given this was a secondary analysis. From a study design perspective, we have had various issues with secondary analyses of RCTs we've considered where it's unclear the extent to which the population could be considered a trial population vs a cohort study within a trial. I don't think the agents really get to grips with that.",
+        "agents": [],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0315",
+        "feedback_text": "No, it missed key issues that would make this not in scope for BMJ Open. It's also a very poor study, which the agents didn't seem to pick up on.",
+        "agents": [
+          "scope"
+        ],
+        "question_type": "combined_help"
+      },
+      {
+        "item_id": "csv_fb_0316",
+        "feedback_text": "Largely disagreed. This is not in scope for BMJ Open and is a very small study. The agents read it as a case series, which is not a study that we would consider in BMJ Open and is a very low quality of evidence. Also it should have picked up on an issue with informed consent--it's a retrospective study, so it's odd that the paper said they obtained informed consent. It missed this as a red flag.",
+        "agents": [],
+        "question_type": "agree_eval"
+      }
+    ]
   },
   "engineering_backlog": {
-    "total": 83,
+    "total": 79,
     "subcategories": {
-      "summary_key_points": 14,
+      "summary_key_points": 12,
       "depth_detail": 15,
       "format_length": 37,
       "integration_workflow": 36,
       "references_citations": 9,
-      "duplication_redundancy": 21
+      "duplication_redundancy": 19
     },
     "priority_order": [
       "format_length",
@@ -135,27 +476,27 @@
     ]
   },
   "positive_analysis": {
-    "total": 79,
+    "total": 111,
     "themes": {
-      "other_positive": 19,
+      "effective_identification": 30,
+      "useful_insights": 46,
+      "other_positive": 29,
       "educational": 4,
-      "useful_insights": 34,
-      "time_saving": 14,
-      "agrees_with_reviewer": 20,
-      "effective_identification": 17,
-      "thorough_analysis": 6
+      "time_saving": 18,
+      "agrees_with_reviewer": 22,
+      "thorough_analysis": 8
     }
   },
   "bug_analysis": {
-    "total": 26,
+    "total": 20,
     "by_agent": {
-      "novelty": 3,
-      "methodology_reporting": 6,
+      "novelty": 4,
+      "methodology_reporting": 8,
       "scope": 3,
-      "methodology_validation": 7,
-      "(general)": 12,
-      "ethics": 2,
-      "integrity": 1
+      "(general)": 5,
+      "methodology_validation": 10,
+      "ethics": 1,
+      "integrity": 2
     }
   }
 }

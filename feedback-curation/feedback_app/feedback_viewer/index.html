@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Item Viewer</title>
+  <link rel="stylesheet" href="viewer.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Feedback Item Viewer</h1>
+    <p class="subtitle">Explore annotator feedback from IM, NN, JW, and HM datasets</p>
+    <div class="load-actions">
+      <button id="btn-load-default" class="btn btn-primary">Load from data folder</button>
+      <span class="or">or</span>
+      <label class="btn btn-secondary">
+        Load JSON files…
+        <input type="file" id="file-input" multiple accept=".json" hidden>
+      </label>
+    </div>
+    <div id="load-status" class="load-status"></div>
+  </header>
+
+  <main class="main" id="main" style="display:none">
+    <aside class="sidebar">
+      <section class="stats-section">
+        <h2>Summary</h2>
+        <div id="stats-container" class="stats-grid"></div>
+      </section>
+      <section class="filters-section">
+        <h2>Filters</h2>
+        <div class="filter-group">
+          <label>Annotator</label>
+          <select id="filter-annotator">
+            <option value="all">All</option>
+            <option value="im">IM</option>
+            <option value="nn">NN</option>
+            <option value="jw">JW</option>
+            <option value="hm">HM</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Sentiment</label>
+          <select id="filter-sentiment">
+            <option value="all">All</option>
+            <option value="positive">Positive</option>
+            <option value="neutral">Neutral</option>
+            <option value="negative">Negative</option>
+            <option value="bug">Bug</option>
+            <option value="unlabeled">Unlabeled</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label>Search text</label>
+          <input type="text" id="filter-search" placeholder="Search feedback…">
+        </div>
+        <div class="filter-group">
+          <label>Items per page</label>
+          <select id="filter-per-page">
+            <option value="20">20</option>
+            <option value="50" selected>50</option>
+            <option value="100">100</option>
+            <option value="200">200</option>
+          </select>
+        </div>
+        <div class="result-count" id="result-count"></div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <div class="toolbar">
+        <button id="btn-prev" class="btn btn-sm" disabled>← Previous</button>
+        <span id="page-info" class="page-info"></span>
+        <button id="btn-next" class="btn btn-sm" disabled>Next →</button>
+      </div>
+      <div id="item-list" class="item-list"></div>
+    </section>
+  </main>
+
+  <div id="detail-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close">&times;</button>
+      <div id="detail-body"></div>
+    </div>
+  </div>
+
+  <script src="viewer.js"></script>
+</body>
+</html>

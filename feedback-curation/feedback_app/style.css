@@ -106,6 +106,41 @@ body {
 }
 .chart-card.wide { grid-column: 1 / -1; }
 .chart-card h3 { font-size: .95rem; margin-bottom: 14px; font-weight: 600; }
+.chart-hint {
+  font-size: .85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.disagreement-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.disagreement-controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.disagreement-controls label span {
+  font-size: .8rem;
+  color: var(--text-light);
+  font-weight: 600;
+}
+.disagreement-controls select {
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: .9rem;
+  min-width: 100px;
+}
+.disagreement-controls .arrow {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  margin-top: 18px;
+}
 .chart-container { position: relative; width: 100%; height: 300px; }
 .chart-container.tall { height: 380px; }
 
@@ -120,6 +155,7 @@ body {
 }
 .info-card h3 { margin-bottom: 10px; font-size: .95rem; }
 .info-card p { margin-bottom: 6px; font-size: .9rem; }
+.info-card code { background: #f0f4f8; padding: 2px 6px; border-radius: 4px; font-size: .85em; }
 
 /* ── Tags ─────────────────────────────────────────────────── */
 .tag {
@@ -238,6 +274,25 @@ body {
   padding-left: 16px;
   border-left: 3px solid var(--border);
 }
+
+/* ── Negative category drill-down ─────────────────────────── */
+.neg-drilldown { margin-bottom: 24px; }
+.neg-category-block {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--red);
+}
+.neg-category-block .neg-category-title { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.neg-category-block .neg-category-desc {
+  font-size: .85rem;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+.neg-category-block .feedback-list { margin-top: 0; }
+.empty-hint { color: var(--text-light); font-size: .9rem; padding: 12px 0; }
 
 /* ── Feedback samples ─────────────────────────────────────── */
 .feedback-list h3 { margin: 20px 0 12px; font-size: 1rem; }

@@ -21,6 +21,11 @@
       <li><a href="#" class="nav-link" data-view="positive">Positive Feedback</a></li>
       <li><a href="#" class="nav-link" data-view="bugs">Bug Reports</a></li>
       <li><a href="#" class="nav-link" data-view="prompts">Prompt Improvements</a></li>
+      <li><a href="#" class="nav-link" data-view="im-deep-dive">IM Deep Dive</a></li>
+      <li><a href="#" class="nav-link" data-view="nn-deep-dive">NN Deep Dive</a></li>
+      <li><a href="#" class="nav-link" data-view="jw-deep-dive">JW Deep Dive</a></li>
+      <li><a href="#" class="nav-link" data-view="hm-deep-dive">HM Deep Dive</a></li>
+      <li><a href="feedback_viewer/" class="nav-link" target="_blank" rel="noopener">Feedback Viewer</a></li>
     </ul>
   </nav>
 
@@ -52,13 +57,35 @@
           <div class="chart-container"><canvas id="chart-consensus"></canvas></div>
         </div>
         <div class="chart-card">
-          <h3>IM vs NN Sentiment Comparison</h3>
+          <h3>Annotator Sentiment Comparison (IM, NN, JW)</h3>
           <div class="chart-container"><canvas id="chart-annotator-compare"></canvas></div>
         </div>
       </div>
       <div class="chart-row">
         <div class="chart-card wide">
-          <h3>Disagreement Patterns (IM &rarr; NN)</h3>
+          <h3>Disagreement Patterns</h3>
+          <p class="chart-hint">When two annotators label the same feedback item differently, each difference is a &ldquo;disagreement pattern&rdquo; (e.g. <code>neutral→negative</code> means Annotator A labeled it neutral, Annotator B labeled it negative). Bars show how often each pattern occurs.</p>
+          <div class="disagreement-controls">
+            <label>
+              <span>Annotator A</span>
+              <select id="disagree-annotator-a">
+                <option value="im">IM</option>
+                <option value="nn">NN</option>
+                <option value="jw">JW</option>
+                <option value="hm">HM</option>
+              </select>
+            </label>
+            <span class="arrow">&rarr;</span>
+            <label>
+              <span>Annotator B</span>
+              <select id="disagree-annotator-b">
+                <option value="im">IM</option>
+                <option value="nn" selected>NN</option>
+                <option value="jw">JW</option>
+                <option value="hm">HM</option>
+              </select>
+            </label>
+          </div>
           <div class="chart-container"><canvas id="chart-disagreements"></canvas></div>
         </div>
       </div>
@@ -66,6 +93,7 @@
         <h3>Annotator Bias Summary</h3>
         <p><strong>IM</strong> tends to label more items as <span class="tag neutral">neutral</span> and <span class="tag positive">positive</span>.</p>
         <p><strong>NN</strong> tends to label significantly more items as <span class="tag negative">negative</span> (46% vs 17%).</p>
+        <p><strong>JW</strong> and <strong>HM</strong> label the same items as IM/NN; their labels are included in the consensus via majority vote.</p>
         <p>The consensus approach uses the <strong>more critical label</strong> when annotators disagree, ensuring product decisions are conservative and don't overlook genuine issues.</p>
       </div>
     </section>
@@ -124,7 +152,18 @@
           <div class="chart-container"><canvas id="chart-neg-agents"></canvas></div>
         </div>
       </div>
-      <div id="neg-feedback-samples" class="feedback-list"></div>
+      <div class="neg-drilldown">
+        <div class="neg-category-block" id="neg-research-flaw-block">
+          <h3 class="neg-category-title">Research Flaw Items</h3>
+          <p class="neg-category-desc">Agents identify issues that aren&rsquo;t present, or miss relevant issues in the manuscript.</p>
+          <div id="neg-research-flaw-items" class="feedback-list"></div>
+        </div>
+        <div class="neg-category-block" id="neg-prompt-ctx-block">
+          <h3 class="neg-category-title">Prompt/Context Issues</h3>
+          <p class="neg-category-desc">Feedback suggesting agents need better scoping, prompts, or context (e.g. too generic, unclear, superficial).</p>
+          <div id="neg-prompt-ctx-items" class="feedback-list"></div>
+        </div>
+      </div>
     </section>
 
     <!-- Product Backlog -->
@@ -183,6 +222,226 @@
       <h1>Suggested Prompt Improvements</h1>
       <p class="view-desc">Actionable prompt and context improvements for each agent, derived from negative and neutral feedback analysis. Agents are ordered from most to least in need of improvement.</p>
       <div id="prompt-cards"></div>
+    </section>
+
+    <!-- IM Deep Dive -->
+    <section id="view-im-deep-dive" class="view">
+      <h1>IM Feedback Deep Dive</h1>
+      <p class="view-desc">General and manuscript-specific feedback from the IM annotator.</p>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-im-total">--</div>
+          <div class="stat-label">Total IM Items</div>
+        </div>
+        <div class="stat-card accent-green">
+          <div class="stat-number" id="stat-im-labeled">--</div>
+          <div class="stat-label">Sentiment Labeled</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-im-unlabeled">--</div>
+          <div class="stat-label">Awaiting Label</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-im-questions">--</div>
+          <div class="stat-label">Unique Questions</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>IM Sentiment Distribution</h3>
+          <div class="chart-container"><canvas id="chart-im-sentiment"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Feedback by Question Type</h3>
+          <div class="chart-container"><canvas id="chart-im-question-types"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Agent Ratings (IM)</h3>
+          <div class="chart-container"><canvas id="chart-im-agent-ratings"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Sentiment by Related Agent</h3>
+          <div class="chart-container"><canvas id="chart-im-sentiment-by-agent"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Feedback by Question</h3>
+          <div class="chart-container"><canvas id="chart-im-questions"></canvas></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>About the IM Dataset</h3>
+        <p>IM labels general feedback from CSV exports. Items use <code>csv_fb_xxxx</code> IDs. IM tends to label more items as <span class="tag neutral">neutral</span> and <span class="tag positive">positive</span> compared to NN.</p>
+      </div>
+      <div id="im-feedback-samples" class="feedback-list"></div>
+    </section>
+
+    <!-- NN Deep Dive -->
+    <section id="view-nn-deep-dive" class="view">
+      <h1>NN Feedback Deep Dive</h1>
+      <p class="view-desc">General and manuscript-specific feedback from the NN annotator.</p>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-nn-total">--</div>
+          <div class="stat-label">Total NN Items</div>
+        </div>
+        <div class="stat-card accent-green">
+          <div class="stat-number" id="stat-nn-labeled">--</div>
+          <div class="stat-label">Sentiment Labeled</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-nn-unlabeled">--</div>
+          <div class="stat-label">Awaiting Label</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-nn-questions">--</div>
+          <div class="stat-label">Unique Questions</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>NN Sentiment Distribution</h3>
+          <div class="chart-container"><canvas id="chart-nn-sentiment"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Feedback by Question Type</h3>
+          <div class="chart-container"><canvas id="chart-nn-question-types"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Agent Ratings (NN)</h3>
+          <div class="chart-container"><canvas id="chart-nn-agent-ratings"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Sentiment by Related Agent</h3>
+          <div class="chart-container"><canvas id="chart-nn-sentiment-by-agent"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Feedback by Question</h3>
+          <div class="chart-container"><canvas id="chart-nn-questions"></canvas></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>About the NN Dataset</h3>
+        <p>NN labels the same items as IM. NN tends to label significantly more items as <span class="tag negative">negative</span> (46% vs 17%), suggesting a stricter evaluation standard.</p>
+      </div>
+      <div id="nn-feedback-samples" class="feedback-list"></div>
+    </section>
+
+    <!-- HM Deep Dive -->
+    <section id="view-hm-deep-dive" class="view">
+      <h1>HM Feedback Deep Dive</h1>
+      <p class="view-desc">General and manuscript-specific feedback from the HM annotator.</p>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-hm-total">--</div>
+          <div class="stat-label">Total HM Items</div>
+        </div>
+        <div class="stat-card accent-green">
+          <div class="stat-number" id="stat-hm-labeled">--</div>
+          <div class="stat-label">Sentiment Labeled</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-hm-unlabeled">--</div>
+          <div class="stat-label">Awaiting Label</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-hm-questions">--</div>
+          <div class="stat-label">Unique Questions</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>HM Sentiment Distribution</h3>
+          <div class="chart-container"><canvas id="chart-hm-sentiment"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Feedback by Question Type</h3>
+          <div class="chart-container"><canvas id="chart-hm-question-types"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Agent Ratings (HM)</h3>
+          <div class="chart-container"><canvas id="chart-hm-agent-ratings"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Sentiment by Related Agent</h3>
+          <div class="chart-container"><canvas id="chart-hm-sentiment-by-agent"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Feedback by Question</h3>
+          <div class="chart-container"><canvas id="chart-hm-questions"></canvas></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>About the HM Dataset</h3>
+        <p>HM labels the same items as IM and NN. HM&rsquo;s distribution falls between IM (more lenient) and NN (stricter).</p>
+      </div>
+      <div id="hm-feedback-samples" class="feedback-list"></div>
+    </section>
+
+    <!-- JW Deep Dive -->
+    <section id="view-jw-deep-dive" class="view">
+      <h1>JW Feedback Deep Dive</h1>
+      <p class="view-desc">Manuscript-specific feedback from the JW dataset. This data comes from a different collection (screenshot-based, per-manuscript) than the IM/NN general feedback, and most items are not yet sentiment-labeled.</p>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-jw-total">--</div>
+          <div class="stat-label">Total JW Items</div>
+        </div>
+        <div class="stat-card accent-green">
+          <div class="stat-number" id="stat-jw-labeled">--</div>
+          <div class="stat-label">Sentiment Labeled</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-jw-unlabeled">--</div>
+          <div class="stat-label">Awaiting Label</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-jw-questions">--</div>
+          <div class="stat-label">Unique Questions</div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>JW Sentiment (Labeled Items)</h3>
+          <div class="chart-container"><canvas id="chart-jw-sentiment"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Feedback by Question</h3>
+          <div class="chart-container"><canvas id="chart-jw-questions"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card wide">
+          <h3>Manuscript / Board Distribution</h3>
+          <div class="chart-container"><canvas id="chart-jw-boards"></canvas></div>
+        </div>
+      </div>
+      <div class="chart-row">
+        <div class="chart-card">
+          <h3>Agent Mentions in Feedback Text</h3>
+          <div class="chart-container"><canvas id="chart-jw-agent-mentions"></canvas></div>
+        </div>
+        <div class="chart-card">
+          <h3>Feedback Length (Word Count)</h3>
+          <div class="chart-container"><canvas id="chart-jw-wordcount"></canvas></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <h3>About the JW Dataset</h3>
+        <p>JW feedback is collected per-manuscript from screenshot-based forms. Items use <code>fb_xxxx</code> IDs (vs <code>csv_fb_xxxx</code> for IM/NN). Most entries lack <code>agent_ratings</code> and <code>related_agents_label</code>, but the free-text feedback often mentions specific agents (e.g. &ldquo;Novelty Agent (very helpful)&rdquo;). Completing sentiment labels would enable fuller integration with the main analysis.</p>
+      </div>
+      <div id="jw-feedback-samples" class="feedback-list"></div>
     </section>
   </main>
 
