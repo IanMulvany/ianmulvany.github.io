@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>arxiv_new | Submission guide</title>
+    <meta
+      name="description"
+      content="Submission workflow, format checklist, metadata requirements, and post-submission status guidance."
+    >
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css?v=policy-history">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="arxiv_new home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/arxiv-logo-one-color-white.svg" alt="">
+        </span>
+        <span>
+          <small>Submission and policy guide</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a class="active" href="submission.html">Submit</a>
+        <a href="policy.html">Policies</a>
+        <a href="staff.html">Staff guide</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+
+      <label class="search-shell" for="site-search">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m16.5 16.5 4 4"></path>
+        </svg>
+        <input id="site-search" type="search" placeholder="Search submission, policy, status..." autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+    </header>
+
+    <div class="layout" id="top">
+      <aside class="sidebar" aria-label="Section navigation">
+        <nav>
+          <p>For authors</p>
+          <a href="#submit">Submission guide</a>
+          <a href="#format">Format checklist</a>
+          <a href="#metadata">Metadata checklist</a>
+          <a href="#after-submit">After submission</a>
+          <p>Other guides</p>
+          <a href="policy.html">Policy guide</a>
+          <a href="staff.html">Staff guide</a>
+          <a href="sources.html">Source index</a>
+        </nav>
+      </aside>
+
+      <main id="main">
+        <section id="submit" class="section" aria-labelledby="submit-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="submit-title">Submission Guide</h2>
+              <p>A single route through the scattered registration, preparation, upload, status, and version pages.</p>
+            </div>
+            <a class="source-link" href="source.html?doc=Submission%20Overview%20-%20arXiv%20info.html">Source: Submission Guidelines</a>
+          </div>
+
+          <div class="workflow">
+            <details open data-searchable>
+              <summary><span>1</span><strong>Confirm account and identity</strong><em>Required</em></summary>
+              <p>Submissions are accepted from registered authors. Each user should have one arXiv account, current affiliation, and a verified email address.</p>
+              <ul>
+                <li>Usernames are unique and cannot be changed.</li>
+                <li>Claimed affiliation should be current in the conventional sense.</li>
+                <li>Misrepresenting identity or affiliation can lead to suspension.</li>
+              </ul>
+            </details>
+            <details data-searchable>
+              <summary><span>2</span><strong>Check endorsement and eligibility</strong><em>May apply</em></summary>
+              <p>New users or users submitting to a new category may need endorsement. Author self-submission is preferred.</p>
+              <ul>
+                <li>Look for endorsers among authors of recent related arXiv papers.</li>
+                <li>Third-party submissions require prior authorization or approved proxy facilities.</li>
+                <li>Conference or journal proxies must classify papers individually, not by venue alone.</li>
+              </ul>
+            </details>
+            <details data-searchable>
+              <summary><span>3</span><strong>Choose source format</strong><em>Required</em></summary>
+              <p>TeX/LaTeX is the best archival choice when available. PDF is accepted only when it is machine readable and follows PDF requirements.</p>
+              <ul>
+                <li>Do not submit DVI, PostScript, scanned documents, or PDF generated from TeX/LaTeX source.</li>
+                <li>HTML with JPEG, PNG, or GIF images is accepted for text submissions.</li>
+                <li>All figures must be included in the submitted source package.</li>
+              </ul>
+            </details>
+            <details data-searchable>
+              <summary><span>4</span><strong>Package files and figures</strong><em>Required</em></summary>
+              <p>Use portable file names, include required TeX support files, and remove files that do not belong in the archival source.</p>
+              <ul>
+                <li>Allowed file-name characters: letters, numbers, underscore, plus, hyphen, period, comma, and equals sign.</li>
+                <li>File names are case sensitive. Match all internal references exactly.</li>
+                <li>Use ancillary files for large blocks of code, data, images, tables, movies, or animated GIFs.</li>
+              </ul>
+            </details>
+            <details data-searchable>
+              <summary><span>5</span><strong>Enter metadata</strong><em>Required</em></summary>
+              <p>Title, authors, and abstract are required. Metadata supports search, announcements, RSS, indexing, and ownership records.</p>
+              <ul>
+                <li>Metadata fields accept ASCII input; convert Unicode to TeX equivalents where needed.</li>
+                <li>Abstracts longer than 1920 characters are not accepted.</li>
+                <li>Use Comments for replacement notes, page counts, related URLs, and publication status before journal metadata exists.</li>
+              </ul>
+            </details>
+            <details data-searchable>
+              <summary><span>6</span><strong>Upload, check, preview, submit</strong><em>Required</em></summary>
+              <p>Upload files, use Check Files, confirm the detected processor and top-level TeX file, preview the PDF, then submit.</p>
+              <ul>
+                <li>If compilation fails, inspect the full log and fix the source before proceeding.</li>
+                <li>Mixed figure formats and case mismatches are common causes of processing failure.</li>
+                <li>Before final submission, carefully review the title, abstract, metadata, and generated PDF.</li>
+              </ul>
+            </details>
+          </div>
+        </section>
+
+        <section id="format" class="section split" aria-labelledby="format-title">
+          <div>
+            <div class="section-heading compact">
+              <div>
+                <h2 id="format-title">Format Checklist</h2>
+                <p>Format problems should be fixed before the work is treated as ready for moderation.</p>
+              </div>
+            </div>
+
+            <div class="check-grid">
+              <article data-searchable>
+                <h3>Every submission should have</h3>
+                <ul class="check-list good">
+                  <li>Title and authorship. Anonymous submissions are not accepted.</li>
+                  <li>Complete references.</li>
+                  <li>Machine-readable text.</li>
+                  <li>Single-spaced body text, 10 to 14 point type, and at least 1 inch margins.</li>
+                  <li>Publicly available repository links for referenced code or data sets.</li>
+                </ul>
+              </article>
+              <article data-searchable>
+                <h3>Every submission should avoid</h3>
+                <ul class="check-list bad">
+                  <li>Line numbers, obstructive watermarks, highlighted text, margin notes, or referee remarks.</li>
+                  <li>Advertisements, slides, posters, or long non-text blocks inside the article body.</li>
+                  <li>Copyright statements that prohibit or impair arXiv redistribution.</li>
+                  <li>Embedded JavaScript, movies, animated GIFs, or HTML inside a PDF.</li>
+                  <li>Scanned documents or bitmapped whole-paper PDFs.</li>
+                </ul>
+              </article>
+            </div>
+          </div>
+
+          <aside class="rule-panel" data-searchable>
+            <h3>TeX and PDF calls</h3>
+            <dl>
+              <dt>TeX source</dt>
+              <dd>Include needed style files, macros, figures, .bib or .bbl files, .ind files, and glossary outputs. Do not include generated output files or hidden directories.</dd>
+              <dt>PDF source</dt>
+              <dd>Use embedded fonts, standard structure, selectable text, and no JavaScript. Avoid Print to PDF when it rasterizes the document.</dd>
+              <dt>Figure formats</dt>
+              <dd>LaTeX processing uses PS/EPS. PDFLaTeX processing uses PDF, JPG, or PNG. arXiv does not convert figures during processing.</dd>
+            </dl>
+          </aside>
+        </section>
+
+        <section id="metadata" class="section" aria-labelledby="metadata-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="metadata-title">Metadata Checklist</h2>
+              <p>Metadata is not decoration. It controls discovery, ownership, announcements, and version context.</p>
+            </div>
+            <a class="source-link" href="source.html?doc=Metadata%20for%20Required%20and%20Optional%20Fields%20-%20arXiv%20info.html">Source: Metadata fields</a>
+          </div>
+
+          <div class="metadata-table-wrap">
+            <table class="metadata-table">
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Status</th>
+                  <th>Use it for</th>
+                  <th>Avoid</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-searchable>
+                  <td>Title</td>
+                  <td><span class="pill required">Required</span></td>
+                  <td>Concise paper title, with standard arXiv references where needed.</td>
+                  <td>All uppercase, Unicode characters, and opaque TeX macros.</td>
+                </tr>
+                <tr data-searchable>
+                  <td>Authors</td>
+                  <td><span class="pill required">Required</span></td>
+                  <td>All authors in standard name order, with affiliations in parentheses when supplied.</td>
+                  <td>Honorifics, degrees, "et al.", commas inside names, fake affiliations, or AI tools as authors.</td>
+                </tr>
+                <tr data-searchable>
+                  <td>Abstract</td>
+                  <td><span class="pill required">Required</span></td>
+                  <td>Short, readable summary for mailings and search. Limit is 1920 characters.</td>
+                  <td>The word "Abstract", unnecessary TeX spacing commands, long tables, or excessive line breaks.</td>
+                </tr>
+                <tr data-searchable>
+                  <td>Comments</td>
+                  <td><span class="pill optional">Optional</span></td>
+                  <td>Page counts, related URLs, replacement reasons, and publication status before journal metadata exists.</td>
+                  <td>Copyright statements or license text that conflicts with the selected arXiv license.</td>
+                </tr>
+                <tr data-searchable>
+                  <td>Journal-ref / DOI</td>
+                  <td><span class="pill optional">Optional</span></td>
+                  <td>Full publication information and a DOI resolving to another version, such as a journal article.</td>
+                  <td>URLs in Journal-ref or the arXiv-assigned DOI in the DOI field.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="after-submit" class="section" aria-labelledby="after-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="after-title">After Submission</h2>
+              <p>Status, announcement, replacement, and version behavior in one place.</p>
+            </div>
+          </div>
+
+          <div class="status-grid">
+            <article data-searchable>
+              <h3>Incomplete</h3>
+              <p>You can still edit. If not submitted or updated within 14 days, it is removed.</p>
+            </article>
+            <article data-searchable>
+              <h3>Processing</h3>
+              <p>arXiv is processing the submission. Editing is unavailable during this usually short state.</p>
+            </article>
+            <article data-searchable>
+              <h3>Submitted</h3>
+              <p>Final pre-announcement state. You may unsubmit to return it to incomplete status.</p>
+            </article>
+            <article data-searchable>
+              <h3>On hold</h3>
+              <p>No immediate action is required unless arXiv contacts you. Do not delete and resubmit.</p>
+            </article>
+            <article data-searchable>
+              <h3>Announced</h3>
+              <p>The arXiv identifier and DOI are assigned during announcement, not in advance.</p>
+            </article>
+            <article data-searchable>
+              <h3>Replacement</h3>
+              <p>Public changes create a new version. Previous versions remain publicly available.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>
+        arxiv_new is a local reorganization prototype built from the saved source files in this folder.
+        Original policy authority remains with the source documents and arXiv.
+      </p>
+      <p>Prototype date: June 3, 2026.</p>
+    </footer>
+
+    <script src="assets/app.js?v=policy-history"></script>
+  </body>
+</html>

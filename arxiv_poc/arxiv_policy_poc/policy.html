@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>arxiv_new | Policy guide</title>
+    <meta
+      name="description"
+      content="Policy map, decision table, enforcement guidance, and editorial calls for arXiv documentation."
+    >
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css?v=policy-history">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="topbar">
+      <a class="brand" href="index.html#top" aria-label="arxiv_new home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="assets/arxiv-logo-one-color-white.svg" alt="">
+        </span>
+        <span>
+          <small>Submission and policy guide</small>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="submission.html">Submit</a>
+        <a class="active" href="policy.html">Policies</a>
+        <a href="staff.html">Staff guide</a>
+        <a href="sources.html">Sources</a>
+      </nav>
+
+      <label class="search-shell" for="site-search">
+        <svg aria-hidden="true" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m16.5 16.5 4 4"></path>
+        </svg>
+        <input id="site-search" type="search" placeholder="Search submission, policy, status..." autocomplete="off">
+        <kbd>/</kbd>
+      </label>
+    </header>
+
+    <div class="layout" id="top">
+      <aside class="sidebar" aria-label="Section navigation">
+        <nav>
+          <p>Policy</p>
+          <a href="#policies">Policy map</a>
+          <a href="#decision-table">Decision table</a>
+          <a href="#policy-calls">Editorial calls</a>
+          <p>Other guides</p>
+          <a href="submission.html">Submission guide</a>
+          <a href="staff.html">Staff guide</a>
+          <a href="sources.html">Source index</a>
+        </nav>
+      </aside>
+
+      <main id="main">
+        <section id="policies" class="section" aria-labelledby="policies-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="policies-title">Policy Map</h2>
+              <p>Where the rules apply, who needs them, and what action they support.</p>
+            </div>
+            <a class="source-link" href="source.html?doc=Content%20Moderation%20-%20arXiv%20info.html">Source: Moderation</a>
+          </div>
+
+          <div class="policy-map">
+            <article data-searchable>
+              <h3>Before public announcement</h3>
+              <p>Moderation evaluates content, category fit, scholarly form, rights, originality, duplication, excessive rate, and format readiness.</p>
+              <a href="#decision-table">Use decision table</a>
+            </article>
+            <article data-searchable>
+              <h3>After public announcement</h3>
+              <p>The paper is part of the permanent scholarly record. Removal is considered only when the submitter did not have legal right to grant the license.</p>
+              <a href="source.html?doc=Version%20Availability%20-%20arXiv%20info.html">Read version rules</a>
+            </article>
+            <article data-searchable>
+              <h3>License and copyright</h3>
+              <p>The selected license is irrevocable and cannot be changed. The author is responsible for choosing a compatible license and publisher version.</p>
+              <a href="source.html?doc=Licenses%20-%20arXiv%20info.html">Read license source</a>
+            </article>
+            <article data-searchable>
+              <h3>Conduct and enforcement</h3>
+              <p>Warnings, account restrictions, submission actions, metadata notes, legal escalation, and possible appeals are handled through Code of Conduct enforcement.</p>
+              <a href="source.html?doc=arXiv%20Code%20of%20Conduct%20Enforcement%20-%20arXiv%20info.html">Read enforcement source</a>
+            </article>
+          </div>
+        </section>
+
+        <section id="decision-table" class="section" aria-labelledby="decision-title">
+          <div class="section-heading">
+            <div>
+              <h2 id="decision-title">Policy Decision Table</h2>
+              <p>A working matrix for authors and staff. It separates the rule, likely action, and escalation point.</p>
+            </div>
+            <p class="result-count" id="result-count" aria-live="polite"></p>
+          </div>
+
+          <div class="decision-table-wrap">
+            <table class="decision-table">
+              <thead>
+                <tr>
+                  <th>Issue</th>
+                  <th>Rule to apply</th>
+                  <th>Usual action</th>
+                  <th>Escalate when</th>
+                  <th>Primary source</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-searchable>
+                  <td>Wrong category or cross-list</td>
+                  <td>Post in the most relevant category; cross-lists may be added or removed.</td>
+                  <td><span class="pill return">Reclassify</span></td>
+                  <td>Category judgment is disputed or a procedural issue is raised.</td>
+                  <td><a href="source.html?doc=Content%20Moderation%20-%20arXiv%20info.html">Moderation</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>Out of scope</td>
+                  <td>Submissions may be declined when arXiv does not serve the topic or intended community.</td>
+                  <td><span class="pill reject">Decline</span></td>
+                  <td>Boundary case across subject areas or new community coverage.</td>
+                  <td><a href="source.html?doc=Content%20Moderation%20-%20arXiv%20info.html">Moderation</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>Weak scholarly form</td>
+                  <td>Submissions must follow accepted standards of scholarly communication and be self-contained.</td>
+                  <td><span class="pill reject">Decline or return</span></td>
+                  <td>Issues are fixable format problems rather than content concerns.</td>
+                  <td><a href="source.html?doc=Policies%20for%20Format%20Requirements%20-%20arXiv%20info.html">Format policy</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>No original or substantive research</td>
+                  <td>Course projects, proposals, news, political-cause material, and work needing significant revision may be declined.</td>
+                  <td><span class="pill reject">Decline</span></td>
+                  <td>Publication status is raised as an appeal factor.</td>
+                  <td><a href="source.html?doc=Content%20Moderation%20-%20arXiv%20info.html">Moderation</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>Duplicate or similar submission</td>
+                  <td>Multiple similar submissions may need consolidation or versioning.</td>
+                  <td><span class="pill return">Consolidate</span></td>
+                  <td>A proxy submits a duplicate of an author-owned paper.</td>
+                  <td><a href="source.html?doc=Version%20Availability%20-%20arXiv%20info.html">Versions</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>Rights or copyright problem</td>
+                  <td>Submitter must have legal authority to grant the selected license, which is irrevocable.</td>
+                  <td><span class="pill escalate">Escalate</span></td>
+                  <td>Publisher proof, barred third-party content, referee comments, or removal request appears.</td>
+                  <td><a href="source.html?doc=Licenses%20-%20arXiv%20info.html">Licenses</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>PDF not machine readable</td>
+                  <td>PDFs must support text extraction, accessibility, and reliable rendering.</td>
+                  <td><span class="pill return">Return</span></td>
+                  <td>Document is scanned, rasterized, font-broken, or JavaScript-bearing.</td>
+                  <td><a href="source.html?doc=Submit%20a%20PDF%20-%20arXiv%20info.html">PDF help</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>TeX package or file failure</td>
+                  <td>Authors must include required files and compatible figures; arXiv does not provide missing local style files.</td>
+                  <td><span class="pill return">Return</span></td>
+                  <td>Compiler logs suggest source incompatibility or unsafe embedded content.</td>
+                  <td><a href="source.html?doc=Submit%20TeX_LaTeX%20-%20arXiv%20info.html">TeX help</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>Generative AI language tools</td>
+                  <td>Significant use should be reported consistent with subject standards; AI tools must not be listed as authors.</td>
+                  <td><span class="pill return">Correct metadata or text</span></td>
+                  <td>AI-generated text causes plagiarism, bias, errors, misleading content, or authorship confusion.</td>
+                  <td><a href="source.html?doc=Content%20Moderation%20-%20arXiv%20info.html">Moderation</a></td>
+                </tr>
+                <tr data-searchable>
+                  <td>Conduct violation</td>
+                  <td>Respectful participation is required across arXiv channels.</td>
+                  <td><span class="pill escalate">Enforce</span></td>
+                  <td>Abusive communication, repeated inappropriate material, legal concern, or account-level action.</td>
+                  <td><a href="source.html?doc=arXiv%20Code%20of%20Conduct%20Enforcement%20-%20arXiv%20info.html">Enforcement</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="policy-calls" class="section" aria-labelledby="calls-title">
+          <div class="section-heading compact">
+            <div>
+              <h2 id="calls-title">Editorial Calls Made In This Redesign</h2>
+              <p>These choices resolve local documentation messiness without changing the underlying policy intent.</p>
+            </div>
+          </div>
+          <div class="call-list">
+            <article data-searchable>
+              <h3>Duplicate endorsement pages</h3>
+              <p>The two endorsement HTML files differ only in saved-page assets and navigation state, so the new site treats them as one source.</p>
+            </article>
+            <article data-searchable>
+              <h3>License wording</h3>
+              <p>The license page is used for license choice and irrevocability. The submittal agreement is used for representations, warranties, and Cornell legal terms.</p>
+            </article>
+            <article data-searchable>
+              <h3>Moderation versus peer review</h3>
+              <p>The policy guide states plainly that arXiv moderation is not peer review, while still showing moderation criteria and actions.</p>
+            </article>
+            <article data-searchable>
+              <h3>Author versus staff language</h3>
+              <p>Rules are rewritten into author tasks, policy statements, and staff actions so the same rule is not repeated in conflicting voices.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>
+        arxiv_new is a local reorganization prototype built from the saved source files in this folder.
+        Original policy authority remains with the source documents and arXiv.
+      </p>
+      <p>Prototype date: June 3, 2026.</p>
+    </footer>
+
+    <script src="assets/app.js?v=policy-history"></script>
+  </body>
+</html>
