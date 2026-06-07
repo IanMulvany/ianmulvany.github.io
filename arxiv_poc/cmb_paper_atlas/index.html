@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMB Paper Atlas</title>
+    <link rel="stylesheet" href="app.css?v=20260607-scroll-route" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="nav-rail" aria-label="Primary">
+        <a class="brand" href="#papers" aria-label="CMB Paper Atlas">
+          <span class="brand-mark">arXiv</span>
+          <span class="brand-text">CMB Atlas</span>
+        </a>
+        <nav class="nav-list">
+          <a class="nav-item" href="#papers" data-route="papers">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z" /><path d="M14 3v5h4" /><path d="M10 13h5M10 17h5" /></svg>
+            </span>
+            <span>Papers</span>
+          </a>
+          <a class="nav-item" href="#authors" data-route="authors">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M16 20v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" /><circle cx="9.5" cy="7" r="4" /><path d="M21 20v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>
+            </span>
+            <span>Authors</span>
+          </a>
+          <a class="nav-item" href="#figures" data-route="figures">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5" /><path d="m7 15 3-3 2 2 3-4 2 5" /><circle cx="8" cy="9" r="1" /></svg>
+            </span>
+            <span>Figures</span>
+          </a>
+          <a class="nav-item" href="#reader" data-route="reader">
+            <span class="nav-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v18H6.5A2.5 2.5 0 0 1 4 18.5z" /><path d="M8 7h8M8 11h8M8 15h5" /></svg>
+            </span>
+            <span>Reader</span>
+          </a>
+        </nav>
+      </aside>
+
+      <main class="workspace">
+        <header class="topbar">
+          <div class="topbar-title">
+            <div class="section-kicker" id="section-kicker">CMB Paper Atlas</div>
+            <h1 id="section-title">Papers</h1>
+          </div>
+          <label class="search-box" for="global-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" /><path d="m16.5 16.5 4 4" /></svg>
+            <input id="global-search" type="search" autocomplete="off" placeholder="Search title, author, caption, arXiv ID" />
+          </label>
+          <div class="stat-strip" id="stat-strip" aria-label="Catalog stats"></div>
+        </header>
+
+        <section id="app" class="app-region" aria-live="polite">
+          <div class="loading">Loading CMB Paper Atlas</div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal" id="figure-modal" hidden>
+      <button class="modal-backdrop" type="button" data-action="close-modal" aria-label="Close figure"></button>
+      <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <header class="modal-header">
+          <div>
+            <p id="modal-source" class="microcopy"></p>
+            <h2 id="modal-title"></h2>
+          </div>
+          <button class="icon-button" type="button" data-action="close-modal" aria-label="Close">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg>
+          </button>
+        </header>
+        <div class="modal-image-wrap">
+          <img id="modal-image" alt="" />
+        </div>
+        <footer class="modal-footer">
+          <p id="modal-caption"></p>
+          <div class="modal-actions">
+            <button class="button secondary" type="button" data-action="modal-reader">Reader</button>
+            <button class="button primary" type="button" data-action="modal-open-image">Open image</button>
+          </div>
+        </footer>
+      </section>
+    </div>
+
+    <script src="app.js?v=20260607-scroll-route" defer></script>
+  </body>
+</html>
