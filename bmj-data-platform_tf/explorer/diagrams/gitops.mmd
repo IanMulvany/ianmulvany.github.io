@@ -1,0 +1,39 @@
+%%{init: {"theme":"base","themeVariables":{
+  "fontFamily":"-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif",
+  "primaryColor":"#1f2935","primaryTextColor":"#e6edf3","primaryBorderColor":"#2b3744",
+  "lineColor":"#8b98a5","fontSize":"13px"
+}}}%%
+flowchart TD
+  DEV["Developer<br/>branch from main"] --> PR["Open Pull Request"]
+  PR --> GATES{"Quality gates"}
+  GATES --> LINT["Superlinter<br/>(tflint · fmt · yaml)"]
+  GATES --> CHECKOV["Checkov<br/>(no high/critical)"]
+  GATES --> PLAN["plan-infrastructure<br/>changed-service matrix<br/>plan-only per dir × env"]
+  LINT --> REVIEW["Review + CODEOWNERS<br/>(Platform / BISO on IAM·KMS·VPC-SC)"]
+  CHECKOV --> REVIEW
+  PLAN --> REVIEW
+  REVIEW --> MERGE["Merge to main"]
+  MERGE --> DEVAPPLY["dev-infrastructure<br/>apply → DEV (bmj-data-dev)"]
+  DEVAPPLY --> DISPATCH["dispatch-run-infrastructure<br/>manual → STG/TEST (bmj-data-test)"]
+  DISPATCH --> RELEASE["Publish GitHub Release"]
+  RELEASE --> LIVEAPPLY["live-infrastructure<br/>apply → LIVE/PROD (bmj-data-prod)"]
+
+  AUTH["GitHub OIDC →<br/>Workload Identity Federation"] -.auth.-> DEVAPPLY
+  AUTH -.auth.-> LIVEAPPLY
+
+  classDef gate fill:#243140,stroke:#D29922,color:#e6edf3;
+  classDef apply fill:#C0392B,stroke:#8c2a20,color:#fff;
+  classDef ok fill:#1f2935,stroke:#3FB950,color:#e6edf3;
+  class GATES,LINT,CHECKOV,PLAN gate;
+  class DEVAPPLY,DISPATCH,LIVEAPPLY,RELEASE apply;
+  class DEV,PR,REVIEW,MERGE,AUTH ok;
+
+  %% ------------------- LINKS TO INFRASTRUCTURE-AS-CODE -------------------
+  click LINT call openInfra(".github/workflows/lint.yaml")
+  click CHECKOV call openInfra(".github/workflows/checkov.yaml")
+  click PLAN call openInfra(".github/workflows/plan-infrastructure.yaml")
+  click REVIEW call openInfra("CODEOWNERS")
+  click DEVAPPLY call openInfra(".github/workflows/dev-infrastructure.yaml")
+  click DISPATCH call openInfra(".github/workflows/dispatch-run-infrastructure.yaml")
+  click LIVEAPPLY call openInfra(".github/workflows/live-infrastructure.yaml")
+  click AUTH call openInfra(".github/workflows/plan-infrastructure.yaml")
