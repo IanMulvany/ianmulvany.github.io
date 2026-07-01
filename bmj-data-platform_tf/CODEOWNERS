@@ -1,9 +1,0 @@
-# Default owners for everything in the repo.
-* @BMJ-Ltd/data-engineering @BMJ-Ltd/platform-team
-
-# Security-sensitive directories require BISO / Platform review.
-/terraform/org-iam/                       @BMJ-Ltd/platform-team
-/terraform/workforce-identity-federation/ @BMJ-Ltd/platform-team
-/terraform/vpc-service-controls/          @BMJ-Ltd/platform-team
-/terraform/kms/                           @BMJ-Ltd/platform-team
-/terraform/secret-manager/                @BMJ-Ltd/platform-team
